@@ -54,7 +54,7 @@ namespace ELHotel {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1148, 649);
+			this->ClientSize = System::Drawing::Size(1083, 622);
 			this->Name = L"MainWindow";
 			this->Text = L"ELHOTEL";
 			this->ResumeLayout(false);

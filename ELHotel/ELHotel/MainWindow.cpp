@@ -1,14 +1,19 @@
 #include "pch.h"
 #include "MainWindow.h"
-
+#include <Windows.h>
 using namespace System;
-using namespace System::Windows::Forms;
-[STAThread]
+using namespace ELHotel;
 
-void main(array<String^>^ args)
+int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
+
 {
-    Application::EnableVisualStyles();
-    Application::SetCompatibleTextRenderingDefault(false);
-    ELHotel::MainWindow form;
-    Application::Run(% form);
+
+	Application::EnableVisualStyles();
+
+	Application::SetCompatibleTextRenderingDefault(false);
+
+	Application::Run(gcnew MainWindow());
+
+	return 0;
+
 }
