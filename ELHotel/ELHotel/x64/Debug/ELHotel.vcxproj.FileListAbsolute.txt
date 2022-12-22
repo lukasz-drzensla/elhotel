@@ -1,4 +1,0 @@
-E:\Workspace\AGH\Sem 5\jpo\ELHotel\ELHotel\ELHotel\x64\Debug\ELHotel.vcxproj.AssemblyReference.cache
-E:\Workspace\AGH\Sem 5\jpo\ELHotel\ELHotel\ELHotel\x64\Debug\ELHotel.vcxproj.SuggestedBindingRedirects.cache
-E:\Workspace\AGH\Sem 5\jpo\ELHotel\ELHotel\ELHotel\x64\Debug\ELHotel.MainWindow.resources
-E:\Workspace\AGH\Sem 5\jpo\ELHotel\ELHotel\ELHotel\x64\Debug\ELHotel.vcxproj.GenerateResource.cache
