@@ -25,6 +25,17 @@
     </property>
     <row>
      <property name="text">
+      <string>Date</string>
+     </property>
+     <property name="font">
+      <font>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
       <string>ROOM 1</string>
      </property>
     </row>
@@ -70,25 +81,95 @@
     </column>
     <item row="0" column="0">
      <property name="text">
-      <string>yee</string>
+      <string>19.12</string>
+     </property>
+     <property name="font">
+      <font>
+       <italic>true</italic>
+      </font>
      </property>
     </item>
     <item row="0" column="1">
      <property name="text">
-      <string/>
+      <string>20.12</string>
+     </property>
+     <property name="font">
+      <font>
+       <italic>true</italic>
+      </font>
      </property>
     </item>
     <item row="0" column="2">
      <property name="text">
-      <string>yee</string>
+      <string>21.12</string>
+     </property>
+     <property name="font">
+      <font>
+       <italic>true</italic>
+      </font>
      </property>
     </item>
     <item row="0" column="3">
+     <property name="text">
+      <string>22.12</string>
+     </property>
+     <property name="font">
+      <font>
+       <italic>true</italic>
+      </font>
+     </property>
+    </item>
+    <item row="0" column="4">
+     <property name="text">
+      <string>23.12</string>
+     </property>
+     <property name="font">
+      <font>
+       <italic>true</italic>
+      </font>
+     </property>
+    </item>
+    <item row="0" column="5">
+     <property name="text">
+      <string>24.12</string>
+     </property>
+     <property name="font">
+      <font>
+       <italic>true</italic>
+      </font>
+     </property>
+    </item>
+    <item row="0" column="6">
+     <property name="text">
+      <string>25.12</string>
+     </property>
+     <property name="font">
+      <font>
+       <italic>true</italic>
+      </font>
+     </property>
+    </item>
+    <item row="1" column="0">
      <property name="text">
       <string>yee</string>
      </property>
     </item>
     <item row="1" column="1">
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item row="1" column="2">
+     <property name="text">
+      <string>yee</string>
+     </property>
+    </item>
+    <item row="1" column="3">
+     <property name="text">
+      <string>yee</string>
+     </property>
+    </item>
+    <item row="2" column="1">
      <property name="text">
       <string>test</string>
      </property>
@@ -123,10 +204,18 @@
     </property>
     <addaction name="actionAdd"/>
     <addaction name="actionRemove"/>
+    <addaction name="actionSayHello"/>
+   </widget>
+   <widget class="QMenu" name="menuRoom">
+    <property name="title">
+     <string>Room</string>
+    </property>
+    <addaction name="actionAdd_3"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuReservation"/>
    <addaction name="menuGuest"/>
+   <addaction name="menuRoom"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionAdd">
@@ -152,6 +241,16 @@
   <action name="actionEdit">
    <property name="text">
     <string>Edit</string>
+   </property>
+  </action>
+  <action name="actionAdd_3">
+   <property name="text">
+    <string>Add</string>
+   </property>
+  </action>
+  <action name="actionSayHello">
+   <property name="text">
+    <string>SayHello</string>
    </property>
   </action>
  </widget>

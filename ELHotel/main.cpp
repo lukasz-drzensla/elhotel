@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
+#include <QMessageBox>
 
 //Reservation system libraries
 #include "header/Reservation.h"
@@ -75,7 +76,6 @@ int global_init()
     return 0;
 }
 
-
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -91,6 +91,13 @@ int main(int argc, char *argv[])
     }
 
     int init = global_init(); //read the config file with all the constants including price per day, etc
+
+    if (init == -1)
+    {
+        QMessageBox msgBox;
+        msgBox.setText("Error reading config file");
+        msgBox.exec();
+    }
 
     MainWindow w;
     w.show();
