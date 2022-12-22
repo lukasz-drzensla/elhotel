@@ -13,7 +13,88 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableWidget" name="reservationCalendar">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>791</width>
+      <height>551</height>
+     </rect>
+    </property>
+    <row>
+     <property name="text">
+      <string>ROOM 1</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>ROOM 2</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>Monday</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Tuesday</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Wednesday</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Thursday</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Friday</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Saturday</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Sunday</string>
+     </property>
+    </column>
+    <item row="0" column="0">
+     <property name="text">
+      <string>yee</string>
+     </property>
+    </item>
+    <item row="0" column="1">
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item row="0" column="2">
+     <property name="text">
+      <string>yee</string>
+     </property>
+    </item>
+    <item row="0" column="3">
+     <property name="text">
+      <string>yee</string>
+     </property>
+    </item>
+    <item row="1" column="1">
+     <property name="text">
+      <string>test</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -28,9 +109,51 @@
      <string>File</string>
     </property>
    </widget>
+   <widget class="QMenu" name="menuReservation">
+    <property name="title">
+     <string>Reservation</string>
+    </property>
+    <addaction name="actionAdd_2"/>
+    <addaction name="actionRemove_2"/>
+    <addaction name="actionEdit"/>
+   </widget>
+   <widget class="QMenu" name="menuGuest">
+    <property name="title">
+     <string>Guest</string>
+    </property>
+    <addaction name="actionAdd"/>
+    <addaction name="actionRemove"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuReservation"/>
+   <addaction name="menuGuest"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAdd">
+   <property name="text">
+    <string>Add</string>
+   </property>
+  </action>
+  <action name="actionRemove">
+   <property name="text">
+    <string>Remove</string>
+   </property>
+  </action>
+  <action name="actionAdd_2">
+   <property name="text">
+    <string>Add</string>
+   </property>
+  </action>
+  <action name="actionRemove_2">
+   <property name="text">
+    <string>Remove</string>
+   </property>
+  </action>
+  <action name="actionEdit">
+   <property name="text">
+    <string>Edit</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

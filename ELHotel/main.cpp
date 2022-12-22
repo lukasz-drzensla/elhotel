@@ -4,6 +4,78 @@
 #include <QLocale>
 #include <QTranslator>
 
+//Reservation system libraries
+#include "header/Reservation.h"
+#include "header/dateTime.h"
+#include "header/globalConstants.h"
+#include <fstream>
+#include <vector>
+#include "header/dataBase.h"
+#include "header/Room.h"
+
+using std::ifstream, std::ofstream, std::string;
+
+int globalConstants::roomRate = 0;
+int globalConstants::thisYear = 0;
+int globalConstants::next_index = 0;
+
+int global_init()
+{
+    ifstream config("config.txt");
+    if (!config.is_open())
+    {
+        ofstream error("config.txt");
+        error.close();
+        return -1;
+    }
+    int n{};
+    int err = 0;
+    while (!config.eof())
+    {
+        string temp{};
+        getline(config, temp);
+        int t{};
+        try
+        {
+            t = stoi(temp);
+        }
+        catch (const std::exception&)
+        {
+            err = 1;
+        }
+        switch (n) {
+        case 0:
+        {
+            if (!err)
+                globalConstants::roomRate = t;
+            else
+                globalConstants::roomRate = 1;
+            break;
+        }
+        case 1:
+        {
+            if (!err)
+                globalConstants::thisYear = t;
+            else
+                globalConstants::thisYear = 2020;
+            break;
+        }
+        case 2:
+        {
+            if (!err)
+                globalConstants::next_index = t;
+            else
+                globalConstants::next_index = 0;
+            break;
+        }
+        };
+        ++n;
+    }
+    config.close();
+    return 0;
+}
+
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -17,6 +89,9 @@ int main(int argc, char *argv[])
             break;
         }
     }
+
+    int init = global_init(); //read the config file with all the constants including price per day, etc
+
     MainWindow w;
     w.show();
     return a.exec();

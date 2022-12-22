@@ -43,6 +43,11 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "E:/Workspace/AGH/Sem 5/jpo/EL
 set(OLD_GLOB
   "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/main.cpp"
   "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/mainwindow.cpp"
+  "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/src/Reservation.cpp"
+  "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/src/Room.cpp"
+  "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/src/dataBase.cpp"
+  "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/src/dateTime.cpp"
+  "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/src/globalConstants.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -61,6 +66,11 @@ endif()
 # _directory_contents at E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:83 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/*.h")
 set(OLD_GLOB
+  "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/header/Reservation.h"
+  "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/header/Room.h"
+  "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/header/dataBase.h"
+  "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/header/dateTime.h"
+  "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/header/globalConstants.h"
   "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/mainwindow.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
