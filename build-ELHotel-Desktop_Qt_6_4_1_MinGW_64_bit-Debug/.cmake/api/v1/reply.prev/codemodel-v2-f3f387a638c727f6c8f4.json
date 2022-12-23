@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-d42ca4059675ff61f463.json",
+					"jsonFile" : "directory-.-Debug-1372e3bf6e4bf1f102cb.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,21 +44,21 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ELHotel::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ELHotel-Debug-6f92fa476c0f53f68c42.json",
+					"jsonFile" : "target-ELHotel-Debug-8389c123661b4d29b667.json",
 					"name" : "ELHotel",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "ELHotel_autogen::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ELHotel_autogen-Debug-1bfb347a487a1bf43008.json",
+					"jsonFile" : "target-ELHotel_autogen-Debug-8172b7e1a43740f3cb21.json",
 					"name" : "ELHotel_autogen",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "ELHotel_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ELHotel_autogen_timestamp_deps-Debug-0ecdcf80af3836e521d9.json",
+					"jsonFile" : "target-ELHotel_autogen_timestamp_deps-Debug-97d61b7dad0709c81287.json",
 					"name" : "ELHotel_autogen_timestamp_deps",
 					"projectIndex" : 0
 				}
@@ -68,8 +68,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "E:/Workspace/AGH/Sem 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug",
-		"source" : "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel"
+		"build" : "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug",
+		"source" : "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel"
 	},
 	"version" : 
 	{

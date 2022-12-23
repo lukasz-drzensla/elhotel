@@ -27,21 +27,21 @@
 		],
 		"files" : 
 		[
-			"E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
+			"C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
 			"CMakeLists.txt",
-			"E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake",
-			"E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake",
-			"E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake",
-			"E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake",
-			"E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake",
-			"E:/Software/Qt/Tools/CMake_64/share/cmake-3.24/Modules/CMakeFindDependencyMacro.cmake",
-			"E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
-			"E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake",
-			"E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake",
-			"E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake",
-			"E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake",
-			"E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake",
-			"E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake"
+			"C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake",
+			"C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake",
+			"C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake",
+			"C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake",
+			"C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake",
+			"C:/Qt/Tools/CMake_64/share/cmake-3.24/Modules/CMakeFindDependencyMacro.cmake",
+			"C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+			"C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake",
+			"C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake",
+			"C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake",
+			"C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake",
+			"C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake",
+			"C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake"
 		],
 		"nodes" : 
 		[
@@ -51,7 +51,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 29,
+				"line" : 38,
 				"parent" : 0
 			},
 			{
@@ -75,13 +75,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 65,
+				"line" : 74,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 55,
+				"line" : 64,
 				"parent" : 0
 			},
 			{
@@ -268,7 +268,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-DQT_QML_DEBUG -g"
+					"fragment" : "-g"
 				},
 				{
 					"fragment" : "-std=gnu++17"
@@ -325,32 +325,32 @@
 			[
 				{
 					"backtrace" : 0,
-					"path" : "E:/Workspace/AGH/Sem 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/include"
+					"path" : "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/include"
 				},
 				{
 					"backtrace" : 14,
 					"isSystem" : true,
-					"path" : "E:/Software/Qt/6.4.1/mingw_64/include/QtCore"
+					"path" : "C:/Qt/6.4.1/mingw_64/include/QtCore"
 				},
 				{
 					"backtrace" : 14,
 					"isSystem" : true,
-					"path" : "E:/Software/Qt/6.4.1/mingw_64/include"
+					"path" : "C:/Qt/6.4.1/mingw_64/include"
 				},
 				{
 					"backtrace" : 14,
 					"isSystem" : true,
-					"path" : "E:/Software/Qt/6.4.1/mingw_64/mkspecs/win32-g++"
+					"path" : "C:/Qt/6.4.1/mingw_64/mkspecs/win32-g++"
 				},
 				{
 					"backtrace" : 6,
 					"isSystem" : true,
-					"path" : "E:/Software/Qt/6.4.1/mingw_64/include/QtWidgets"
+					"path" : "C:/Qt/6.4.1/mingw_64/include/QtWidgets"
 				},
 				{
 					"backtrace" : 6,
 					"isSystem" : true,
-					"path" : "E:/Software/Qt/6.4.1/mingw_64/include/QtGui"
+					"path" : "C:/Qt/6.4.1/mingw_64/include/QtGui"
 				}
 			],
 			"language" : "CXX",
@@ -367,18 +367,23 @@
 			[
 				0,
 				1,
-				2
+				2,
+				10,
+				11,
+				12,
+				13,
+				14
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"id" : "ELHotel_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "ELHotel_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "ELHotel_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "ELHotel::@6890427a1f51a3e7e1df",
@@ -401,7 +406,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-DQT_QML_DEBUG -g",
+				"fragment" : "-g",
 				"role" : "flags"
 			},
 			{
@@ -410,17 +415,17 @@
 			},
 			{
 				"backtrace" : 6,
-				"fragment" : "E:\\Software\\Qt\\6.4.1\\mingw_64\\lib\\libQt6Widgets.a",
+				"fragment" : "C:\\Qt\\6.4.1\\mingw_64\\lib\\libQt6Widgets.a",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 13,
-				"fragment" : "E:\\Software\\Qt\\6.4.1\\mingw_64\\lib\\libQt6Gui.a",
+				"fragment" : "C:\\Qt\\6.4.1\\mingw_64\\lib\\libQt6Gui.a",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 14,
-				"fragment" : "E:\\Software\\Qt\\6.4.1\\mingw_64\\lib\\libQt6Core.a",
+				"fragment" : "C:\\Qt\\6.4.1\\mingw_64\\lib\\libQt6Core.a",
 				"role" : "libraries"
 			},
 			{
@@ -440,7 +445,7 @@
 			},
 			{
 				"backtrace" : 32,
-				"fragment" : "E:\\Software\\Qt\\6.4.1\\mingw_64\\lib\\libQt6EntryPoint.a",
+				"fragment" : "C:\\Qt\\6.4.1\\mingw_64\\lib\\libQt6EntryPoint.a",
 				"role" : "libraries"
 			},
 			{
@@ -485,7 +490,12 @@
 			[
 				0,
 				1,
-				2
+				2,
+				10,
+				11,
+				12,
+				13,
+				14
 			]
 		},
 		{
@@ -494,7 +504,11 @@
 			[
 				3,
 				5,
-				7
+				6,
+				7,
+				8,
+				9,
+				16
 			]
 		},
 		{
@@ -502,15 +516,15 @@
 			"sourceIndexes" : 
 			[
 				4,
-				6,
-				8
+				15,
+				17
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				9
+				18
 			]
 		}
 	],
@@ -520,7 +534,7 @@
 			"backtrace" : 0,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "E:/Workspace/AGH/Sem 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/mocs_compilation.cpp",
+			"path" : "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/mocs_compilation.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -552,25 +566,75 @@
 		},
 		{
 			"backtrace" : 4,
+			"path" : "header/dateTime.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "header/globalConstants.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "header/Reservation.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "header/Room.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "src/dataBase.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "src/dateTime.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "src/globalConstants.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "src/Reservation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "src/Room.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
 			"path" : "ELHotel_en_GB.ts",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "E:/Workspace/AGH/Sem 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/include/ui_mainwindow.h",
+			"path" : "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/include/ui_mainwindow.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "E:/Workspace/AGH/Sem 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/timestamp",
+			"path" : "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/timestamp",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "E:/Workspace/AGH/Sem 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/timestamp.rule",
+			"path" : "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/timestamp.rule",
 			"sourceGroupIndex" : 3
 		}
 	],
