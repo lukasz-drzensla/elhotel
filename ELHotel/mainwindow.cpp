@@ -1,17 +1,15 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
 //Reservation system libraries
-#include "header/Reservation.h"
-#include "header/dateTime.h"
+
 #include "header/globalConstants.h"
 #include <fstream>
 #include <vector>
-#include "header/dataBase.h"
 #include "header/Room.h"
 #include <QMessageBox>
 
-dataBase db;
+
 
 std::string toSTD (QString qs)
 {
@@ -21,6 +19,19 @@ std::string toSTD (QString qs)
 QString toQString (std::string ss)
 {
     return QString::fromStdString(ss);
+}
+
+void MainWindow::updateCalendar()
+{
+    rooms_on_display.clear();
+    ui->reservationCalendar->setRowCount(1);
+    for (int i = 0; i < db.rooms.size(); i++)
+    {
+        ui->reservationCalendar->insertRow(ui->reservationCalendar->rowCount());
+        QString des = toQString(db.rooms[i].description);
+        ui->reservationCalendar->setVerticalHeaderItem(ui->reservationCalendar->rowCount()-1, new QTableWidgetItem(des));
+        rooms_on_display.push_back(db.rooms[i].id);
+    }
 }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -33,15 +44,35 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     db.init(globalConstants::thisYear); //init the database with current year
-
-    Reservation guest(globalConstants::next_index, db.rooms[0], "Janusz Pawlacz", dateTime(9, 12, 2022), dateTime(13, 12, 2022), "666-666-666", 0);
-    db.autoAddReservation(guest);
-    Reservation guest2(globalConstants::next_index, db.rooms[1], "Janusz Nosacz", dateTime(9, 12, 2022), dateTime(12, 12, 2022), "666-666-666", 0);
-    db.autoAddReservation(guest2);
-    Reservation guest3(globalConstants::next_index, db.rooms[1], "Janusz Janusz", dateTime(9, 12, 2022), dateTime(12, 12, 2022), "666-666-666", 0);
-    guest = guest3;
+    db.load(true);
 
 
+    updateCalendar();
+
+    dateTime first_day (19,12,2022);
+    int day_index = first_day.getDifference(dateTime(1, 1, globalConstants::thisYear), first_day);
+    for (int i = 0; i < 14; i++)
+    {
+        days_of_week.push_back(day_index+i);
+    }
+
+    for (int i = 0; i<14; i++)
+    {
+        vector <Reservation> all = db.getAllReservationsAtDate(days_of_week[i]);
+        for (int j = 0; j < all.size(); j++)
+        {
+            int room_id = all[j].getRoom().id;
+            for (int n = 0; n < rooms_on_display.size(); n++)
+            {
+                if (rooms_on_display[n] == room_id)
+                {
+                    QTableWidgetItem *reservation_item = new QTableWidgetItem;
+                    reservation_item->setText(toQString(all[j].getName()));
+                    ui->reservationCalendar->setItem(n, i, reservation_item);
+                }
+            }
+        }
+    }
 }
 
 MainWindow::~MainWindow()
@@ -50,18 +81,29 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_actionAdd_3_triggered()
+void test()
 {
-    ui->reservationCalendar->insertRow(ui->reservationCalendar->rowCount());
-    ui->reservationCalendar->setVerticalHeaderItem(ui->reservationCalendar->rowCount()-1, new QTableWidgetItem("New Room"));
+    QMessageBox msgBox;
+    msgBox.setText("TEST");
+    msgBox.exec();
 }
 
+void MainWindow::on_actionAdd_3_triggered()
+{
+    //Room->Add Button
+
+    ANR = new addnewroom (this, ui->reservationCalendar, &db, &rooms_on_display);
+    ANR->show();
+
+    //QMessageBox msgBox;
+    //msgBox.setText(toQString(std::to_string(x)));
+    //msgBox.exec();
+}
 
 void MainWindow::on_actionSayHello_triggered()
 {
     dateTime dt(12, 12, 2022);
     vector <Reservation> all = db.getAllReservationsAtDate(dt);
-
 
     for (int i = 0; i < all.size(); i++)
     {
@@ -72,3 +114,70 @@ void MainWindow::on_actionSayHello_triggered()
     }
 }
 
+
+void MainWindow::on_actionTEST_triggered()
+{
+
+}
+
+
+void MainWindow::on_actioninfo_triggered()
+{
+    QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
+    QModelIndex QMI = selection.at(0);
+    int row = QMI.row();
+    if (row > 0)
+    {
+        int ID = rooms_on_display[--row];
+        int index = 0;
+        for (int i = 0; i < db.rooms.size(); i++)
+        {
+            if (db.rooms[i].id == ID)
+            {
+                index = i;
+                break;
+            }
+        }
+        QMessageBox msgBox;
+        msgBox.setText("Room ID: " + toQString(std::to_string(db.rooms[index].id)) + ", Description: " + toQString(db.rooms[index].description) + ", Max people: " + toQString(std::to_string(db.rooms[index].max_people)) + ", Cost rate (price per night): " + toQString(std::to_string(db.rooms[index].cost_rate)));
+        msgBox.exec();
+    }
+}
+
+
+void MainWindow::on_actionRemove_3_triggered()
+{
+    try {
+        QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
+        QModelIndex QMI = selection.at(0);
+        int row = QMI.row();
+        if (row > 0)
+        {
+            int ID = rooms_on_display[--row];
+            int index = 0;
+            for (int i = 0; i < db.rooms.size(); i++)
+            {
+                if (db.rooms[i].id == ID)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            db.rooms.erase(db.rooms.begin() + index);
+            db.saveRooms();
+            updateCalendar();
+            QMessageBox msgBox;
+            msgBox.setText("Removed");
+            msgBox.exec();
+        } else {
+            QMessageBox msgBox;
+            msgBox.setText("No room selected");
+            msgBox.exec();
+        }
+    } catch (...)
+    {
+        QMessageBox msgBox;
+        msgBox.setText("Unexpected error");
+        msgBox.exec();
+    }
+}

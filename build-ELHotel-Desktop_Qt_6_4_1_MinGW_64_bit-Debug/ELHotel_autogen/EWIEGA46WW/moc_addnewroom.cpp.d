@@ -1,4 +1,4 @@
-D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/EWIEGA46WW/moc_mainwindow.cpp: D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/mainwindow.h \
+D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/EWIEGA46WW/moc_addnewroom.cpp: D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/addnewroom.h \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/moc_predefs.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qabstractitemmodel.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qalgorithms.h \
@@ -114,7 +114,6 @@ D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_
   C:/Qt/6.4.1/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.4.1/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.4.1/mingw_64/include/QtWidgets/QDialog \
-  C:/Qt/6.4.1/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.4.1/mingw_64/include/QtWidgets/QTableWidget \
   C:/Qt/6.4.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
   C:/Qt/6.4.1/mingw_64/include/QtWidgets/qabstractitemview.h \
@@ -123,7 +122,6 @@ D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_
   C:/Qt/6.4.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
   C:/Qt/6.4.1/mingw_64/include/QtWidgets/qdialog.h \
   C:/Qt/6.4.1/mingw_64/include/QtWidgets/qframe.h \
-  C:/Qt/6.4.1/mingw_64/include/QtWidgets/qmainwindow.h \
   C:/Qt/6.4.1/mingw_64/include/QtWidgets/qrubberband.h \
   C:/Qt/6.4.1/mingw_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/6.4.1/mingw_64/include/QtWidgets/qslider.h \
@@ -361,7 +359,6 @@ D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
-  D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/addnewroom.h \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/Reservation.h \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/Room.h \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/dataBase.h \

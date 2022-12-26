@@ -1,0 +1,33 @@
+<?xml version = "1.0" encoding = "utf-8"?><root><worksheet name = "reservations">
+<Row index="0">
+<ID>0</ID>
+<ROOM_ID>0</ROOM_ID>
+<NAME>Janusz 1</NAME>
+<ARRIVAL>10, 12, 2022</ARRIVAL>
+<DEPARTURE>17, 12, 2022</DEPARTURE>
+<PHONE>666-666-666</PHONE>
+<COST>350</COST>
+<NIP>0</NIP>
+</Row>
+<Row index="1">
+<ID>2</ID>
+<ROOM_ID>1</ROOM_ID>
+<NAME>Janusz 3</NAME>
+<ARRIVAL>23, 12, 2022</ARRIVAL>
+<DEPARTURE>24, 12, 2022</DEPARTURE>
+<PHONE>666-666-666</PHONE>
+<COST>200</COST>
+<NIP>0</NIP>
+</Row>
+<Row index="2">
+<ID>1</ID>
+<ROOM_ID>2</ROOM_ID>
+<NAME>Janusz 2</NAME>
+<ARRIVAL>09, 12, 2022</ARRIVAL>
+<DEPARTURE>20, 12, 2022</DEPARTURE>
+<PHONE>666-666-666</PHONE>
+<COST>2200</COST>
+<NIP>0</NIP>
+</Row>
+</worksheet>
+</root>

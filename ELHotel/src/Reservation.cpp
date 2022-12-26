@@ -5,7 +5,8 @@ Reservation::Reservation()
 }
 
 Reservation::Reservation(int _ID, Room _room, std::string _name, dateTime _arrival, dateTime _departure, std::string _phone_number, int _cost, std::string _NIP) {
-	ID = _ID; room = _room; name = _name; arrival.set(_arrival); departure.set(_departure); phone_number = _phone_number; if (_cost == 0) {cost = arrival.getDifference(arrival, departure) * _room.cost_rate;} else cost = _cost; NIP = _NIP;
+	ID = _ID; room.id = _room.id; room.cost_rate = _room.cost_rate; room.description = _room.description; room.max_people = _room.max_people; name = _name; arrival.set(_arrival); departure.set(_departure); phone_number = _phone_number; if (_cost == 0) { cost = arrival.getDifference(arrival, departure) * _room.cost_rate; }
+	else cost = _cost; NIP = _NIP;
 }
 
 int Reservation::getID()

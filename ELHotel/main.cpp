@@ -19,6 +19,7 @@ using std::ifstream, std::ofstream, std::string;
 int globalConstants::roomRate = 0;
 int globalConstants::thisYear = 0;
 int globalConstants::next_index = 0;
+int globalConstants::next_room_index = 0;
 
 int global_init()
 {
@@ -67,6 +68,14 @@ int global_init()
                 globalConstants::next_index = t;
             else
                 globalConstants::next_index = 0;
+            break;
+        }
+        case 3:
+        {
+            if (!err)
+                globalConstants::next_room_index = t;
+            else
+                globalConstants::next_room_index = 0;
             break;
         }
         };

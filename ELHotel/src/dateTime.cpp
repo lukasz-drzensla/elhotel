@@ -87,6 +87,16 @@ void dateTime::set(dateTime dt)
 
 std::string dateTime::sayHello()
 {
-	return std::to_string(day) + ", " + std::to_string(month) + ", " + std::to_string(year);
+	std::string d = "";
+	if (day < 10)
+	{
+		d += "0";
+	}
+	std::string m = "";
+	if (month < 10)
+	{
+		m += "0";
+	}
+	return d+std::to_string(day) + ", " + m+std::to_string(month) + ", " + std::to_string(year);
 }
 

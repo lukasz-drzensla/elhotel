@@ -7,6 +7,6 @@ void globalConstants::save()
 	file.close();
 
 	file.open("config.txt");
-	file << roomRate << std::endl << thisYear << std::endl << next_index;
+    file << roomRate << std::endl << thisYear << std::endl << next_index << std::endl << next_room_index;
 	file.close();
 }

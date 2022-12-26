@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "addnewroom.h"
+#include "header/dataBase.h"
+#include <vector>
+#include "header/dateTime.h"
+#include "header/Reservation.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,7 +25,20 @@ private slots:
 
     void on_actionSayHello_triggered();
 
+    void on_actionTEST_triggered();
+
+    void on_actioninfo_triggered();
+
+    void on_actionRemove_3_triggered();
+
+    void on_actionUpdate_triggered();
+
 private:
     Ui::MainWindow *ui;
+    addnewroom *ANR;
+    dataBase db{};
+    std::vector <int> days_of_week{};
+    std::vector <int> rooms_on_display{};
+    void updateCalendar();
 };
 #endif // MAINWINDOW_H
