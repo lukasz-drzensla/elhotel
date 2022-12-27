@@ -311,6 +311,12 @@
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
 			null
+		],
+		[
+			"D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/viewcalendarupdater.h",
+			"MU",
+			"EWIEGA46WW/moc_viewcalendarupdater.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -420,6 +426,11 @@
 		],
 		[
 			"D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/src/globalConstants.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/viewcalendarupdater.cpp",
 			"MU",
 			null
 		]

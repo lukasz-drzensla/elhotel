@@ -50,6 +50,7 @@ set(OLD_GLOB
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/src/dataBase.cpp"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/src/dateTime.cpp"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/src/globalConstants.cpp"
+  "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/viewcalendarupdater.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -76,6 +77,7 @@ set(OLD_GLOB
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/dateTime.h"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/globalConstants.h"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/mainwindow.h"
+  "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/viewcalendarupdater.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

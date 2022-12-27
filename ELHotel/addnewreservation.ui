@@ -50,12 +50,12 @@
    </property>
    <property name="dateTime">
     <datetime>
-     <hour>0</hour>
+     <hour>18</hour>
      <minute>0</minute>
      <second>0</second>
-     <year>2022</year>
-     <month>1</month>
-     <day>1</day>
+     <year>2021</year>
+     <month>12</month>
+     <day>31</day>
     </datetime>
    </property>
   </widget>
@@ -70,16 +70,16 @@
    </property>
    <property name="dateTime">
     <datetime>
-     <hour>0</hour>
+     <hour>18</hour>
      <minute>0</minute>
      <second>0</second>
      <year>2022</year>
      <month>1</month>
-     <day>2</day>
+     <day>1</day>
     </datetime>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit">
+  <widget class="QTextEdit" name="name_txt">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -87,6 +87,9 @@
      <width>281</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Name Surname</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -115,26 +118,6 @@
     <string>Room:</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>190</y>
-     <width>281</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>Room 1</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Room 2</string>
-    </property>
-   </item>
-  </widget>
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
@@ -148,7 +131,7 @@
     <string>Price:</string>
    </property>
   </widget>
-  <widget class="QSpinBox" name="spinBox">
+  <widget class="QSpinBox" name="spinPrice">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -157,8 +140,11 @@
      <height>25</height>
     </rect>
    </property>
+   <property name="maximum">
+    <number>2147483647</number>
+   </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="recalc_button">
    <property name="geometry">
     <rect>
      <x>220</x>
@@ -184,7 +170,7 @@
     <string>NIP:</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_2">
+  <widget class="QTextEdit" name="nip_txt">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -192,6 +178,12 @@
      <width>281</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="acceptRichText">
+    <bool>false</bool>
+   </property>
+   <property name="placeholderText">
+    <string>0</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_7">
@@ -207,7 +199,7 @@
     <string>Phone number:</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_3">
+  <widget class="QTextEdit" name="phone_txt">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -216,8 +208,11 @@
      <height>31</height>
     </rect>
    </property>
+   <property name="placeholderText">
+    <string>123-456-789</string>
+   </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="add_reservation_button">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -230,7 +225,7 @@
     <string>Add</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="cancel_but">
    <property name="geometry">
     <rect>
      <x>220</x>
@@ -241,6 +236,19 @@
    </property>
    <property name="text">
     <string>Cancel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="roomLabel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>200</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
    </property>
   </widget>
  </widget>

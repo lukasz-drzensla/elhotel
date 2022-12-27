@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QComboBox>
 #include <QtWidgets/QDateEdit>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QLabel>
@@ -28,19 +27,19 @@ public:
     QLabel *label_2;
     QDateEdit *arr_dateEdit;
     QDateEdit *dep_dateEdit;
-    QTextEdit *textEdit;
+    QTextEdit *name_txt;
     QLabel *label_3;
     QLabel *label_4;
-    QComboBox *comboBox;
     QLabel *label_5;
-    QSpinBox *spinBox;
-    QPushButton *pushButton;
+    QSpinBox *spinPrice;
+    QPushButton *recalc_button;
     QLabel *label_6;
-    QTextEdit *textEdit_2;
+    QTextEdit *nip_txt;
     QLabel *label_7;
-    QTextEdit *textEdit_3;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
+    QTextEdit *phone_txt;
+    QPushButton *add_reservation_button;
+    QPushButton *cancel_but;
+    QLabel *roomLabel;
 
     void setupUi(QDialog *addnewreservation)
     {
@@ -56,52 +55,52 @@ public:
         arr_dateEdit = new QDateEdit(addnewreservation);
         arr_dateEdit->setObjectName("arr_dateEdit");
         arr_dateEdit->setGeometry(QRect(20, 90, 110, 25));
-        arr_dateEdit->setDateTime(QDateTime(QDate(2022, 1, 1), QTime(0, 0, 0)));
+        arr_dateEdit->setDateTime(QDateTime(QDate(2021, 12, 31), QTime(18, 0, 0)));
         dep_dateEdit = new QDateEdit(addnewreservation);
         dep_dateEdit->setObjectName("dep_dateEdit");
         dep_dateEdit->setGeometry(QRect(20, 140, 110, 25));
-        dep_dateEdit->setDateTime(QDateTime(QDate(2022, 1, 2), QTime(0, 0, 0)));
-        textEdit = new QTextEdit(addnewreservation);
-        textEdit->setObjectName("textEdit");
-        textEdit->setGeometry(QRect(20, 30, 281, 31));
+        dep_dateEdit->setDateTime(QDateTime(QDate(2022, 1, 1), QTime(18, 0, 0)));
+        name_txt = new QTextEdit(addnewreservation);
+        name_txt->setObjectName("name_txt");
+        name_txt->setGeometry(QRect(20, 30, 281, 31));
         label_3 = new QLabel(addnewreservation);
         label_3->setObjectName("label_3");
         label_3->setGeometry(QRect(20, 10, 49, 16));
         label_4 = new QLabel(addnewreservation);
         label_4->setObjectName("label_4");
         label_4->setGeometry(QRect(20, 170, 49, 16));
-        comboBox = new QComboBox(addnewreservation);
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->setObjectName("comboBox");
-        comboBox->setGeometry(QRect(20, 190, 281, 24));
         label_5 = new QLabel(addnewreservation);
         label_5->setObjectName("label_5");
         label_5->setGeometry(QRect(20, 220, 49, 16));
-        spinBox = new QSpinBox(addnewreservation);
-        spinBox->setObjectName("spinBox");
-        spinBox->setGeometry(QRect(20, 240, 191, 25));
-        pushButton = new QPushButton(addnewreservation);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(220, 240, 80, 24));
+        spinPrice = new QSpinBox(addnewreservation);
+        spinPrice->setObjectName("spinPrice");
+        spinPrice->setGeometry(QRect(20, 240, 191, 25));
+        spinPrice->setMaximum(2147483647);
+        recalc_button = new QPushButton(addnewreservation);
+        recalc_button->setObjectName("recalc_button");
+        recalc_button->setGeometry(QRect(220, 240, 80, 24));
         label_6 = new QLabel(addnewreservation);
         label_6->setObjectName("label_6");
         label_6->setGeometry(QRect(20, 330, 49, 16));
-        textEdit_2 = new QTextEdit(addnewreservation);
-        textEdit_2->setObjectName("textEdit_2");
-        textEdit_2->setGeometry(QRect(20, 350, 281, 31));
+        nip_txt = new QTextEdit(addnewreservation);
+        nip_txt->setObjectName("nip_txt");
+        nip_txt->setGeometry(QRect(20, 350, 281, 31));
+        nip_txt->setAcceptRichText(false);
         label_7 = new QLabel(addnewreservation);
         label_7->setObjectName("label_7");
         label_7->setGeometry(QRect(20, 270, 91, 16));
-        textEdit_3 = new QTextEdit(addnewreservation);
-        textEdit_3->setObjectName("textEdit_3");
-        textEdit_3->setGeometry(QRect(20, 290, 281, 31));
-        pushButton_2 = new QPushButton(addnewreservation);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(130, 400, 80, 24));
-        pushButton_3 = new QPushButton(addnewreservation);
-        pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(220, 400, 80, 24));
+        phone_txt = new QTextEdit(addnewreservation);
+        phone_txt->setObjectName("phone_txt");
+        phone_txt->setGeometry(QRect(20, 290, 281, 31));
+        add_reservation_button = new QPushButton(addnewreservation);
+        add_reservation_button->setObjectName("add_reservation_button");
+        add_reservation_button->setGeometry(QRect(130, 400, 80, 24));
+        cancel_but = new QPushButton(addnewreservation);
+        cancel_but->setObjectName("cancel_but");
+        cancel_but->setGeometry(QRect(220, 400, 80, 24));
+        roomLabel = new QLabel(addnewreservation);
+        roomLabel->setObjectName("roomLabel");
+        roomLabel->setGeometry(QRect(20, 200, 49, 16));
 
         retranslateUi(addnewreservation);
 
@@ -113,17 +112,18 @@ public:
         addnewreservation->setWindowTitle(QCoreApplication::translate("addnewreservation", "Dialog", nullptr));
         label->setText(QCoreApplication::translate("addnewreservation", "Arrival date:", nullptr));
         label_2->setText(QCoreApplication::translate("addnewreservation", "Departure date:", nullptr));
+        name_txt->setPlaceholderText(QCoreApplication::translate("addnewreservation", "Name Surname", nullptr));
         label_3->setText(QCoreApplication::translate("addnewreservation", "Name:", nullptr));
         label_4->setText(QCoreApplication::translate("addnewreservation", "Room:", nullptr));
-        comboBox->setItemText(0, QCoreApplication::translate("addnewreservation", "Room 1", nullptr));
-        comboBox->setItemText(1, QCoreApplication::translate("addnewreservation", "Room 2", nullptr));
-
         label_5->setText(QCoreApplication::translate("addnewreservation", "Price:", nullptr));
-        pushButton->setText(QCoreApplication::translate("addnewreservation", "Recalculate", nullptr));
+        recalc_button->setText(QCoreApplication::translate("addnewreservation", "Recalculate", nullptr));
         label_6->setText(QCoreApplication::translate("addnewreservation", "NIP:", nullptr));
+        nip_txt->setPlaceholderText(QCoreApplication::translate("addnewreservation", "0", nullptr));
         label_7->setText(QCoreApplication::translate("addnewreservation", "Phone number:", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("addnewreservation", "Add", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("addnewreservation", "Cancel", nullptr));
+        phone_txt->setPlaceholderText(QCoreApplication::translate("addnewreservation", "123-456-789", nullptr));
+        add_reservation_button->setText(QCoreApplication::translate("addnewreservation", "Add", nullptr));
+        cancel_but->setText(QCoreApplication::translate("addnewreservation", "Cancel", nullptr));
+        roomLabel->setText(QCoreApplication::translate("addnewreservation", "TextLabel", nullptr));
     } // retranslateUi
 
 };

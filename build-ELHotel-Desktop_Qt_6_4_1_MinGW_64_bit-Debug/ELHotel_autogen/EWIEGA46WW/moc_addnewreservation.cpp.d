@@ -1,5 +1,6 @@
 D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/EWIEGA46WW/moc_addnewreservation.cpp: D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/addnewreservation.h \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/moc_predefs.h \
+  C:/Qt/6.4.1/mingw_64/include/QtCore/qabstractitemmodel.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qalgorithms.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qanystringview.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qarraydata.h \
@@ -32,10 +33,12 @@ D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_
   C:/Qt/6.4.1/mingw_64/include/QtCore/qhash.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qhashfunctions.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qiodevicebase.h \
+  C:/Qt/6.4.1/mingw_64/include/QtCore/qitemselectionmodel.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qiterable.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qiterator.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qline.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qlist.h \
+  C:/Qt/6.4.1/mingw_64/include/QtCore/qlocale.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qlogging.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qmap.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qmargins.h \
@@ -53,6 +56,7 @@ D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_
   C:/Qt/6.4.1/mingw_64/include/QtCore/qprocessordetection.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qrect.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qrefcount.h \
+  C:/Qt/6.4.1/mingw_64/include/QtCore/qregularexpression.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qscopedpointer.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qscopeguard.h \
   C:/Qt/6.4.1/mingw_64/include/QtCore/qset.h \
@@ -106,11 +110,27 @@ D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_
   C:/Qt/6.4.1/mingw_64/include/QtGui/qtguiexports.h \
   C:/Qt/6.4.1/mingw_64/include/QtGui/qtguiglobal.h \
   C:/Qt/6.4.1/mingw_64/include/QtGui/qtransform.h \
+  C:/Qt/6.4.1/mingw_64/include/QtGui/qvalidator.h \
   C:/Qt/6.4.1/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.4.1/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.4.1/mingw_64/include/QtWidgets/QDialog \
+  C:/Qt/6.4.1/mingw_64/include/QtWidgets/QTableWidget \
+  C:/Qt/6.4.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+  C:/Qt/6.4.1/mingw_64/include/QtWidgets/qabstractitemview.h \
+  C:/Qt/6.4.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+  C:/Qt/6.4.1/mingw_64/include/QtWidgets/qabstractslider.h \
+  C:/Qt/6.4.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
   C:/Qt/6.4.1/mingw_64/include/QtWidgets/qdialog.h \
+  C:/Qt/6.4.1/mingw_64/include/QtWidgets/qframe.h \
+  C:/Qt/6.4.1/mingw_64/include/QtWidgets/qrubberband.h \
   C:/Qt/6.4.1/mingw_64/include/QtWidgets/qsizepolicy.h \
+  C:/Qt/6.4.1/mingw_64/include/QtWidgets/qslider.h \
+  C:/Qt/6.4.1/mingw_64/include/QtWidgets/qstyle.h \
+  C:/Qt/6.4.1/mingw_64/include/QtWidgets/qstyleoption.h \
+  C:/Qt/6.4.1/mingw_64/include/QtWidgets/qtabbar.h \
+  C:/Qt/6.4.1/mingw_64/include/QtWidgets/qtableview.h \
+  C:/Qt/6.4.1/mingw_64/include/QtWidgets/qtablewidget.h \
+  C:/Qt/6.4.1/mingw_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.4.1/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.4.1/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.4.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -138,6 +158,7 @@ D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/c++0x_warning.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/char_traits.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/charconv.h \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/codecvt.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/concept_check.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/cpp_type_traits.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/cxxabi_forced.h \
@@ -147,11 +168,13 @@ D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/exception.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/exception_defines.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/exception_ptr.h \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fstream.tcc \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/functexcept.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/functional_hash.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/hash_bytes.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/invoke.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ios_base.h \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/iterator_concepts.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/list.tcc \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.h \
@@ -216,6 +239,7 @@ D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/uses_allocator_args.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/vector.tcc \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cctype \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cerrno \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/chrono \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/clocale \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cmath \
@@ -223,6 +247,7 @@ D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/concepts \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstddef \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstdint \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstdio \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstdlib \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstring \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cwchar \
@@ -238,10 +263,12 @@ D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ext/numeric_traits.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ext/string_conversions.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ext/type_traits.h \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/fstream \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/functional \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/initializer_list \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iosfwd \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iterator \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/limits \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/list \
@@ -281,8 +308,10 @@ D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/variant \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/vector \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/atomic_word.h \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++allocator.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++locale.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h \
@@ -329,4 +358,10 @@ D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
-  C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h
+  C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
+  D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/Reservation.h \
+  D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/Room.h \
+  D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/dataBase.h \
+  D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/dateTime.h \
+  D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/globalConstants.h \
+  D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/viewcalendarupdater.h

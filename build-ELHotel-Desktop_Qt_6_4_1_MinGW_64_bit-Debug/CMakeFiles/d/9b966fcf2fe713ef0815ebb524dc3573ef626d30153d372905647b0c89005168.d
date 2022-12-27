@@ -553,6 +553,8 @@ ELHotel_autogen/timestamp: \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/src/dataBase.cpp \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/src/dateTime.cpp \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/src/globalConstants.cpp \
+  D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/viewcalendarupdater.cpp \
+  D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/viewcalendarupdater.h \
   CMakeFiles/3.24.2/CMakeCXXCompiler.cmake \
   CMakeFiles/3.24.2/CMakeRCCompiler.cmake \
   CMakeFiles/3.24.2/CMakeSystem.cmake \

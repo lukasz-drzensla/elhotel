@@ -7,6 +7,7 @@
 #include "header/Room.h"
 #include "header/globalConstants.h"
 #include <vector>
+#include "viewcalendarupdater.h"
 
 namespace Ui {
 class addnewroom;
@@ -17,7 +18,7 @@ class addnewroom : public QDialog
     Q_OBJECT
 
 public:
-    explicit addnewroom(QWidget *parent = nullptr, QTableWidget* calendar = nullptr, dataBase* data = nullptr, std::vector <int> *rooms_on_display = nullptr);
+    explicit addnewroom(QWidget *parent = nullptr, QTableWidget* calendar = nullptr, dataBase* data = nullptr, std::vector <int> *rooms_on_display = nullptr, viewCalendarUpdater *_calUpd = nullptr);
     ~addnewroom();
 
 private slots:
@@ -30,6 +31,7 @@ private:
     QTableWidget* cal;
     dataBase* db;
     vector <int> *r_o_d;
+    viewCalendarUpdater *calUpd{};
 };
 
 #endif // ADDNEWROOM_H

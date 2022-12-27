@@ -363,4 +363,5 @@ D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/Room.h \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/dataBase.h \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/dateTime.h \
-  D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/globalConstants.h
+  D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/globalConstants.h \
+  D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/viewcalendarupdater.h

@@ -8,6 +8,7 @@
 #include "header/dateTime.h"
 #include "header/Reservation.h"
 #include "addnewreservation.h"
+#include "viewcalendarupdater.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -46,13 +47,14 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    addnewroom *ANR;
+    addnewroom *ANR{};
+    addnewreservation *add_new_res_window{};
     dataBase db{};
     std::vector <int> days_of_week{};
     std::vector <int> rooms_on_display{};
     dateTime first_day{};
-    void updateCalendar();
-    void updateReservations();
-    void displayDates(dateTime first_day);
+    std::string toSTD (QString qs);
+    QString toQString (std::string ss);
+    viewCalendarUpdater *calUpd;
 };
 #endif // MAINWINDOW_H

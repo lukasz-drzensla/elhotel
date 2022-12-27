@@ -11,49 +11,14 @@
 
 
 
-std::string toSTD (QString qs)
+std::string MainWindow::toSTD (QString qs)
 {
     return qs.toStdString();
 }
 
-QString toQString (std::string ss)
+QString MainWindow::toQString (std::string ss)
 {
     return QString::fromStdString(ss);
-}
-
-void MainWindow::updateCalendar()
-{
-    rooms_on_display.clear();
-    ui->reservationCalendar->setRowCount(1);
-    for (int i = 0; i < db.rooms.size(); i++)
-    {
-        ui->reservationCalendar->insertRow(ui->reservationCalendar->rowCount());
-        QString des = toQString(db.rooms[i].description);
-        ui->reservationCalendar->setVerticalHeaderItem(ui->reservationCalendar->rowCount()-1, new QTableWidgetItem(des));
-        rooms_on_display.push_back(db.rooms[i].id);
-    }
-}
-
-void MainWindow::updateReservations()
-{
-    updateCalendar();
-    for (int i = 0; i<14; i++)
-    {
-        vector <Reservation> all = db.getAllReservationsAtDate(days_of_week[i]);
-        for (int j = 0; j < all.size(); j++)
-        {
-            int room_id = all[j].getRoom().id;
-            for (int n = 0; n < rooms_on_display.size(); n++)
-            {
-                if (rooms_on_display[n] == room_id)
-                {
-                    QTableWidgetItem *reservation_item = new QTableWidgetItem;
-                    reservation_item->setText(toQString(all[j].getName()));
-                    ui->reservationCalendar->setItem(n+1, i, reservation_item);
-                }
-            }
-        }
-    }
 }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -64,36 +29,23 @@ MainWindow::MainWindow(QWidget *parent)
     this->setCentralWidget(ui->reservationCalendar);
     ui->reservationCalendar->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
+    calUpd = new viewCalendarUpdater(&rooms_on_display, ui->reservationCalendar, &db, &days_of_week, &first_day);
+
     //initalize database
     db.init(globalConstants::thisYear); //init the database with current year
     db.load(true);
 
     //initialize room view
-    updateCalendar();
+    calUpd->updateCalendar();
 
     //initialize days of week view
     dateTime dt (19,12,globalConstants::thisYear);
     first_day.set(dt);
-    displayDates(first_day);
+    calUpd->displayDates(&first_day);
 
     //initialize reservations view
-    updateReservations();
+    calUpd->updateReservations();
 }
-
-void MainWindow::displayDates(dateTime first_day)
-{
-    days_of_week.clear();
-    int day_index = first_day.getDifference(dateTime(1, 1, globalConstants::thisYear), first_day);
-    for (int i = 0; i < 14; i++)
-    {
-        days_of_week.push_back(day_index+i);
-        QTableWidgetItem *date_item = new QTableWidgetItem;
-        date_item->setText(toQString(std::to_string(first_day.guessDay(day_index+i))+"."+std::to_string(first_day.guessMonth(day_index+i))));
-        ui->reservationCalendar->setItem(0, i, date_item);
-    }
-}
-
-
 
 void MainWindow::on_actionPrevious_week_triggered()
 {
@@ -104,8 +56,8 @@ void MainWindow::on_actionPrevious_week_triggered()
     int month = dt.guessMonth(index);
     dateTime prev_dt (day, month, globalConstants::thisYear);
     first_day.set(prev_dt);
-    displayDates(first_day);
-    updateReservations();
+    calUpd->displayDates(&first_day);
+    calUpd->updateReservations();
 }
 
 void MainWindow::on_actionNext_week_triggered()
@@ -117,8 +69,8 @@ void MainWindow::on_actionNext_week_triggered()
     int month = dt.guessMonth(index);
     dateTime next_dt (day, month, globalConstants::thisYear);
     first_day.set(next_dt);
-    displayDates(first_day);
-    updateReservations();
+    calUpd->displayDates(&first_day);
+    calUpd->updateReservations();
 }
 
 MainWindow::~MainWindow()
@@ -138,7 +90,7 @@ void MainWindow::on_actionAdd_3_triggered()
 {
     //Room->Add Button
 
-    ANR = new addnewroom (this, ui->reservationCalendar, &db, &rooms_on_display);
+    ANR = new addnewroom (this, ui->reservationCalendar, &db, &rooms_on_display, calUpd);
     ANR->show();
 
     //QMessageBox msgBox;
@@ -211,7 +163,8 @@ void MainWindow::on_actionRemove_3_triggered()
             }
             db.rooms.erase(db.rooms.begin() + index);
             db.saveRooms();
-            updateCalendar();
+            calUpd->updateCalendar();
+            calUpd->updateReservations();
             QMessageBox msgBox;
             msgBox.setText("Removed");
             msgBox.exec();
@@ -263,6 +216,7 @@ void MainWindow::on_actionInfo_triggered()
     }
 }
 
+//do not remove - QT creator goes crazy when this particular empty (!!) function is removed
 void MainWindow::on_actionUpdate_triggered()
 {
 
@@ -278,7 +232,69 @@ void MainWindow::on_actionRemove_2_triggered()
 
 void MainWindow::on_actionAdd_2_triggered()
 {
-    addnewreservation res_wind;
-    res_wind.exec();
+    int departure_index{};
+    QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
+    QModelIndex QMI = selection.at(0);
+    int start_row = QMI.row();
+    int start_column = QMI.column();
+    int index = 0;
+    int ID {};
+    for (int k = 0; k < selection.size(); k++)
+    {
+        QMI = selection.at(k);
+        int row = QMI.row();
+        if (row != start_row)
+        {
+            break;
+        }
+        int column = QMI.column();
+        departure_index = days_of_week[column];
+        if (row > 0)
+        {
+            ID = rooms_on_display[--row];
+            for (int i = 0; i < db.rooms.size(); i++)
+            {
+                if (db.rooms[i].id == ID)
+                {
+                    index = i;
+                    break;
+                }
+            }
+        } else {
+            return;
+        }
+        vector <Reservation> all = db.getAllReservationsAtDate(days_of_week[column]);
+
+        for (int i = 0; i < all.size(); i++)
+        {
+            if (all[i].getRoom().id == index)
+            {
+                //found reservation, throw error
+                QMessageBox msgBox;
+                msgBox.setText("There is already a reservation made for this room for the specified time period");
+                msgBox.exec();
+                return;
+            }
+        }
+    }
+    //if no error
+    dateTime dt{};
+    int day = dt.guessDay(days_of_week[start_column]);
+    int month = dt.guessMonth(days_of_week[start_column]);
+    dateTime arrival (day, month, globalConstants::thisYear);
+    day = dt.guessDay(departure_index);
+    month = dt.guessMonth(departure_index);
+    dateTime departure (day, month, globalConstants::thisYear);
+    int duration = dt.getDifference(arrival, departure);
+    if (duration < 1)
+    {
+        QMessageBox msgBox;
+        msgBox.setText("Cannot make a zero-nigths reservation");
+        msgBox.exec();
+        return;
+    }
+
+    add_new_res_window = new addnewreservation(this, calUpd, &arrival, &departure, &db, &duration, &db.rooms[index]);
+    add_new_res_window->exec();
 }
 
