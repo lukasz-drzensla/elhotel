@@ -536,6 +536,8 @@ ELHotel_autogen/timestamp: \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/CMakeLists.txt \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/Resources.qrc \
+  D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/addnewreservation.cpp \
+  D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/addnewreservation.h \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/addnewroom.cpp \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/addnewroom.h \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/Reservation.h \
@@ -555,6 +557,7 @@ ELHotel_autogen/timestamp: \
   CMakeFiles/3.24.2/CMakeRCCompiler.cmake \
   CMakeFiles/3.24.2/CMakeSystem.cmake \
   ELHotel_autogen/moc_predefs.h \
+  D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/addnewreservation.ui \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/addnewroom.ui \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/mainwindow.ui \
   C:/Qt/Tools/CMake_64/bin/cmake.exe

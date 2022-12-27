@@ -41,6 +41,7 @@ endif()
 # _directory_contents at C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:83 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/*.cpp")
 set(OLD_GLOB
+  "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/addnewreservation.cpp"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/addnewroom.cpp"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/main.cpp"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/mainwindow.cpp"
@@ -67,6 +68,7 @@ endif()
 # _directory_contents at C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:83 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/*.h")
 set(OLD_GLOB
+  "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/addnewreservation.h"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/addnewroom.h"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/Reservation.h"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/Room.h"
@@ -174,6 +176,7 @@ endif()
 # _directory_contents at C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:83 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/*.ui")
 set(OLD_GLOB
+  "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/addnewreservation.ui"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/addnewroom.ui"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/mainwindow.ui"
   )

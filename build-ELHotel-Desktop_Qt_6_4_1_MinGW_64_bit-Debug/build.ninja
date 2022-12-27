@@ -121,6 +121,14 @@ build CMakeFiles/ELHotel.dir/addnewroom.cpp.obj: CXX_COMPILER__ELHotel_Debug D$:
   OBJECT_DIR = CMakeFiles\ELHotel.dir
   OBJECT_FILE_DIR = CMakeFiles\ELHotel.dir
 
+build CMakeFiles/ELHotel.dir/addnewreservation.cpp.obj: CXX_COMPILER__ELHotel_Debug D$:/Workspace/AGH/Semestr$ 5/jpo/ELHotel/ELHotel/addnewreservation.cpp || cmake_object_order_depends_target_ELHotel
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\ELHotel.dir\addnewreservation.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -I"D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/include" -isystem C:/Qt/6.4.1/mingw_64/include/QtCore -isystem C:/Qt/6.4.1/mingw_64/include -isystem C:/Qt/6.4.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.4.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.4.1/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\ELHotel.dir
+  OBJECT_FILE_DIR = CMakeFiles\ELHotel.dir
+
 build CMakeFiles/ELHotel.dir/ELHotel_autogen/EWIEGA46WW/qrc_Resources.cpp.obj: CXX_COMPILER__ELHotel_Debug D$:/Workspace/AGH/Semestr$ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/EWIEGA46WW/qrc_Resources.cpp || cmake_object_order_depends_target_ELHotel
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\ELHotel.dir\ELHotel_autogen\EWIEGA46WW\qrc_Resources.cpp.obj.d
@@ -137,7 +145,7 @@ build CMakeFiles/ELHotel.dir/ELHotel_autogen/EWIEGA46WW/qrc_Resources.cpp.obj: C
 #############################################
 # Link the executable ELHotel.exe
 
-build ELHotel.exe: CXX_EXECUTABLE_LINKER__ELHotel_Debug CMakeFiles/ELHotel.dir/ELHotel_autogen/mocs_compilation.cpp.obj CMakeFiles/ELHotel.dir/main.cpp.obj CMakeFiles/ELHotel.dir/mainwindow.cpp.obj CMakeFiles/ELHotel.dir/src/dataBase.cpp.obj CMakeFiles/ELHotel.dir/src/dateTime.cpp.obj CMakeFiles/ELHotel.dir/src/globalConstants.cpp.obj CMakeFiles/ELHotel.dir/src/Reservation.cpp.obj CMakeFiles/ELHotel.dir/src/Room.cpp.obj CMakeFiles/ELHotel.dir/addnewroom.cpp.obj CMakeFiles/ELHotel.dir/ELHotel_autogen/EWIEGA46WW/qrc_Resources.cpp.obj | C$:/Qt/6.4.1/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.4.1/mingw_64/lib/libQt6Gui.a C$:/Qt/6.4.1/mingw_64/lib/libQt6Core.a C$:/Qt/6.4.1/mingw_64/lib/libQt6EntryPoint.a || ELHotel_autogen ELHotel_autogen_timestamp_deps
+build ELHotel.exe: CXX_EXECUTABLE_LINKER__ELHotel_Debug CMakeFiles/ELHotel.dir/ELHotel_autogen/mocs_compilation.cpp.obj CMakeFiles/ELHotel.dir/main.cpp.obj CMakeFiles/ELHotel.dir/mainwindow.cpp.obj CMakeFiles/ELHotel.dir/src/dataBase.cpp.obj CMakeFiles/ELHotel.dir/src/dateTime.cpp.obj CMakeFiles/ELHotel.dir/src/globalConstants.cpp.obj CMakeFiles/ELHotel.dir/src/Reservation.cpp.obj CMakeFiles/ELHotel.dir/src/Room.cpp.obj CMakeFiles/ELHotel.dir/addnewroom.cpp.obj CMakeFiles/ELHotel.dir/addnewreservation.cpp.obj CMakeFiles/ELHotel.dir/ELHotel_autogen/EWIEGA46WW/qrc_Resources.cpp.obj | C$:/Qt/6.4.1/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.4.1/mingw_64/lib/libQt6Gui.a C$:/Qt/6.4.1/mingw_64/lib/libQt6Core.a C$:/Qt/6.4.1/mingw_64/lib/libQt6EntryPoint.a || ELHotel_autogen ELHotel_autogen_timestamp_deps
   FLAGS = -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.4.1/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.4.1/mingw_64/lib/libQt6Gui.a  C:/Qt/6.4.1/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.4.1/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -224,7 +232,7 @@ build ELHotel_autogen_timestamp_deps: phony CMakeFiles/ELHotel_autogen_timestamp
 #############################################
 # Utility command for ELHotel_autogen
 
-build ELHotel_autogen: phony CMakeFiles/ELHotel_autogen ELHotel_autogen/include/ui_mainwindow.h ELHotel_autogen/include/ui_addnewroom.h ELHotel_autogen/timestamp ELHotel_autogen/mocs_compilation.cpp ELHotel_autogen_timestamp_deps
+build ELHotel_autogen: phony CMakeFiles/ELHotel_autogen ELHotel_autogen/include/ui_mainwindow.h ELHotel_autogen/include/ui_addnewroom.h ELHotel_autogen/include/ui_addnewreservation.h ELHotel_autogen/timestamp ELHotel_autogen/mocs_compilation.cpp ELHotel_autogen_timestamp_deps
 
 
 #############################################
@@ -249,13 +257,13 @@ build ELHotel_autogen/EWIEGA46WW/qrc_Resources.cpp | ${cmake_ninja_workdir}ELHot
 #############################################
 # Phony custom command for CMakeFiles\ELHotel_autogen_timestamp_deps
 
-build CMakeFiles/ELHotel_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/ELHotel_autogen_timestamp_deps: phony C$:/Qt/6.4.1/mingw_64/lib/libQt6Core.a C$:/Qt/6.4.1/mingw_64/./bin/uic.exe C$:/Qt/6.4.1/mingw_64/./bin/moc.exe C$:/Qt/6.4.1/mingw_64/lib/libQt6Widgets.a
+build CMakeFiles/ELHotel_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/ELHotel_autogen_timestamp_deps: phony C$:/Qt/6.4.1/mingw_64/lib/libQt6Core.a C$:/Qt/6.4.1/mingw_64/./bin/moc.exe C$:/Qt/6.4.1/mingw_64/./bin/uic.exe C$:/Qt/6.4.1/mingw_64/lib/libQt6Widgets.a
 
 
 #############################################
 # Phony custom command for CMakeFiles\ELHotel_autogen
 
-build CMakeFiles/ELHotel_autogen ELHotel_autogen/include/ui_mainwindow.h ELHotel_autogen/include/ui_addnewroom.h | ${cmake_ninja_workdir}CMakeFiles/ELHotel_autogen ${cmake_ninja_workdir}ELHotel_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}ELHotel_autogen/include/ui_addnewroom.h: phony ELHotel_autogen/timestamp || ELHotel_autogen_timestamp_deps
+build CMakeFiles/ELHotel_autogen ELHotel_autogen/include/ui_mainwindow.h ELHotel_autogen/include/ui_addnewroom.h ELHotel_autogen/include/ui_addnewreservation.h | ${cmake_ninja_workdir}CMakeFiles/ELHotel_autogen ${cmake_ninja_workdir}ELHotel_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}ELHotel_autogen/include/ui_addnewroom.h ${cmake_ninja_workdir}ELHotel_autogen/include/ui_addnewreservation.h: phony ELHotel_autogen/timestamp || ELHotel_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

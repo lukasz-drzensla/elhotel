@@ -7,6 +7,7 @@
 #include <vector>
 #include "header/dateTime.h"
 #include "header/Reservation.h"
+#include "addnewreservation.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -37,10 +38,11 @@ private slots:
 
     void on_actionRemove_2_triggered();
 
-
     void on_actionPrevious_week_triggered();
 
     void on_actionNext_week_triggered();
+
+    void on_actionAdd_2_triggered();
 
 private:
     Ui::MainWindow *ui;

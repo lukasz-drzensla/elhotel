@@ -275,3 +275,10 @@ void MainWindow::on_actionRemove_2_triggered()
 }
 
 
+
+void MainWindow::on_actionAdd_2_triggered()
+{
+    addnewreservation res_wind;
+    res_wind.exec();
+}
+

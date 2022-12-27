@@ -35,6 +35,9 @@ set(PROJECT_SOURCES
         addnewroom.cpp
         addnewroom.ui
         Resources.qrc
+        addnewreservation.h
+        addnewreservation.cpp
+        addnewreservation.ui
         ${TS_FILES}
 )
 

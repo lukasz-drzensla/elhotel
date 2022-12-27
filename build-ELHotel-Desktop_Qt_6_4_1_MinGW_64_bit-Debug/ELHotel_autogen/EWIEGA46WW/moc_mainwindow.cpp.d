@@ -361,6 +361,7 @@ D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
+  D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/addnewreservation.h \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/addnewroom.h \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/Reservation.h \
   D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/Room.h \
