@@ -18,28 +18,22 @@
 <MAX>4</MAX>
 </Row>
 <Row index="3">
-<ID>9</ID>
+<ID>3</ID>
 <COST>50</COST>
 <DES>104</DES>
-<MAX>2</MAX>
+<MAX>0</MAX>
 </Row>
 <Row index="4">
-<ID>10</ID>
+<ID>14</ID>
 <COST>50</COST>
 <DES>105</DES>
-<MAX>4</MAX>
+<MAX>0</MAX>
 </Row>
 <Row index="5">
-<ID>11</ID>
+<ID>15</ID>
 <COST>50</COST>
 <DES>106a</DES>
 <MAX>2</MAX>
-</Row>
-<Row index="6">
-<ID>12</ID>
-<COST>50</COST>
-<DES>106b</DES>
-<MAX>1</MAX>
 </Row>
 </worksheet>
 </root>

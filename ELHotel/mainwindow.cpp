@@ -187,18 +187,10 @@ void MainWindow::on_actionInfo_triggered()
     QModelIndex QMI = selection.at(0);
     int row = QMI.row();
     int column = QMI.column();
-    int index = 0;
+    int ID{};
     if (row > 0)
     {
-        int ID = rooms_on_display[--row];
-        for (int i = 0; i < db.rooms.size(); i++)
-        {
-            if (db.rooms[i].id == ID)
-            {
-                index = i;
-                break;
-            }
-        }
+        ID = rooms_on_display[--row];
     } else {
         return;
     }
@@ -206,7 +198,7 @@ void MainWindow::on_actionInfo_triggered()
 
     for (int i = 0; i < all.size(); i++)
     {
-        if (all[i].getRoom().id == index)
+        if (all[i].getRoom().id == ID)
         {
             QMessageBox msgBox;
             msgBox.setText(toQString(all[i].sayHello()));
@@ -252,14 +244,6 @@ void MainWindow::on_actionAdd_2_triggered()
         if (row > 0)
         {
             ID = rooms_on_display[--row];
-            for (int i = 0; i < db.rooms.size(); i++)
-            {
-                if (db.rooms[i].id == ID)
-                {
-                    index = i;
-                    break;
-                }
-            }
         } else {
             return;
         }
@@ -267,7 +251,7 @@ void MainWindow::on_actionAdd_2_triggered()
 
         for (int i = 0; i < all.size(); i++)
         {
-            if (all[i].getRoom().id == index)
+            if (all[i].getRoom().id == ID)
             {
                 //found reservation, throw error
                 QMessageBox msgBox;

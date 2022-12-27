@@ -126,7 +126,19 @@ int dataBase::load(bool LR)
 			{
 				newRow = false;
 				//add reservation
-				Room room = rooms[_room_id];
+                Room room {};
+
+                for (int i = 0; i < rooms.size(); i++)
+                {
+                    if (rooms[i].id == _room_id)
+                    {
+                        room.id=rooms[i].id;
+                        room.cost_rate=rooms[i].cost_rate;
+                        room.description=rooms[i].description;
+                        room.max_people=rooms[i].max_people;
+                        break;
+                    }
+                }
 				Reservation res(_id, room, _name, _arrival, _departure, _phone, _cost, _NIP);
 				autoAddReservation(res);
 			}
