@@ -1074,6 +1074,9 @@
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "C:/Qt/Tools/CMake_64/share/cmake-3.24/Modules/CMakeParseArguments.cmake"
+		},
+		{
+			"path" : "Resources.qrc"
 		}
 	],
 	"kind" : "cmakeFiles",

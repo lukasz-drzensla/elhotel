@@ -34,28 +34,9 @@ void MainWindow::updateCalendar()
     }
 }
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+void MainWindow::updateReservations()
 {
-    ui->setupUi(this);
-    this->setCentralWidget(ui->reservationCalendar);
-    ui->reservationCalendar->setEditTriggers(QAbstractItemView::NoEditTriggers);
-
-
-    db.init(globalConstants::thisYear); //init the database with current year
-    db.load(true);
-
-
     updateCalendar();
-
-    dateTime first_day (19,12,2022);
-    int day_index = first_day.getDifference(dateTime(1, 1, globalConstants::thisYear), first_day);
-    for (int i = 0; i < 14; i++)
-    {
-        days_of_week.push_back(day_index+i);
-    }
-
     for (int i = 0; i<14; i++)
     {
         vector <Reservation> all = db.getAllReservationsAtDate(days_of_week[i]);
@@ -68,11 +49,76 @@ MainWindow::MainWindow(QWidget *parent)
                 {
                     QTableWidgetItem *reservation_item = new QTableWidgetItem;
                     reservation_item->setText(toQString(all[j].getName()));
-                    ui->reservationCalendar->setItem(n, i, reservation_item);
+                    ui->reservationCalendar->setItem(n+1, i, reservation_item);
                 }
             }
         }
     }
+}
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+    this->setCentralWidget(ui->reservationCalendar);
+    ui->reservationCalendar->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+    //initalize database
+    db.init(globalConstants::thisYear); //init the database with current year
+    db.load(true);
+
+    //initialize room view
+    updateCalendar();
+
+    //initialize days of week view
+    dateTime dt (19,12,globalConstants::thisYear);
+    first_day.set(dt);
+    displayDates(first_day);
+
+    //initialize reservations view
+    updateReservations();
+}
+
+void MainWindow::displayDates(dateTime first_day)
+{
+    days_of_week.clear();
+    int day_index = first_day.getDifference(dateTime(1, 1, globalConstants::thisYear), first_day);
+    for (int i = 0; i < 14; i++)
+    {
+        days_of_week.push_back(day_index+i);
+        QTableWidgetItem *date_item = new QTableWidgetItem;
+        date_item->setText(toQString(std::to_string(first_day.guessDay(day_index+i))+"."+std::to_string(first_day.guessMonth(day_index+i))));
+        ui->reservationCalendar->setItem(0, i, date_item);
+    }
+}
+
+
+
+void MainWindow::on_actionPrevious_week_triggered()
+{
+    dateTime dt (1, 1, globalConstants::thisYear);
+    int index = dt.getDifference(dt, first_day);
+    index-=7;
+    int day = dt.guessDay(index);
+    int month = dt.guessMonth(index);
+    dateTime prev_dt (day, month, globalConstants::thisYear);
+    first_day.set(prev_dt);
+    displayDates(first_day);
+    updateReservations();
+}
+
+void MainWindow::on_actionNext_week_triggered()
+{
+    dateTime dt (1, 1, globalConstants::thisYear);
+    int index = dt.getDifference(dt, first_day);
+    index+=7;
+    int day = dt.guessDay(index);
+    int month = dt.guessMonth(index);
+    dateTime next_dt (day, month, globalConstants::thisYear);
+    first_day.set(next_dt);
+    displayDates(first_day);
+    updateReservations();
 }
 
 MainWindow::~MainWindow()
@@ -181,3 +227,51 @@ void MainWindow::on_actionRemove_3_triggered()
         msgBox.exec();
     }
 }
+
+void MainWindow::on_actionInfo_triggered()
+{
+    QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
+    QModelIndex QMI = selection.at(0);
+    int row = QMI.row();
+    int column = QMI.column();
+    int index = 0;
+    if (row > 0)
+    {
+        int ID = rooms_on_display[--row];
+        for (int i = 0; i < db.rooms.size(); i++)
+        {
+            if (db.rooms[i].id == ID)
+            {
+                index = i;
+                break;
+            }
+        }
+    } else {
+        return;
+    }
+    vector <Reservation> all = db.getAllReservationsAtDate(days_of_week[column]);
+
+    for (int i = 0; i < all.size(); i++)
+    {
+        if (all[i].getRoom().id == index)
+        {
+            QMessageBox msgBox;
+            msgBox.setText(toQString(all[i].sayHello()));
+            msgBox.exec();
+            return;
+        }
+    }
+}
+
+void MainWindow::on_actionUpdate_triggered()
+{
+
+}
+
+
+void MainWindow::on_actionRemove_2_triggered()
+{
+
+}
+
+

@@ -34,6 +34,7 @@ set(PROJECT_SOURCES
         addnewroom.h
         addnewroom.cpp
         addnewroom.ui
+        Resources.qrc
         ${TS_FILES}
 )
 

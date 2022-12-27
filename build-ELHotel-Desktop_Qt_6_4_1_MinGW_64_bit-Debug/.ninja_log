@@ -1,67 +1,58 @@
 # ninja log v5
-1265	2820	6936190926859003	CMakeFiles/ELHotel.dir/src/dateTime.cpp.obj	6d40ffec29db0260
-21	1334	6937642041767230	ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
-21	1334	6937642041767230	ELHotel_autogen/timestamp	cbca03c5a970f134
+442	1360	6938376051975781	CMakeFiles/ELHotel.dir/src/dateTime.cpp.obj	6d40ffec29db0260
+20	1280	6938379350724096	ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
+20	1280	6938379350724096	ELHotel_autogen/timestamp	cbca03c5a970f134
+1283	7496	6938379415803750	CMakeFiles/ELHotel.dir/main.cpp.obj	cbae3a4a8de983d4
 0	27	0	CMakeFiles/clean.additional	baedbe210acaa455
-1338	7609	6937642107406951	CMakeFiles/ELHotel.dir/main.cpp.obj	cbae3a4a8de983d4
-1334	7669	6937642108006608	CMakeFiles/ELHotel.dir/ELHotel_autogen/mocs_compilation.cpp.obj	97189ffcc6c25af6
-1341	8193	6937642113223398	CMakeFiles/ELHotel.dir/mainwindow.cpp.obj	ea8d2262a5ac5f0
-1407	3916	6937502741505993	CMakeFiles/ELHotel.dir/src/Room.cpp.obj	d987a3aeef0e00ff
-8193	8830	6937642119489869	ELHotel.exe	5ef2690506abf163
+1286	8078	6938379421550196	CMakeFiles/ELHotel.dir/mainwindow.cpp.obj	ea8d2262a5ac5f0
+1505	3474	6937670560244452	CMakeFiles/ELHotel.dir/src/Room.cpp.obj	d987a3aeef0e00ff
+1280	7575	6938379416573274	CMakeFiles/ELHotel.dir/ELHotel_autogen/mocs_compilation.cpp.obj	97189ffcc6c25af6
+8318	8971	6938379430404686	ELHotel.exe	5c646a0f15e2657
 28	38	0	clean	577b940aee94fbd7
-1420	4063	6937637523069329	CMakeFiles/ELHotel.dir/src/dataBase.cpp.obj	ab61017084860b38
-1417	3931	6937502741665889	CMakeFiles/ELHotel.dir/src/Reservation.cpp.obj	4f2ae9082ce6a136
-447	1625	6937505054755788	CMakeFiles/ELHotel.dir/src/globalConstants.cpp.obj	e429690091855858
-6	47	0	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	e42f17a00db07d21
-21	1334	6937642041767230	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/timestamp	cbca03c5a970f134
-21	1334	6937642041767230	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
-1344	8157	6937642112863619	CMakeFiles/ELHotel.dir/addnewroom.cpp.obj	4a715a221f8e61f0
-6	43	0	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	e42f17a00db07d21
-19	415	6937643317034547	ELHotel_autogen/timestamp	cbca03c5a970f134
-19	415	6937643317034547	ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
-19	415	6937643317034547	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/timestamp	cbca03c5a970f134
-19	415	6937643317034547	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
-439	6064	6937643373509889	CMakeFiles/ELHotel.dir/addnewroom.cpp.obj	4a715a221f8e61f0
-436	6071	6937643373609813	CMakeFiles/ELHotel.dir/mainwindow.cpp.obj	ea8d2262a5ac5f0
-6071	6726	6937643380095844	ELHotel.exe	5ef2690506abf163
-9	47	0	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	e42f17a00db07d21
-19	439	6937643993270960	ELHotel_autogen/timestamp	cbca03c5a970f134
-19	439	6937643993270960	ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
-19	439	6937643993270960	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/timestamp	cbca03c5a970f134
-19	439	6937643993270960	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
-463	5985	6937644048716910	CMakeFiles/ELHotel.dir/addnewroom.cpp.obj	4a715a221f8e61f0
-459	6102	6937644049876216	CMakeFiles/ELHotel.dir/mainwindow.cpp.obj	ea8d2262a5ac5f0
-6103	6750	6937644056262303	ELHotel.exe	5ef2690506abf163
+1414	1489	6937670540376642	ELHotel_autogen/EWIEGA46WW/qrc_Resources.cpp	14f273c3186da990
+1346	4258	6938374440385309	CMakeFiles/ELHotel.dir/src/dataBase.cpp.obj	ab61017084860b38
+1357	3444	6938374432120422	CMakeFiles/ELHotel.dir/src/Reservation.cpp.obj	4f2ae9082ce6a136
+1512	3450	6937670559724763	CMakeFiles/ELHotel.dir/src/globalConstants.cpp.obj	e429690091855858
+6	45	0	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	e42f17a00db07d21
+20	1280	6938379350724096	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/timestamp	cbca03c5a970f134
+20	1280	6938379350724096	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
+1290	8318	6938379423988682	CMakeFiles/ELHotel.dir/addnewroom.cpp.obj	4a715a221f8e61f0
+1414	1489	6937670540376642	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/EWIEGA46WW/qrc_Resources.cpp	14f273c3186da990
+1519	1747	6937670542915073	CMakeFiles/ELHotel.dir/ELHotel_autogen/EWIEGA46WW/qrc_Resources.cpp.obj	44c2daa1a9dbd5ea
 7	45	0	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	e42f17a00db07d21
-20	421	6937644379779883	ELHotel_autogen/timestamp	cbca03c5a970f134
-20	421	6937644379779883	ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
-20	421	6937644379779883	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/timestamp	cbca03c5a970f134
-20	421	6937644379779883	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
-444	6071	6937644436255214	CMakeFiles/ELHotel.dir/addnewroom.cpp.obj	4a715a221f8e61f0
-441	6132	6937644436794883	CMakeFiles/ELHotel.dir/mainwindow.cpp.obj	ea8d2262a5ac5f0
-7	44	0	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	e42f17a00db07d21
-19	456	6937644761322161	ELHotel_autogen/timestamp	cbca03c5a970f134
-19	456	6937644761322161	ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
-19	456	6937644761322161	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/timestamp	cbca03c5a970f134
-19	456	6937644761322161	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
-476	5736	6937644814089756	CMakeFiles/ELHotel.dir/mainwindow.cpp.obj	ea8d2262a5ac5f0
-479	5744	6937644814189722	CMakeFiles/ELHotel.dir/addnewroom.cpp.obj	4a715a221f8e61f0
-6	43	0	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	e42f17a00db07d21
-19	4653	6937644971749225	CMakeFiles/ELHotel.dir/ELHotel_autogen/mocs_compilation.cpp.obj	97189ffcc6c25af6
-4653	5295	6937644978036773	ELHotel.exe	5ef2690506abf163
-6	43	0	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	e42f17a00db07d21
-12	441	6937646136936688	ELHotel_autogen/timestamp	cbca03c5a970f134
-12	441	6937646136936688	ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
-12	441	6937646136936688	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/timestamp	cbca03c5a970f134
-12	441	6937646136936688	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
-464	5730	6937646189804255	CMakeFiles/ELHotel.dir/addnewroom.cpp.obj	4a715a221f8e61f0
-461	5785	6937646190383900	CMakeFiles/ELHotel.dir/mainwindow.cpp.obj	ea8d2262a5ac5f0
-5786	6434	6937646196745307	ELHotel.exe	5ef2690506abf163
+20	1342	6938383040171226	ELHotel_autogen/timestamp	cbca03c5a970f134
+20	1342	6938383040171226	ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
+20	1342	6938383040171226	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/timestamp	cbca03c5a970f134
+20	1342	6938383040171226	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
+1352	2999	6938383059449282	CMakeFiles/ELHotel.dir/src/dateTime.cpp.obj	6d40ffec29db0260
+1359	3481	6938383064326263	CMakeFiles/ELHotel.dir/src/Reservation.cpp.obj	4f2ae9082ce6a136
+1355	4340	6938383073020864	CMakeFiles/ELHotel.dir/src/dataBase.cpp.obj	ab61017084860b38
+1362	8917	6938383118802501	CMakeFiles/ELHotel.dir/addnewroom.cpp.obj	4a715a221f8e61f0
+6	45	0	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	e42f17a00db07d21
+21	1283	6938383730409336	ELHotel_autogen/timestamp	cbca03c5a970f134
+21	1283	6938383730409336	ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
+21	1283	6938383730409336	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/timestamp	cbca03c5a970f134
+21	1283	6938383730409336	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
+1284	7067	6938383791141698	CMakeFiles/ELHotel.dir/ELHotel_autogen/mocs_compilation.cpp.obj	97189ffcc6c25af6
+1287	7529	6938383795738836	CMakeFiles/ELHotel.dir/main.cpp.obj	cbae3a4a8de983d4
+1293	7884	6938383799266632	CMakeFiles/ELHotel.dir/addnewroom.cpp.obj	4a715a221f8e61f0
+1290	8153	6938383801944974	CMakeFiles/ELHotel.dir/mainwindow.cpp.obj	ea8d2262a5ac5f0
+8153	8828	6938383808560901	ELHotel.exe	5c646a0f15e2657
 6	46	0	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	e42f17a00db07d21
-20	466	6937646831115873	ELHotel_autogen/timestamp	cbca03c5a970f134
-20	466	6937646831115873	ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
-20	466	6937646831115873	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/timestamp	cbca03c5a970f134
-20	466	6937646831115873	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
-492	6194	6937646888390697	CMakeFiles/ELHotel.dir/addnewroom.cpp.obj	4a715a221f8e61f0
-489	6256	6937646888990332	CMakeFiles/ELHotel.dir/mainwindow.cpp.obj	ea8d2262a5ac5f0
-6256	6914	6937646895476368	ELHotel.exe	5ef2690506abf163
+22	1298	6938384647931454	ELHotel_autogen/timestamp	cbca03c5a970f134
+22	1298	6938384647931454	ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
+22	1298	6938384647931454	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/timestamp	cbca03c5a970f134
+22	1298	6938384647931454	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
+1301	7389	6938384711801883	CMakeFiles/ELHotel.dir/main.cpp.obj	cbae3a4a8de983d4
+1307	7823	6938384716109201	CMakeFiles/ELHotel.dir/addnewroom.cpp.obj	4a715a221f8e61f0
+1298	7865	6938384716558919	CMakeFiles/ELHotel.dir/ELHotel_autogen/mocs_compilation.cpp.obj	97189ffcc6c25af6
+1304	8045	6938384718317856	CMakeFiles/ELHotel.dir/mainwindow.cpp.obj	ea8d2262a5ac5f0
+8045	8693	6938384724723880	ELHotel.exe	5c646a0f15e2657
+6	45	0	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	e42f17a00db07d21
+20	412	6938385670207663	ELHotel_autogen/timestamp	cbca03c5a970f134
+20	412	6938385670207663	ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
+20	412	6938385670207663	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/timestamp	cbca03c5a970f134
+20	412	6938385670207663	D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/mocs_compilation.cpp	cbca03c5a970f134
+434	5838	6938385724434053	CMakeFiles/ELHotel.dir/addnewroom.cpp.obj	4a715a221f8e61f0
+431	5950	6938385725563355	CMakeFiles/ELHotel.dir/mainwindow.cpp.obj	ea8d2262a5ac5f0
+5951	6610	6938385732039312	ELHotel.exe	5c646a0f15e2657

@@ -18,6 +18,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
+#include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -37,6 +38,9 @@ public:
     QAction *actionRemove_3;
     QAction *actioninfo;
     QAction *actionUpdate;
+    QAction *actionNext_week;
+    QAction *actionPrevious_week;
+    QAction *actionInfo;
     QWidget *centralwidget;
     QTableWidget *reservationCalendar;
     QMenuBar *menubar;
@@ -44,8 +48,9 @@ public:
     QMenu *menuReservation;
     QMenu *menuGuest;
     QMenu *menuRoom;
-    QMenu *menuTESTTEST;
+    QMenu *menuView;
     QStatusBar *statusbar;
+    QToolBar *toolBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -76,6 +81,18 @@ public:
         actioninfo->setObjectName("actioninfo");
         actionUpdate = new QAction(MainWindow);
         actionUpdate->setObjectName("actionUpdate");
+        actionNext_week = new QAction(MainWindow);
+        actionNext_week->setObjectName("actionNext_week");
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/rec/resources/next.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionNext_week->setIcon(icon);
+        actionPrevious_week = new QAction(MainWindow);
+        actionPrevious_week->setObjectName("actionPrevious_week");
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/rec/resources/prev.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionPrevious_week->setIcon(icon1);
+        actionInfo = new QAction(MainWindow);
+        actionInfo->setObjectName("actionInfo");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         reservationCalendar = new QTableWidget(centralwidget);
@@ -155,11 +172,12 @@ public:
         QTableWidgetItem *__qtablewidgetitem28 = new QTableWidgetItem();
         reservationCalendar->setItem(0, 13, __qtablewidgetitem28);
         reservationCalendar->setObjectName("reservationCalendar");
-        reservationCalendar->setGeometry(QRect(0, 0, 1441, 551));
+        reservationCalendar->setGeometry(QRect(0, 0, 1441, 521));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 1460, 21));
+        menubar->setNativeMenuBar(true);
         menuFile = new QMenu(menubar);
         menuFile->setObjectName("menuFile");
         menuReservation = new QMenu(menubar);
@@ -168,21 +186,26 @@ public:
         menuGuest->setObjectName("menuGuest");
         menuRoom = new QMenu(menubar);
         menuRoom->setObjectName("menuRoom");
-        menuTESTTEST = new QMenu(menubar);
-        menuTESTTEST->setObjectName("menuTESTTEST");
+        menuView = new QMenu(menubar);
+        menuView->setObjectName("menuView");
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
         MainWindow->setStatusBar(statusbar);
+        toolBar = new QToolBar(MainWindow);
+        toolBar->setObjectName("toolBar");
+        MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
 
         menubar->addAction(menuFile->menuAction());
+        menubar->addAction(menuView->menuAction());
         menubar->addAction(menuReservation->menuAction());
         menubar->addAction(menuGuest->menuAction());
         menubar->addAction(menuRoom->menuAction());
-        menubar->addAction(menuTESTTEST->menuAction());
         menuReservation->addAction(actionAdd_2);
         menuReservation->addAction(actionRemove_2);
         menuReservation->addAction(actionEdit);
+        menuReservation->addSeparator();
+        menuReservation->addAction(actionInfo);
         menuGuest->addAction(actionAdd);
         menuGuest->addAction(actionRemove);
         menuGuest->addAction(actionSayHello);
@@ -190,7 +213,10 @@ public:
         menuRoom->addAction(actionRemove_3);
         menuRoom->addSeparator();
         menuRoom->addAction(actioninfo);
-        menuTESTTEST->addAction(actionTEST20);
+        menuView->addAction(actionNext_week);
+        menuView->addAction(actionPrevious_week);
+        toolBar->addAction(actionPrevious_week);
+        toolBar->addAction(actionNext_week);
 
         retranslateUi(MainWindow);
 
@@ -215,6 +241,9 @@ public:
         actioninfo->setToolTip(QCoreApplication::translate("MainWindow", "Information about a room", nullptr));
 #endif // QT_CONFIG(tooltip)
         actionUpdate->setText(QCoreApplication::translate("MainWindow", "Update", nullptr));
+        actionNext_week->setText(QCoreApplication::translate("MainWindow", "Next week", nullptr));
+        actionPrevious_week->setText(QCoreApplication::translate("MainWindow", "Previous week", nullptr));
+        actionInfo->setText(QCoreApplication::translate("MainWindow", "Info", nullptr));
         QTableWidgetItem *___qtablewidgetitem = reservationCalendar->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow", "Monday", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = reservationCalendar->horizontalHeaderItem(1);
@@ -282,7 +311,8 @@ public:
         menuReservation->setTitle(QCoreApplication::translate("MainWindow", "Reservation", nullptr));
         menuGuest->setTitle(QCoreApplication::translate("MainWindow", "Guest", nullptr));
         menuRoom->setTitle(QCoreApplication::translate("MainWindow", "Room", nullptr));
-        menuTESTTEST->setTitle(QCoreApplication::translate("MainWindow", "TESTTEST", nullptr));
+        menuView->setTitle(QCoreApplication::translate("MainWindow", "View", nullptr));
+        toolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
     } // retranslateUi
 
 };

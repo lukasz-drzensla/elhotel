@@ -18,6 +18,8 @@ public:
 	int getYear();
 	int isLeap();
 	int countLeap(dateTime dt);
+    int guessMonth(int index);
+    int guessDay(int index);
 	int getDifference(dateTime dt1, dateTime dt2);
 	void set(dateTime dt);
 	std::string sayHello();

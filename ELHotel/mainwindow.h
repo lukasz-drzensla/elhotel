@@ -33,12 +33,24 @@ private slots:
 
     void on_actionUpdate_triggered();
 
+    void on_actionInfo_triggered();
+
+    void on_actionRemove_2_triggered();
+
+
+    void on_actionPrevious_week_triggered();
+
+    void on_actionNext_week_triggered();
+
 private:
     Ui::MainWindow *ui;
     addnewroom *ANR;
     dataBase db{};
     std::vector <int> days_of_week{};
     std::vector <int> rooms_on_display{};
+    dateTime first_day{};
     void updateCalendar();
+    void updateReservations();
+    void displayDates(dateTime first_day);
 };
 #endif // MAINWINDOW_H

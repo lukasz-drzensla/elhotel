@@ -51,7 +51,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 39,
+				"line" : 42,
 				"parent" : 0
 			},
 			{
@@ -75,13 +75,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 75,
+				"line" : 78,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 65,
+				"line" : 68,
 				"parent" : 0
 			},
 			{
@@ -373,18 +373,19 @@
 				12,
 				13,
 				14,
-				16
+				16,
+				23
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "ELHotel_autogen::@6890427a1f51a3e7e1df"
+			"id" : "ELHotel_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "ELHotel_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 0,
+			"id" : "ELHotel_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "ELHotel::@6890427a1f51a3e7e1df",
@@ -497,7 +498,8 @@
 				12,
 				13,
 				14,
-				16
+				16,
+				23
 			]
 		},
 		{
@@ -511,8 +513,8 @@
 				8,
 				9,
 				15,
-				19,
-				20
+				20,
+				21
 			]
 		},
 		{
@@ -522,14 +524,16 @@
 				4,
 				17,
 				18,
-				21
+				19,
+				22
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				22
+				24,
+				25
 			]
 		}
 	],
@@ -637,6 +641,11 @@
 		},
 		{
 			"backtrace" : 4,
+			"path" : "Resources.qrc",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
 			"path" : "ELHotel_en_GB.ts",
 			"sourceGroupIndex" : 2
 		},
@@ -660,8 +669,21 @@
 		},
 		{
 			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/EWIEGA46WW/qrc_Resources.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/timestamp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/EWIEGA46WW/qrc_Resources.cpp.rule",
 			"sourceGroupIndex" : 3
 		}
 	],

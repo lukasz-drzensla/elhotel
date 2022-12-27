@@ -100,3 +100,32 @@ std::string dateTime::sayHello()
 	return d+std::to_string(day) + ", " + m+std::to_string(month) + ", " + std::to_string(year);
 }
 
+
+int dateTime::guessMonth (int index)
+{
+    int c_days{};
+    for (int i = 1; i < 13; i++)
+    {
+        c_days+=dayMonths[i];
+        if (index < c_days)
+        {
+            return i;
+        }
+    }
+    return 1;
+}
+
+int dateTime::guessDay(int index)
+{
+    int c_days{};
+    for (int i = 1; i < 13; i++)
+    {
+        c_days+=dayMonths[i];
+        if (index < c_days)
+        {
+            c_days-=dayMonths[i];
+            break;
+        }
+    }
+    return index-c_days+1;
+}
