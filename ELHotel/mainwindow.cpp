@@ -89,28 +89,12 @@ void test()
 void MainWindow::on_actionAdd_3_triggered()
 {
     //Room->Add Button
-
     ANR = new addnewroom (this, ui->reservationCalendar, &db, &rooms_on_display, calUpd);
     ANR->show();
-
-    //QMessageBox msgBox;
-    //msgBox.setText(toQString(std::to_string(x)));
-    //msgBox.exec();
 }
 
 void MainWindow::on_actionSayHello_triggered()
-{
-    dateTime dt(12, 12, 2022);
-    vector <Reservation> all = db.getAllReservationsAtDate(dt);
-
-    for (int i = 0; i < all.size(); i++)
-    {
-        QMessageBox msgBox;
-        msgBox.setText(toQString(all[i].sayHello()));
-        msgBox.exec();
-
-    }
-}
+{}
 
 
 void MainWindow::on_actionTEST_triggered()
@@ -145,6 +129,12 @@ void MainWindow::on_actioninfo_triggered()
 
 void MainWindow::on_actionRemove_3_triggered()
 {
+    QMessageBox::StandardButton user_action_confirmation = QMessageBox::question(this, "Remove a room", "Are you sure you want to remove the selected room?", QMessageBox::Yes|QMessageBox::No);
+      if (user_action_confirmation == QMessageBox::Yes) {
+        //proceed
+      } else {
+        return;
+      }
     try {
         QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
         QModelIndex QMI = selection.at(0);
@@ -161,13 +151,21 @@ void MainWindow::on_actionRemove_3_triggered()
                     break;
                 }
             }
-            db.rooms.erase(db.rooms.begin() + index);
+            //db.rooms.erase(db.rooms.begin()+index); //for reason which remains unknown to me it always deletes the last element
+            vector <Room> temp{};
+            for (int i = 0; i < db.rooms.size(); i++)
+            {
+                if (i!=index)
+                    temp.push_back(db.rooms[i]);
+            }
+            db.rooms.clear();
+            for (int i = 0; i < temp.size(); i++)
+            {
+                db.rooms.push_back(temp[i]);
+            }
             db.saveRooms();
             calUpd->updateCalendar();
             calUpd->updateReservations();
-            QMessageBox msgBox;
-            msgBox.setText("Removed");
-            msgBox.exec();
         } else {
             QMessageBox msgBox;
             msgBox.setText("No room selected");
@@ -244,6 +242,14 @@ void MainWindow::on_actionAdd_2_triggered()
         if (row > 0)
         {
             ID = rooms_on_display[--row];
+            for (int i = 0; i < db.rooms.size(); i++)
+            {
+                if (db.rooms[i].id == ID)
+                {
+                    index = i;
+                    break;
+                }
+            }
         } else {
             return;
         }

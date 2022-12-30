@@ -1,39 +1,21 @@
 <?xml version = "1.0" encoding = "utf-8"?><root><worksheet name = "rooms">
 <Row index="0">
 <ID>0</ID>
-<COST>50</COST>
+<COST>200</COST>
 <DES>101</DES>
-<MAX>4</MAX>
+<MAX>6</MAX>
 </Row>
 <Row index="1">
 <ID>1</ID>
-<COST>200</COST>
+<COST>50</COST>
 <DES>102</DES>
-<MAX>6</MAX>
+<MAX>0</MAX>
 </Row>
 <Row index="2">
 <ID>2</ID>
 <COST>50</COST>
 <DES>103</DES>
 <MAX>4</MAX>
-</Row>
-<Row index="3">
-<ID>3</ID>
-<COST>50</COST>
-<DES>104</DES>
-<MAX>0</MAX>
-</Row>
-<Row index="4">
-<ID>14</ID>
-<COST>50</COST>
-<DES>105</DES>
-<MAX>0</MAX>
-</Row>
-<Row index="5">
-<ID>15</ID>
-<COST>50</COST>
-<DES>106a</DES>
-<MAX>2</MAX>
 </Row>
 </worksheet>
 </root>

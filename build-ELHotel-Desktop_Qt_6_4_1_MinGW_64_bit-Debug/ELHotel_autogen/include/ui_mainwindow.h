@@ -208,7 +208,6 @@ public:
         menuReservation->addAction(actionInfo);
         menuGuest->addAction(actionAdd);
         menuGuest->addAction(actionRemove);
-        menuGuest->addAction(actionSayHello);
         menuRoom->addAction(actionAdd_3);
         menuRoom->addAction(actionRemove_3);
         menuRoom->addSeparator();

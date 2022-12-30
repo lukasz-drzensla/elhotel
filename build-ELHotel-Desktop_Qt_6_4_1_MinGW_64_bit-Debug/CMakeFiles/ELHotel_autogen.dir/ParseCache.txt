@@ -371,7 +371,6 @@ D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/addnewroom.h
 D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/viewcalendarupdater.h
 D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/main.cpp
 D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/Reservation.h
-D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/Room.h
 D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/viewcalendarupdater.cpp
 D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/mainwindow.h
  mmc:Q_OBJECT
@@ -746,6 +745,8 @@ D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/mainwindow.h
  mdp:D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/dateTime.h
  mdp:D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/globalConstants.h
  mdp:D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/viewcalendarupdater.h
+D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/Room.h
+D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/dataBase.h
 D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/addnewreservation.h
  mmc:Q_OBJECT
  mdp:D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/addnewreservation.h
@@ -1115,7 +1116,6 @@ D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/addnewreservation.h
  mdp:D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/dateTime.h
  mdp:D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/globalConstants.h
  mdp:D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/viewcalendarupdater.h
-D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/dataBase.h
 D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/dateTime.h
 D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/globalConstants.h
 D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/addnewroom.cpp

@@ -244,7 +244,6 @@
     </property>
     <addaction name="actionAdd"/>
     <addaction name="actionRemove"/>
-    <addaction name="actionSayHello"/>
    </widget>
    <widget class="QMenu" name="menuRoom">
     <property name="title">
