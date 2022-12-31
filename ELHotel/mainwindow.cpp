@@ -63,14 +63,25 @@ void MainWindow::on_actionPrevious_week_triggered()
 void MainWindow::on_actionNext_week_triggered()
 {
     dateTime dt (1, 1, globalConstants::thisYear);
-    int index = dt.getDifference(dt, first_day);
-    index+=7;
-    int day = dt.guessDay(index);
-    int month = dt.guessMonth(index);
-    dateTime next_dt (day, month, globalConstants::thisYear);
-    first_day.set(next_dt);
-    calUpd->displayDates(&first_day);
-    calUpd->updateReservations();
+    int isLeap = dt.isLeap();
+    int max=365;
+    if (isLeap)
+        max=366;
+    if (days_of_week[13]<max-5)
+    {
+        int index = dt.getDifference(dt, first_day);
+        index+=7;
+        int day = dt.guessDay(index);
+        int month = dt.guessMonth(index);
+        dateTime next_dt (day, month, globalConstants::thisYear);
+        first_day.set(next_dt);
+        calUpd->displayDates(&first_day);
+        calUpd->updateReservations();
+    } else {
+        QMessageBox msgBox;
+        msgBox.setText("End of the year");
+        msgBox.exec();
+    }
 }
 
 MainWindow::~MainWindow()
@@ -81,9 +92,7 @@ MainWindow::~MainWindow()
 
 void test()
 {
-    QMessageBox msgBox;
-    msgBox.setText("TEST");
-    msgBox.exec();
+
 }
 
 void MainWindow::on_actionAdd_3_triggered()
@@ -159,10 +168,7 @@ void MainWindow::on_actionRemove_3_triggered()
                     temp.push_back(db.rooms[i]);
             }
             db.rooms.clear();
-            for (int i = 0; i < temp.size(); i++)
-            {
-                db.rooms.push_back(temp[i]);
-            }
+            db.rooms=temp;
             db.saveRooms();
             calUpd->updateCalendar();
             calUpd->updateReservations();
@@ -215,7 +221,60 @@ void MainWindow::on_actionUpdate_triggered()
 
 void MainWindow::on_actionRemove_2_triggered()
 {
+    QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
+    QModelIndex QMI = selection.at(0);
+    int row = QMI.row();
+    int column = QMI.column();
+    int ID{};
+    int res_id;
+    if (row > 0)
+    {
+        ID = rooms_on_display[--row];
+    } else {
+        return;
+    }
+    vector <Reservation> all = db.getAllReservationsAtDate(days_of_week[column]);
 
+    for (int i = 0; i < all.size(); i++)
+    {
+        if (all[i].getRoom().id == ID)
+        {
+            QMessageBox::StandardButton user_action_confirmation = QMessageBox::question(this, "Remove a reservation", "Are you sure you want to remove: " + toQString(all[i].sayHello()), QMessageBox::Yes|QMessageBox::No);
+              if (user_action_confirmation == QMessageBox::Yes) {
+                //proceed
+              } else {
+                return;
+              }
+            res_id = all[i].getID();
+            break;
+        }
+    }
+    vector <Reservation> temp{};
+    if (res_id%2==0)
+    {
+        for (int i = 0; i < db.Reservations.even.size(); i++)
+        {
+            if (db.Reservations.even[i].getID() != res_id)
+            {
+                temp.push_back(db.Reservations.even[i]);
+            }
+        }
+        db.Reservations.even.clear();
+        db.Reservations.even = temp;
+    } else {
+        for (int i = 0; i < db.Reservations.odd.size(); i++)
+        {
+            if (db.Reservations.odd[i].getID() != res_id)
+            {
+                temp.push_back(db.Reservations.odd[i]);
+            }
+        }
+        db.Reservations.odd.clear();
+        db.Reservations.odd = temp;
+    }
+    db.save();
+    calUpd->updateCalendar();
+    calUpd->updateReservations();
 }
 
 

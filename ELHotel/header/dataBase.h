@@ -22,9 +22,8 @@ private:
 		vector <Reservation> odd{};
 	};
 	vector <tuple> daysOfYear{};
-	res Reservations{};
-	
 public:
+    res Reservations{};
 	int init(int year);
 	int load(bool LR = false);
 	int loadRooms();
