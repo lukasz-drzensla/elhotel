@@ -40,6 +40,9 @@ set(PROJECT_SOURCES
         addnewreservation.ui
         viewcalendarupdater.h
         viewcalendarupdater.cpp
+        editreservation.h
+        editreservation.cpp
+        editreservation.ui
         ${TS_FILES}
 )
 

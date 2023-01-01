@@ -277,6 +277,12 @@
 			null
 		],
 		[
+			"D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/editreservation.h",
+			"MU",
+			"EWIEGA46WW/moc_editreservation.cpp",
+			null
+		],
+		[
 			"D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/Reservation.h",
 			"MU",
 			"6OFTS6FJJP/moc_Reservation.cpp",
@@ -395,6 +401,11 @@
 		],
 		[
 			"D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/addnewroom.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/editreservation.cpp",
 			"MU",
 			null
 		],

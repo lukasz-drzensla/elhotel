@@ -43,6 +43,7 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/Workspace/AGH/Semestr 5/jp
 set(OLD_GLOB
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/addnewreservation.cpp"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/addnewroom.cpp"
+  "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/editreservation.cpp"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/main.cpp"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/mainwindow.cpp"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/src/Reservation.cpp"
@@ -71,6 +72,7 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/Workspace/AGH/Semestr 5/jp
 set(OLD_GLOB
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/addnewreservation.h"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/addnewroom.h"
+  "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/editreservation.h"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/Reservation.h"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/Room.h"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/header/dataBase.h"
@@ -180,6 +182,7 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/Workspace/AGH/Semestr 5/jp
 set(OLD_GLOB
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/addnewreservation.ui"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/addnewroom.ui"
+  "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/editreservation.ui"
   "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/mainwindow.ui"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

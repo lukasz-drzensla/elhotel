@@ -540,6 +540,8 @@ ELHotel_autogen/timestamp: \
 	D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/addnewreservation.h \
 	D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/addnewroom.cpp \
 	D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/addnewroom.h \
+	D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/editreservation.cpp \
+	D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/editreservation.h \
 	D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/Reservation.h \
 	D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/Room.h \
 	D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/header/dataBase.h \
@@ -561,5 +563,6 @@ ELHotel_autogen/timestamp: \
 	D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/moc_predefs.h \
 	D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/addnewreservation.ui \
 	D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/addnewroom.ui \
+	D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/editreservation.ui \
 	D:/Workspace/AGH/Semestr\ 5/jpo/ELHotel/ELHotel/mainwindow.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

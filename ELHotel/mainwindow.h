@@ -45,6 +45,8 @@ private slots:
 
     void on_actionAdd_2_triggered();
 
+    void on_actionEdit_triggered();
+
 private:
     Ui::MainWindow *ui;
     addnewroom *ANR{};
