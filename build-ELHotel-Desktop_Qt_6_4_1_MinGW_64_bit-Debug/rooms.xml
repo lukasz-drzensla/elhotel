@@ -18,12 +18,6 @@
 <MAX>5</MAX>
 </Row>
 <Row index="3">
-<ID>28</ID>
-<COST>50</COST>
-<DES>103b</DES>
-<MAX>2</MAX>
-</Row>
-<Row index="4">
 <ID>29</ID>
 <COST>50</COST>
 <DES>104</DES>

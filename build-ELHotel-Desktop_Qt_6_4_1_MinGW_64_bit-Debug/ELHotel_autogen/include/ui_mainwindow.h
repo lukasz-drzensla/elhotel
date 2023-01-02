@@ -41,6 +41,8 @@ public:
     QAction *actionNext_week;
     QAction *actionPrevious_week;
     QAction *actionInfo;
+    QAction *actionMark_as_arrived;
+    QAction *actionMark_as_departed;
     QWidget *centralwidget;
     QTableWidget *reservationCalendar;
     QMenuBar *menubar;
@@ -93,6 +95,10 @@ public:
         actionPrevious_week->setIcon(icon1);
         actionInfo = new QAction(MainWindow);
         actionInfo->setObjectName("actionInfo");
+        actionMark_as_arrived = new QAction(MainWindow);
+        actionMark_as_arrived->setObjectName("actionMark_as_arrived");
+        actionMark_as_departed = new QAction(MainWindow);
+        actionMark_as_departed->setObjectName("actionMark_as_departed");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         reservationCalendar = new QTableWidget(centralwidget);
@@ -206,6 +212,9 @@ public:
         menuReservation->addAction(actionEdit);
         menuReservation->addSeparator();
         menuReservation->addAction(actionInfo);
+        menuReservation->addSeparator();
+        menuReservation->addAction(actionMark_as_arrived);
+        menuReservation->addAction(actionMark_as_departed);
         menuGuest->addAction(actionAdd);
         menuGuest->addAction(actionRemove);
         menuRoom->addAction(actionAdd_3);
@@ -243,6 +252,8 @@ public:
         actionNext_week->setText(QCoreApplication::translate("MainWindow", "Next week", nullptr));
         actionPrevious_week->setText(QCoreApplication::translate("MainWindow", "Previous week", nullptr));
         actionInfo->setText(QCoreApplication::translate("MainWindow", "Info", nullptr));
+        actionMark_as_arrived->setText(QCoreApplication::translate("MainWindow", "Mark as arrived", nullptr));
+        actionMark_as_departed->setText(QCoreApplication::translate("MainWindow", "Mark as departed", nullptr));
         QTableWidgetItem *___qtablewidgetitem = reservationCalendar->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow", "Monday", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = reservationCalendar->horizontalHeaderItem(1);

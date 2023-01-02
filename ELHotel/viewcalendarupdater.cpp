@@ -62,6 +62,10 @@ void viewCalendarUpdater::updateReservations()
                 {
                     QTableWidgetItem *reservation_item = new QTableWidgetItem;
                     reservation_item->setText(toQString(all[j].getName()));
+                    if (all[j].getStatus()==1)
+                    {
+                        reservation_item->setBackground(Qt::green);
+                    }
                     calendar->setItem(n+1, i, reservation_item);
                 }
             }

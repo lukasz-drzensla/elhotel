@@ -237,6 +237,9 @@
     <addaction name="actionEdit"/>
     <addaction name="separator"/>
     <addaction name="actionInfo"/>
+    <addaction name="separator"/>
+    <addaction name="actionMark_as_arrived"/>
+    <addaction name="actionMark_as_departed"/>
    </widget>
    <widget class="QMenu" name="menuGuest">
     <property name="title">
@@ -365,6 +368,16 @@
   <action name="actionInfo">
    <property name="text">
     <string>Info</string>
+   </property>
+  </action>
+  <action name="actionMark_as_arrived">
+   <property name="text">
+    <string>Mark as arrived</string>
+   </property>
+  </action>
+  <action name="actionMark_as_departed">
+   <property name="text">
+    <string>Mark as departed</string>
    </property>
   </action>
  </widget>

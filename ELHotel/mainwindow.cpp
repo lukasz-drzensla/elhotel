@@ -343,7 +343,7 @@ void MainWindow::on_actionAdd_2_triggered()
         return;
     }
 
-    add_new_res_window = new addnewreservation(this, calUpd, &arrival, &departure, &db, &duration, &db.rooms[index], &days_of_week);
+    add_new_res_window = new addnewreservation(this, calUpd, &arrival, &departure, &db, &duration, &db.rooms[index]);
     add_new_res_window->exec();
 }
 

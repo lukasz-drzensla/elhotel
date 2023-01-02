@@ -2,20 +2,19 @@
 #include "ui_addnewreservation.h"
 #include <QMessageBox>
 
-addnewreservation::addnewreservation(QWidget *parent, viewCalendarUpdater *_calendar, dateTime *_arrival, dateTime *_departure, dataBase *_db, int* _duration, Room *_room, std::vector <int> *_days_of_week) :
+addnewreservation::addnewreservation(QWidget *parent, viewCalendarUpdater *_calendar, dateTime *_arrival, dateTime *_departure, dataBase *_db, int* _duration, Room *_room) :
     QDialog(parent),
     ui(new Ui::addnewreservation)
 {
     calendar = _calendar;
     db=_db;
-    duration=_duration;
+    duration=*_duration;
     room=_room;
     ui->setupUi(this);
-    days_of_week=_days_of_week;
     ui->arr_dateEdit->setDate(QDate(_arrival->getYear(), _arrival->getMonth(), _arrival->getDay()));
     ui->dep_dateEdit->setDate(QDate(_departure->getYear(), _departure->getMonth(), _departure->getDay()));
     ui->roomLabel->setText(QString::fromStdString(room->description));
-    int price = (room->cost_rate)*(*duration);
+    int price = (room->cost_rate)*duration;
     ui->spinPrice->setValue(price);
 }
 
@@ -28,8 +27,8 @@ void addnewreservation::on_recalc_button_clicked()
 {
     dateTime new_arr (ui->arr_dateEdit->date().day(), ui->arr_dateEdit->date().month(), ui->arr_dateEdit->date().year());
     dateTime new_dep (ui->dep_dateEdit->date().day(), ui->dep_dateEdit->date().month(), ui->dep_dateEdit->date().year());
-    *duration = new_arr.getDifference(new_arr, new_dep);
-    int price = (room->cost_rate)*(*duration);
+    duration = new_arr.getDifference(new_arr, new_dep);
+    int price = (room->cost_rate)*duration;
     ui->spinPrice->setValue(price);
 }
 
@@ -64,9 +63,23 @@ void addnewreservation::on_add_reservation_button_clicked()
     }
     dateTime new_arr (ui->arr_dateEdit->date().day(), ui->arr_dateEdit->date().month(), ui->arr_dateEdit->date().year());
     dateTime new_dep (ui->dep_dateEdit->date().day(), ui->dep_dateEdit->date().month(), ui->dep_dateEdit->date().year());
-    *duration = new_arr.getDifference(new_arr, new_dep);
+    duration = new_arr.getDifference(new_arr, new_dep);
+    if (duration < 0)
+    {
+        QMessageBox msgBox;
+        msgBox.setText("Error: departure earlier than arrival");
+        msgBox.exec();
+        return;
+    }
+    if (duration==0)
+    {
+        QMessageBox msgBox;
+        msgBox.setText("Error: cannot make a zero-nights reservation");
+        msgBox.exec();
+        return;
+    }
     int first_index = new_arr.getDifference(dateTime (1,1,globalConstants::thisYear), new_arr);
-    for (int j = 0; j <= *duration; j++)
+    for (int j = 0; j <= duration; j++)
     {
         vector <Reservation> all = db->getAllReservationsAtDate(first_index+j);
 
@@ -76,7 +89,7 @@ void addnewreservation::on_add_reservation_button_clicked()
             {
                 //found reservation, throw error
                 QMessageBox msgBox;
-                msgBox.setText("There is already a reservation made for this room for the specified time period");
+                msgBox.setText("Error: there is already a reservation made for this room for the specified time period");
                 msgBox.exec();
                 return;
             }
@@ -86,7 +99,6 @@ void addnewreservation::on_add_reservation_button_clicked()
     Reservation reservation (globalConstants::next_index, *room, name, new_arr, new_dep, phone, cost, nip);
     db->autoAddReservation(reservation);
     calendar->updateReservations();
-    globalConstants::save();
     db->save();
     close();
 }

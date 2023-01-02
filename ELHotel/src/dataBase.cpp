@@ -43,7 +43,7 @@ int dataBase::addReservationAtDate(dateTime& dt, int& ID)
 	return which;
 }
 
-int dataBase::autoAddReservation(Reservation& reservation)
+int dataBase::autoAddReservation(Reservation& reservation, bool affectGlobalConstants)
 {
 	dateTime dt(1, 1, globalConstants::thisYear);
 	addReservation(reservation);
@@ -55,8 +55,11 @@ int dataBase::autoAddReservation(Reservation& reservation)
 	{
 		daysOfYear[i].Reservation_ID.push_back(reservation.getID());
 	}
-	globalConstants::next_index++;
-	globalConstants::save();
+    if (affectGlobalConstants)
+    {
+        globalConstants::next_index++;
+        globalConstants::save();
+    }
 	return 0;
 }
 
@@ -87,7 +90,7 @@ int dataBase::load(bool LR)
 	{
 		loadRooms();
 	}
-	globalConstants::next_index = 0;
+    //globalConstants::next_index = 0;
 	ifstream file("reservations.xml");
 	if (!file.is_open())
 		return -1;
@@ -108,6 +111,9 @@ int dataBase::load(bool LR)
 	string _phone{};
 	int _cost{};
 	string _NIP{};
+    int _status{};
+    int _people{};
+    string _comment{};
 	const string id_str = "<ID>";
 	const string room_id_str = "<ROOM_ID>";
 	const string name_str = "<NAME>";
@@ -116,6 +122,9 @@ int dataBase::load(bool LR)
 	const string phone_str = "<PHONE>";
 	const string cost_str = "<COST>";
 	const string NIP_str = "<NIP>";
+    const string status_str = "<STATUS>";
+    const string people_str = "<PEOPLE>";
+    const string comment_str = "<COMMENT>";
 	while (!file.eof())
 	{
 		getline(file, line);
@@ -139,8 +148,8 @@ int dataBase::load(bool LR)
                         break;
                     }
                 }
-				Reservation res(_id, room, _name, _arrival, _departure, _phone, _cost, _NIP);
-				autoAddReservation(res);
+                Reservation res(_id, room, _name, _arrival, _departure, _phone, _cost, _NIP, _status, _people, _comment);
+                autoAddReservation(res, false);
 			}
             else if (line.starts_with(id_str))
 			{
@@ -248,6 +257,37 @@ int dataBase::load(bool LR)
 				auto position = line.find('/');
 				_NIP = line.substr(NIP_str.length(), position - NIP_str.length() - 1);
 			}
+            else if (line.starts_with(status_str))
+            {
+                auto position = line.find('/');
+                string temp = line.substr(status_str.length(), position - status_str.length() - 1);
+                try
+                {
+                    _status = std::stoi(temp);
+                }
+                catch (const std::exception&)
+                {
+                    _status = 0;
+                }
+            }
+            else if (line.starts_with(people_str))
+            {
+                auto position = line.find('/');
+                string temp = line.substr(people_str.length(), position - people_str.length() - 1);
+                try
+                {
+                    _people = std::stoi(temp);
+                }
+                catch (const std::exception&)
+                {
+                    _people = 0;
+                }
+            }
+            else if (line.starts_with(comment_str))
+            {
+                auto position = line.find('/');
+                _comment = line.substr(comment_str.length(), position - comment_str.length() - 1);
+            }
 		}
         else if (line.starts_with("<Row"))
 		{
@@ -430,6 +470,15 @@ int dataBase::save(bool SR)
 		file << "<NIP>";
 		file << Reservations.even[i].getNIP();
 		file << "</NIP>" << endl;
+        file << "<STATUS>";
+        file << Reservations.even[i].getStatus();
+        file << "</STATUS>" << endl;
+        file << "<PEOPLE>";
+        file << Reservations.even[i].getPeople();
+        file << "</PEOPLE>" << endl;
+        file << "<COMMENT>";
+        file << Reservations.even[i].getComment();
+        file << "</COMMENT>" << endl;
 		file << "</Row>" << endl;
 	}
 
@@ -462,6 +511,15 @@ int dataBase::save(bool SR)
 		file << "<NIP>";
 		file << Reservations.odd[i].getNIP();
 		file << "</NIP>" << endl;
+        file << "<STATUS>";
+        file << Reservations.odd[i].getStatus();
+        file << "</STATUS>" << endl;
+        file << "<PEOPLE>";
+        file << Reservations.odd[i].getPeople();
+        file << "</PEOPLE>" << endl;
+        file << "<COMMENT>";
+        file << Reservations.odd[i].getComment();
+        file << "</COMMENT>" << endl;
 		file << "</Row>" << endl;
 	}
 

@@ -56,24 +56,24 @@ int dateTime::countLeap(dateTime dt)
 	{
 		--years;
 	}
-	return years / 4 - years / 100 + years / 400;
+    return years / 4 + years / 400 - years / 100;
 }
 
 int dateTime::getDifference(dateTime dt1, dateTime dt2)
 {
-	int n1 = dt1.getYear() * 365 + dt1.getDay();
+    int days_1 = dt1.getYear() * 365 + dt1.getDay();
 	for (int i = 1; i < dt1.getMonth(); i++)
 	{
-		n1 += dayMonths[i];
+        days_1 += dayMonths[i];
 	}
-	n1 += countLeap(dt1);
-	int n2 = dt2.getYear() * 365 + dt2.getDay();
+    days_1 += countLeap(dt1);
+    int days_2 = dt2.getYear() * 365 + dt2.getDay();
 	for (int i = 1; i < dt2.getMonth(); i++)
 	{
-		n2 += dayMonths[i];
+        days_2 += dayMonths[i];
 	}
-	n2 += countLeap(dt2);
-	return (n2-n1);
+    days_2 += countLeap(dt2);
+    return (days_2-days_1);
 }
 
 void dateTime::set(dateTime dt)
