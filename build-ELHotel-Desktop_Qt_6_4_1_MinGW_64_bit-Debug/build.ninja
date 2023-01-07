@@ -264,7 +264,7 @@ build ELHotel_autogen/timestamp ELHotel_autogen/mocs_compilation.cpp | ${cmake_n
 #############################################
 # Custom command for ELHotel_autogen\EWIEGA46WW\qrc_Resources.cpp
 
-build ELHotel_autogen/EWIEGA46WW/qrc_Resources.cpp | ${cmake_ninja_workdir}ELHotel_autogen/EWIEGA46WW/qrc_Resources.cpp: CUSTOM_COMMAND D$:/Workspace/AGH/Semestr$ 5/jpo/ELHotel/ELHotel/Resources.qrc CMakeFiles/ELHotel_autogen.dir/AutoRcc_Resources_EWIEGA46WW_Info.json D$:/Workspace/AGH/Semestr$ 5/jpo/ELHotel/ELHotel/resources/next.png D$:/Workspace/AGH/Semestr$ 5/jpo/ELHotel/ELHotel/resources/prev.png C$:/Qt/6.4.1/mingw_64/./bin/rcc.exe || ELHotel_autogen ELHotel_autogen_timestamp_deps
+build ELHotel_autogen/EWIEGA46WW/qrc_Resources.cpp | ${cmake_ninja_workdir}ELHotel_autogen/EWIEGA46WW/qrc_Resources.cpp: CUSTOM_COMMAND D$:/Workspace/AGH/Semestr$ 5/jpo/ELHotel/ELHotel/Resources.qrc CMakeFiles/ELHotel_autogen.dir/AutoRcc_Resources_EWIEGA46WW_Info.json D$:/Workspace/AGH/Semestr$ 5/jpo/ELHotel/ELHotel/resources/remove.png D$:/Workspace/AGH/Semestr$ 5/jpo/ELHotel/ELHotel/resources/next.png D$:/Workspace/AGH/Semestr$ 5/jpo/ELHotel/ELHotel/resources/prev.png D$:/Workspace/AGH/Semestr$ 5/jpo/ELHotel/ELHotel/resources/add.png D$:/Workspace/AGH/Semestr$ 5/jpo/ELHotel/ELHotel/resources/dep.png D$:/Workspace/AGH/Semestr$ 5/jpo/ELHotel/ELHotel/resources/arr.png D$:/Workspace/AGH/Semestr$ 5/jpo/ELHotel/ELHotel/resources/attention.png C$:/Qt/6.4.1/mingw_64/./bin/rcc.exe || ELHotel_autogen ELHotel_autogen_timestamp_deps
   COMMAND = cmd.exe /C "cd /D "D:\Workspace\AGH\Semestr 5\jpo\ELHotel\build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug" && C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autorcc "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/CMakeFiles/ELHotel_autogen.dir/AutoRcc_Resources_EWIEGA46WW_Info.json" Debug"
   DESC = Automatic RCC for Resources.qrc
   restat = 1
@@ -273,7 +273,7 @@ build ELHotel_autogen/EWIEGA46WW/qrc_Resources.cpp | ${cmake_ninja_workdir}ELHot
 #############################################
 # Phony custom command for CMakeFiles\ELHotel_autogen_timestamp_deps
 
-build CMakeFiles/ELHotel_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/ELHotel_autogen_timestamp_deps: phony C$:/Qt/6.4.1/mingw_64/lib/libQt6Core.a C$:/Qt/6.4.1/mingw_64/./bin/uic.exe C$:/Qt/6.4.1/mingw_64/./bin/moc.exe C$:/Qt/6.4.1/mingw_64/lib/libQt6Widgets.a
+build CMakeFiles/ELHotel_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/ELHotel_autogen_timestamp_deps: phony C$:/Qt/6.4.1/mingw_64/lib/libQt6Core.a C$:/Qt/6.4.1/mingw_64/./bin/moc.exe C$:/Qt/6.4.1/mingw_64/./bin/uic.exe C$:/Qt/6.4.1/mingw_64/lib/libQt6Widgets.a
 
 
 #############################################

@@ -4,9 +4,12 @@ Reservation::Reservation()
 {
 }
 
-Reservation::Reservation(int _ID, Room _room, std::string _name, dateTime _arrival, dateTime _departure, std::string _phone_number, int _cost, std::string _NIP, int _status, int _people, std::string _comment) {
-    ID = _ID; room.id = _room.id; room.cost_rate = _room.cost_rate; room.description = _room.description; room.max_people = _room.max_people; name = _name; arrival.set(_arrival); departure.set(_departure); phone_number = _phone_number; if (_cost == 0) { cost = arrival.getDifference(arrival, departure) * _room.cost_rate; status = _status; people = _people; comment=_comment;}
+Reservation::Reservation(int _ID, Room _room, std::string _name, dateTime _arrival, dateTime _departure, std::string _phone_number, int _cost, std::string _NIP, int _status, int _people, std::string _comment, int _paid) {
+    ID = _ID; room.id = _room.id; room.cost_rate = _room.cost_rate; room.description = _room.description; room.max_people = _room.max_people; name = _name; arrival.set(_arrival); departure.set(_departure); phone_number = _phone_number; if (_cost == 0) { cost = arrival.getDifference(arrival, departure) * _room.cost_rate;}
 	else cost = _cost; NIP = _NIP;
+    status = _status; people = _people;
+    comment=_comment;
+    paid=_paid;
 }
 
 int Reservation::getID()
@@ -56,7 +59,7 @@ int Reservation::getDuration()
 
 std::string Reservation::sayHello()
 {
-	return "ID: " + std::to_string(ID) + " Name: " + name + " Cost: " + std::to_string(cost) + " Room: " + room.description + " Arrival: " + arrival.sayHello() + " Departure: " + departure.sayHello();
+    return "ID: " + std::to_string(ID) + " Name: " + name + " Cost: " + std::to_string(cost) + " Room: " + room.description + " Arrival: " + arrival.sayHello() + " Departure: " + departure.sayHello() + " People: " + std::to_string (people) + " Status: " + stat_str[status] + " Paid: " + std::to_string(paid) + " Comments: " + comment;
 }
 
 int Reservation::getStatus()
@@ -77,4 +80,9 @@ std::string Reservation::getComment()
 void Reservation::setStatus(int _status)
 {
     status = _status;
+}
+
+int Reservation::getPaid()
+{
+    return paid;
 }

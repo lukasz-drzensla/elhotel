@@ -32,6 +32,7 @@ public:
     vector <Room> rooms{};
 	vector <int> getID(dateTime dt);
 	Reservation getReservationByID(int &ID);
+    int getDBIDByResID(int ID);
 	vector <Reservation> getAllReservationsAtDate(dateTime &dt); //return a vector of all reservations made for a specific day
     vector <Reservation> getAllReservationsAtDate(int index);
     int checkForID(int &ID); //does client exist in database? 1->yes

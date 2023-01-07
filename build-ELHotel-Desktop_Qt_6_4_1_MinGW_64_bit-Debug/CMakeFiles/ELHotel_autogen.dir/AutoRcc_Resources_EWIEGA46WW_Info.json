@@ -7,8 +7,13 @@
 	"INCLUDE_DIR" : "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel_autogen/include",
 	"INPUTS" : 
 	[
+		"D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/resources/remove.png",
 		"D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/resources/next.png",
-		"D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/resources/prev.png"
+		"D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/resources/prev.png",
+		"D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/resources/add.png",
+		"D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/resources/dep.png",
+		"D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/resources/arr.png",
+		"D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel/resources/attention.png"
 	],
 	"LOCK_FILE" : "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/CMakeFiles/ELHotel_autogen.dir/AutoRcc_Resources_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,

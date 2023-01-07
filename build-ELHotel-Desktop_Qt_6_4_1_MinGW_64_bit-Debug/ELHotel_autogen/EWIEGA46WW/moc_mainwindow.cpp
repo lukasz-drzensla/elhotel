@@ -26,7 +26,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 namespace {
 struct qt_meta_stringdata_MainWindow_t {
-    uint offsetsAndSizes[28];
+    uint offsetsAndSizes[58];
     char stringdata0[11];
     char stringdata1[25];
     char stringdata2[1];
@@ -41,6 +41,21 @@ struct qt_meta_stringdata_MainWindow_t {
     char stringdata11[29];
     char stringdata12[25];
     char stringdata13[24];
+    char stringdata14[35];
+    char stringdata15[36];
+    char stringdata16[46];
+    char stringdata17[26];
+    char stringdata18[48];
+    char stringdata19[49];
+    char stringdata20[44];
+    char stringdata21[45];
+    char stringdata22[28];
+    char stringdata23[48];
+    char stringdata24[46];
+    char stringdata25[49];
+    char stringdata26[39];
+    char stringdata27[37];
+    char stringdata28[38];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_MainWindow_t::offsetsAndSizes) + ofs), len 
@@ -59,7 +74,22 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
         QT_MOC_LITERAL(219, 32),  // "on_actionPrevious_week_triggered"
         QT_MOC_LITERAL(252, 28),  // "on_actionNext_week_triggered"
         QT_MOC_LITERAL(281, 24),  // "on_actionAdd_2_triggered"
-        QT_MOC_LITERAL(306, 23)   // "on_actionEdit_triggered"
+        QT_MOC_LITERAL(306, 23),  // "on_actionEdit_triggered"
+        QT_MOC_LITERAL(330, 34),  // "on_actionMark_as_arrived_trig..."
+        QT_MOC_LITERAL(365, 35),  // "on_actionMark_as_departed_tri..."
+        QT_MOC_LITERAL(401, 45),  // "on_actionMark_as_attention_re..."
+        QT_MOC_LITERAL(447, 25),  // "on_actionUnmark_triggered"
+        QT_MOC_LITERAL(473, 47),  // "on_actionMark_as_arrived_but_..."
+        QT_MOC_LITERAL(521, 48),  // "on_actionMark_as_departed_but..."
+        QT_MOC_LITERAL(570, 43),  // "on_actionMark_as_arrived_and_..."
+        QT_MOC_LITERAL(614, 44),  // "on_actionMark_as_departed_and..."
+        QT_MOC_LITERAL(659, 27),  // "on_actionUnmark_2_triggered"
+        QT_MOC_LITERAL(687, 47),  // "on_actionMark_as_arrived_and_..."
+        QT_MOC_LITERAL(735, 45),  // "on_actionMark_as_requires_att..."
+        QT_MOC_LITERAL(781, 48),  // "on_actionMark_as_departed_and..."
+        QT_MOC_LITERAL(830, 38),  // "on_actionEnable_auto_marking_..."
+        QT_MOC_LITERAL(869, 36),  // "on_actionMark_as_arrived_2_tr..."
+        QT_MOC_LITERAL(906, 37)   // "on_actionMark_as_departed_2_t..."
     },
     "MainWindow",
     "on_actionAdd_3_triggered",
@@ -74,7 +104,22 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
     "on_actionPrevious_week_triggered",
     "on_actionNext_week_triggered",
     "on_actionAdd_2_triggered",
-    "on_actionEdit_triggered"
+    "on_actionEdit_triggered",
+    "on_actionMark_as_arrived_triggered",
+    "on_actionMark_as_departed_triggered",
+    "on_actionMark_as_attention_required_triggered",
+    "on_actionUnmark_triggered",
+    "on_actionMark_as_arrived_but_not_paid_triggered",
+    "on_actionMark_as_departed_but_not_paid_triggered",
+    "on_actionMark_as_arrived_and_paid_triggered",
+    "on_actionMark_as_departed_and_paid_triggered",
+    "on_actionUnmark_2_triggered",
+    "on_actionMark_as_arrived_and_not_paid_triggered",
+    "on_actionMark_as_requires_attengion_triggered",
+    "on_actionMark_as_departed_and_not_paid_triggered",
+    "on_actionEnable_auto_marking_triggered",
+    "on_actionMark_as_arrived_2_triggered",
+    "on_actionMark_as_departed_2_triggered"
 };
 #undef QT_MOC_LITERAL
 } // unnamed namespace
@@ -85,7 +130,7 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-      12,   14, // methods
+      27,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -93,20 +138,50 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   86,    2, 0x08,    1 /* Private */,
-       3,    0,   87,    2, 0x08,    2 /* Private */,
-       4,    0,   88,    2, 0x08,    3 /* Private */,
-       5,    0,   89,    2, 0x08,    4 /* Private */,
-       6,    0,   90,    2, 0x08,    5 /* Private */,
-       7,    0,   91,    2, 0x08,    6 /* Private */,
-       8,    0,   92,    2, 0x08,    7 /* Private */,
-       9,    0,   93,    2, 0x08,    8 /* Private */,
-      10,    0,   94,    2, 0x08,    9 /* Private */,
-      11,    0,   95,    2, 0x08,   10 /* Private */,
-      12,    0,   96,    2, 0x08,   11 /* Private */,
-      13,    0,   97,    2, 0x08,   12 /* Private */,
+       1,    0,  176,    2, 0x08,    1 /* Private */,
+       3,    0,  177,    2, 0x08,    2 /* Private */,
+       4,    0,  178,    2, 0x08,    3 /* Private */,
+       5,    0,  179,    2, 0x08,    4 /* Private */,
+       6,    0,  180,    2, 0x08,    5 /* Private */,
+       7,    0,  181,    2, 0x08,    6 /* Private */,
+       8,    0,  182,    2, 0x08,    7 /* Private */,
+       9,    0,  183,    2, 0x08,    8 /* Private */,
+      10,    0,  184,    2, 0x08,    9 /* Private */,
+      11,    0,  185,    2, 0x08,   10 /* Private */,
+      12,    0,  186,    2, 0x08,   11 /* Private */,
+      13,    0,  187,    2, 0x08,   12 /* Private */,
+      14,    0,  188,    2, 0x08,   13 /* Private */,
+      15,    0,  189,    2, 0x08,   14 /* Private */,
+      16,    0,  190,    2, 0x08,   15 /* Private */,
+      17,    0,  191,    2, 0x08,   16 /* Private */,
+      18,    0,  192,    2, 0x08,   17 /* Private */,
+      19,    0,  193,    2, 0x08,   18 /* Private */,
+      20,    0,  194,    2, 0x08,   19 /* Private */,
+      21,    0,  195,    2, 0x08,   20 /* Private */,
+      22,    0,  196,    2, 0x08,   21 /* Private */,
+      23,    0,  197,    2, 0x08,   22 /* Private */,
+      24,    0,  198,    2, 0x08,   23 /* Private */,
+      25,    0,  199,    2, 0x08,   24 /* Private */,
+      26,    0,  200,    2, 0x08,   25 /* Private */,
+      27,    0,  201,    2, 0x08,   26 /* Private */,
+      28,    0,  202,    2, 0x08,   27 /* Private */,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -155,6 +230,36 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'on_actionAdd_2_triggered'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_actionEdit_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_actionMark_as_arrived_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_actionMark_as_departed_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_actionMark_as_attention_required_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_actionUnmark_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_actionMark_as_arrived_but_not_paid_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_actionMark_as_departed_but_not_paid_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_actionMark_as_arrived_and_paid_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_actionMark_as_departed_and_paid_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_actionUnmark_2_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_actionMark_as_arrived_and_not_paid_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_actionMark_as_requires_attengion_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_actionMark_as_departed_and_not_paid_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_actionEnable_auto_marking_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_actionMark_as_arrived_2_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_actionMark_as_departed_2_triggered'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -178,6 +283,21 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 9: _t->on_actionNext_week_triggered(); break;
         case 10: _t->on_actionAdd_2_triggered(); break;
         case 11: _t->on_actionEdit_triggered(); break;
+        case 12: _t->on_actionMark_as_arrived_triggered(); break;
+        case 13: _t->on_actionMark_as_departed_triggered(); break;
+        case 14: _t->on_actionMark_as_attention_required_triggered(); break;
+        case 15: _t->on_actionUnmark_triggered(); break;
+        case 16: _t->on_actionMark_as_arrived_but_not_paid_triggered(); break;
+        case 17: _t->on_actionMark_as_departed_but_not_paid_triggered(); break;
+        case 18: _t->on_actionMark_as_arrived_and_paid_triggered(); break;
+        case 19: _t->on_actionMark_as_departed_and_paid_triggered(); break;
+        case 20: _t->on_actionUnmark_2_triggered(); break;
+        case 21: _t->on_actionMark_as_arrived_and_not_paid_triggered(); break;
+        case 22: _t->on_actionMark_as_requires_attengion_triggered(); break;
+        case 23: _t->on_actionMark_as_departed_and_not_paid_triggered(); break;
+        case 24: _t->on_actionEnable_auto_marking_triggered(); break;
+        case 25: _t->on_actionMark_as_arrived_2_triggered(); break;
+        case 26: _t->on_actionMark_as_departed_2_triggered(); break;
         default: ;
         }
     }
@@ -203,13 +323,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 12)
+        if (_id < 27)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 12;
+        _id -= 27;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 12)
+        if (_id < 27)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 12;
+        _id -= 27;
     }
     return _id;
 }

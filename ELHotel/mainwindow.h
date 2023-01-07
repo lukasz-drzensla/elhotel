@@ -47,6 +47,36 @@ private slots:
 
     void on_actionEdit_triggered();
 
+    void on_actionMark_as_arrived_triggered();
+
+    void on_actionMark_as_departed_triggered();
+
+    void on_actionMark_as_attention_required_triggered();
+
+    void on_actionUnmark_triggered();
+
+    void on_actionMark_as_arrived_but_not_paid_triggered();
+
+    void on_actionMark_as_departed_but_not_paid_triggered();
+
+    void on_actionMark_as_arrived_and_paid_triggered();
+
+    void on_actionMark_as_departed_and_paid_triggered();
+
+    void on_actionUnmark_2_triggered();
+
+    void on_actionMark_as_arrived_and_not_paid_triggered();
+
+    void on_actionMark_as_requires_attengion_triggered();
+
+    void on_actionMark_as_departed_and_not_paid_triggered();
+
+    void on_actionEnable_auto_marking_triggered();
+
+    void on_actionMark_as_arrived_2_triggered();
+
+    void on_actionMark_as_departed_2_triggered();
+
 private:
     Ui::MainWindow *ui;
     addnewroom *ANR{};
@@ -58,5 +88,8 @@ private:
     std::string toSTD (QString qs);
     QString toQString (std::string ss);
     viewCalendarUpdater *calUpd;
+    void changeStatus(int stat);
+    void changeStatusAuto(int stat);
+    bool enableAutoMarking=true;
 };
 #endif // MAINWINDOW_H

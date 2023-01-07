@@ -160,7 +160,7 @@ void MainWindow::on_actionRemove_3_triggered()
                     break;
                 }
             }
-            //db.rooms.erase(db.rooms.begin()+index); //for reason which remains unknown to me it always deletes the last element
+            //db.rooms.erase(db.rooms.begin()+index); //for a reason which remains unknown to me it always deletes the last element
             vector <Room> temp{};
             for (int i = 0; i < db.rooms.size(); i++)
             {
@@ -343,7 +343,7 @@ void MainWindow::on_actionAdd_2_triggered()
         return;
     }
 
-    add_new_res_window = new addnewreservation(this, calUpd, &arrival, &departure, &db, &duration, &db.rooms[index]);
+    add_new_res_window = new addnewreservation(this, calUpd, &arrival, &departure, &db, &duration, &db.rooms[index], &enableAutoMarking);
     add_new_res_window->exec();
 }
 
@@ -351,5 +351,254 @@ void MainWindow::on_actionAdd_2_triggered()
 void MainWindow::on_actionEdit_triggered()
 {
 
+}
+
+void MainWindow::changeStatus(int stat)
+{
+    QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
+    QModelIndex QMI = selection.at(0);
+    int row = QMI.row();
+    int column = QMI.column();
+    int ID{};
+    if (row > 0)
+    {
+        ID = rooms_on_display[--row];
+    } else {
+        return;
+    }
+    vector <Reservation> all = db.getAllReservationsAtDate(days_of_week[column]);
+
+    for (int j = 0; j < all.size(); j++)
+    {
+        if (all[j].getRoom().id == ID)
+        {
+            int id=db.getDBIDByResID(all[j].getID());
+            if (id<0)
+            {
+                db.Reservations.even[-id].setStatus(stat);
+                db.save();
+                calUpd->updateCalendar();
+                calUpd->updateReservations();
+                break;
+            } else {
+                db.Reservations.odd[id].setStatus(stat);
+                db.save();
+                calUpd->updateCalendar();
+                calUpd->updateReservations();
+                break;
+            }
+            return;
+        }
+    }
+}
+
+void MainWindow::changeStatusAuto(int stat)
+{
+    QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
+    QModelIndex QMI = selection.at(0);
+    int row = QMI.row();
+    int column = QMI.column();
+    int ID{};
+    if (row > 0)
+    {
+        ID = rooms_on_display[--row];
+    } else {
+        return;
+    }
+    vector <Reservation> all = db.getAllReservationsAtDate(days_of_week[column]);
+
+    for (int j = 0; j < all.size(); j++)
+    {
+        if (all[j].getRoom().id == ID)
+        {
+            int id=db.getDBIDByResID(all[j].getID());
+            if (id<0)
+            {
+                int cost = db.Reservations.even[-id].getCost();
+                int paid = db.Reservations.even[-id].getPaid();
+                if (stat==1)
+                {
+                    if (cost-paid==0)
+                    {
+                        db.Reservations.even[-id].setStatus(1);
+                    } else {
+                        db.Reservations.even[-id].setStatus(4);
+                    }
+                } else if (stat==2)
+                {
+                    if (cost-paid==0)
+                    {
+                        db.Reservations.even[-id].setStatus(2);
+                    } else {
+                        db.Reservations.even[-id].setStatus(5);
+                    }
+                }
+                db.save();
+                calUpd->updateCalendar();
+                calUpd->updateReservations();
+                break;
+            } else {
+                int cost = db.Reservations.odd[id].getCost();
+                int paid = db.Reservations.odd[id].getPaid();
+                if (stat==1)
+                {
+                    if (cost-paid==0)
+                    {
+                        db.Reservations.odd[id].setStatus(1);
+                    } else {
+                        db.Reservations.odd[id].setStatus(4);
+                    }
+                } else if (stat==2)
+                {
+                    if (cost-paid==0)
+                    {
+                        db.Reservations.odd[id].setStatus(2);
+                    } else {
+                        db.Reservations.odd[id].setStatus(5);
+                    }
+                }
+                db.save();
+                calUpd->updateCalendar();
+                calUpd->updateReservations();
+                break;
+            }
+            return;
+        }
+    }
+}
+
+void MainWindow::on_actionMark_as_arrived_triggered()
+{
+}
+
+
+void MainWindow::on_actionMark_as_departed_triggered()
+{
+}
+
+
+void MainWindow::on_actionMark_as_attention_required_triggered()
+{
+}
+
+
+void MainWindow::on_actionUnmark_triggered()
+{
+}
+
+
+void MainWindow::on_actionMark_as_arrived_but_not_paid_triggered()
+{
+}
+
+
+void MainWindow::on_actionMark_as_departed_but_not_paid_triggered()
+{
+}
+
+
+void MainWindow::on_actionMark_as_arrived_and_paid_triggered()
+{
+    if (!enableAutoMarking)
+    {
+        changeStatus(1);
+    } else {
+        QMessageBox msgBox;
+        msgBox.setText("Auto - marking is enabled. Disable it or use the automatic functions");
+        msgBox.exec();
+    }
+}
+
+
+void MainWindow::on_actionMark_as_departed_and_paid_triggered()
+{
+    if (!enableAutoMarking)
+    {
+        changeStatus(2);
+    } else {
+        QMessageBox msgBox;
+        msgBox.setText("Auto - marking is enabled. Disable it or use the automatic functions");
+        msgBox.exec();
+    }
+}
+
+
+void MainWindow::on_actionUnmark_2_triggered()
+{
+    changeStatus(0);
+}
+
+
+void MainWindow::on_actionMark_as_arrived_and_not_paid_triggered()
+{
+    if (!enableAutoMarking)
+    {
+        changeStatus(4);
+    } else {
+        QMessageBox msgBox;
+        msgBox.setText("Auto - marking is enabled. Disable it or use the automatic functions");
+        msgBox.exec();
+    }
+}
+
+
+void MainWindow::on_actionMark_as_requires_attengion_triggered()
+{
+    changeStatus(3);
+}
+
+
+void MainWindow::on_actionMark_as_departed_and_not_paid_triggered()
+{
+
+    if (!enableAutoMarking)
+    {
+        changeStatus(5);
+    } else {
+        QMessageBox msgBox;
+        msgBox.setText("Auto - marking is enabled. Disable it or use the automatic functions");
+        msgBox.exec();
+    }
+}
+
+
+void MainWindow::on_actionEnable_auto_marking_triggered()
+{
+    if (enableAutoMarking)
+    {
+        enableAutoMarking=false;
+        ui->actionEnable_auto_marking->setText("Enable auto - marking");
+        return;
+    } else {
+        enableAutoMarking=true;
+        ui->actionEnable_auto_marking->setText("Disable auto - marking");
+        return;
+    }
+}
+
+
+void MainWindow::on_actionMark_as_arrived_2_triggered()
+{
+    if (enableAutoMarking)
+    {
+        changeStatusAuto(1);
+    } else {
+        QMessageBox msgBox;
+        msgBox.setText("Auto - marking is disabled. Enable it or use the manual functions");
+        msgBox.exec();
+    }
+}
+
+
+void MainWindow::on_actionMark_as_departed_2_triggered()
+{
+    if (enableAutoMarking)
+    {
+        changeStatusAuto(2);
+    } else {
+        QMessageBox msgBox;
+        msgBox.setText("Auto - marking is disabled. Enable it or use the manual functions");
+        msgBox.exec();
+    }
 }
 

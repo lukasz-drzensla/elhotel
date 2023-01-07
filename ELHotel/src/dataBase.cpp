@@ -81,6 +81,9 @@ int dataBase::init(int year)
 		}
 	}
 
+    Reservation empty(-2, Room(), "Empty", dateTime(30, 2, 2022), dateTime(31, 2, 2022), "666-666-666",0, "0", 0);
+    addReservation(empty);
+
 	return 0;
 }
 
@@ -114,6 +117,7 @@ int dataBase::load(bool LR)
     int _status{};
     int _people{};
     string _comment{};
+    int _paid{};
 	const string id_str = "<ID>";
 	const string room_id_str = "<ROOM_ID>";
 	const string name_str = "<NAME>";
@@ -125,6 +129,7 @@ int dataBase::load(bool LR)
     const string status_str = "<STATUS>";
     const string people_str = "<PEOPLE>";
     const string comment_str = "<COMMENT>";
+    const string paid_str = "<PAID>";
 	while (!file.eof())
 	{
 		getline(file, line);
@@ -148,8 +153,10 @@ int dataBase::load(bool LR)
                         break;
                     }
                 }
-                Reservation res(_id, room, _name, _arrival, _departure, _phone, _cost, _NIP, _status, _people, _comment);
-                autoAddReservation(res, false);
+                if (_id >=0){
+                    Reservation res(_id, room, _name, _arrival, _departure, _phone, _cost, _NIP, _status, _people, _comment, _paid);
+                    autoAddReservation(res, false);
+                }
 			}
             else if (line.starts_with(id_str))
 			{
@@ -287,6 +294,19 @@ int dataBase::load(bool LR)
             {
                 auto position = line.find('/');
                 _comment = line.substr(comment_str.length(), position - comment_str.length() - 1);
+            }
+            else if (line.starts_with(paid_str))
+            {
+                auto position = line.find('/');
+                string temp = line.substr(paid_str.length(), position - paid_str.length() - 1);
+                try
+                {
+                    _paid = std::stoi(temp);
+                }
+                catch (const std::exception&)
+                {
+                    _paid = 0;
+                }
             }
 		}
         else if (line.starts_with("<Row"))
@@ -441,7 +461,7 @@ int dataBase::save(bool SR)
 		return -1;
 
 	file << "<?xml version = \"1.0\" encoding = \"utf-8\"?><root><worksheet name = \"reservations\">" << endl;
-	for (int i = 0; i < Reservations.even.size(); i++)
+    for (int i = 1; i < Reservations.even.size(); i++)
 	{
 		file << "<Row index=\"";
 		file << i;
@@ -471,7 +491,8 @@ int dataBase::save(bool SR)
 		file << Reservations.even[i].getNIP();
 		file << "</NIP>" << endl;
         file << "<STATUS>";
-        file << Reservations.even[i].getStatus();
+        int x = Reservations.even[i].getStatus();
+        file << x;
         file << "</STATUS>" << endl;
         file << "<PEOPLE>";
         file << Reservations.even[i].getPeople();
@@ -479,6 +500,9 @@ int dataBase::save(bool SR)
         file << "<COMMENT>";
         file << Reservations.even[i].getComment();
         file << "</COMMENT>" << endl;
+        file << "<PAID>";
+        file << Reservations.even[i].getPaid();
+        file << "</PAID>" << endl;
 		file << "</Row>" << endl;
 	}
 
@@ -512,7 +536,8 @@ int dataBase::save(bool SR)
 		file << Reservations.odd[i].getNIP();
 		file << "</NIP>" << endl;
         file << "<STATUS>";
-        file << Reservations.odd[i].getStatus();
+        int x = Reservations.odd[i].getStatus();
+        file << x;
         file << "</STATUS>" << endl;
         file << "<PEOPLE>";
         file << Reservations.odd[i].getPeople();
@@ -520,6 +545,9 @@ int dataBase::save(bool SR)
         file << "<COMMENT>";
         file << Reservations.odd[i].getComment();
         file << "</COMMENT>" << endl;
+        file << "<PAID>";
+        file << Reservations.odd[i].getPaid();
+        file << "</PAID>" << endl;
 		file << "</Row>" << endl;
 	}
 
@@ -563,6 +591,31 @@ Reservation dataBase::getReservationByID(int& ID)
 	}
 
 	return Reservation();
+}
+
+int dataBase::getDBIDByResID(int ID)
+{
+    if (ID % 2 == 0)
+    {
+        for (int i = 0; i < Reservations.even.size(); i++)
+        {
+            if (Reservations.even[i].getID() == ID)
+            {
+                return -i;
+            }
+        }
+    }
+    else {
+        for (int i = 0; i < Reservations.odd.size(); i++)
+        {
+            if (Reservations.odd[i].getID() == ID)
+            {
+                    return i;
+            }
+        }
+    }
+
+    return 0;
 }
 
 vector<Reservation> dataBase::getAllReservationsAtDate(dateTime& dt)

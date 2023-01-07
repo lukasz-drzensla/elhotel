@@ -23,5 +23,41 @@
 <DES>104</DES>
 <MAX>6</MAX>
 </Row>
+<Row index="4">
+<ID>30</ID>
+<COST>50</COST>
+<DES>105</DES>
+<MAX>3</MAX>
+</Row>
+<Row index="5">
+<ID>31</ID>
+<COST>200</COST>
+<DES>201</DES>
+<MAX>5</MAX>
+</Row>
+<Row index="6">
+<ID>32</ID>
+<COST>100</COST>
+<DES>202</DES>
+<MAX>2</MAX>
+</Row>
+<Row index="7">
+<ID>33</ID>
+<COST>150</COST>
+<DES>203</DES>
+<MAX>4</MAX>
+</Row>
+<Row index="8">
+<ID>34</ID>
+<COST>50</COST>
+<DES>204a</DES>
+<MAX>2</MAX>
+</Row>
+<Row index="9">
+<ID>35</ID>
+<COST>75</COST>
+<DES>204b</DES>
+<MAX>2</MAX>
+</Row>
 </worksheet>
 </root>

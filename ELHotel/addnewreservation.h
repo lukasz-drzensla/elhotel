@@ -18,7 +18,7 @@ class addnewreservation : public QDialog
     Q_OBJECT
 
 public:
-    explicit addnewreservation(QWidget *parent = nullptr, viewCalendarUpdater *_calendar = nullptr, dateTime *_arrival = nullptr, dateTime *_departure = nullptr, dataBase *_db = nullptr, int *_duration = nullptr, Room *_room = nullptr);
+    explicit addnewreservation(QWidget *parent = nullptr, viewCalendarUpdater *_calendar = nullptr, dateTime *_arrival = nullptr, dateTime *_departure = nullptr, dataBase *_db = nullptr, int *_duration = nullptr, Room *_room = nullptr, bool *_enable=nullptr);
     ~addnewreservation();
 
 private slots:
@@ -28,12 +28,17 @@ private slots:
 
     void on_cancel_but_clicked();
 
+    void on_spinPaid_valueChanged(int arg1);
+
+    void on_spinPrice_valueChanged(int arg1);
+
 private:
     Ui::addnewreservation *ui;
     viewCalendarUpdater *calendar{};
     int duration{};
     dataBase *db;
     Room *room{};
+    bool *enable{};
 };
 
 #endif // ADDNEWRESERVATION_H

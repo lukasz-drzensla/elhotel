@@ -2,5 +2,10 @@
     <qresource prefix="/rec">
         <file>resources/next.png</file>
         <file>resources/prev.png</file>
+        <file>resources/arr.png</file>
+        <file>resources/dep.png</file>
+        <file>resources/attention.png</file>
+        <file>resources/add.png</file>
+        <file>resources/remove.png</file>
     </qresource>
 </RCC>

@@ -232,14 +232,31 @@
     <property name="title">
      <string>Reservation</string>
     </property>
+    <widget class="QMenu" name="menuMark">
+     <property name="title">
+      <string>Mark</string>
+     </property>
+     <addaction name="actionEnable_auto_marking"/>
+     <addaction name="separator"/>
+     <addaction name="actionMark_as_arrived_2"/>
+     <addaction name="actionMark_as_departed_2"/>
+     <addaction name="separator"/>
+     <addaction name="actionMark_as_arrived_and_paid"/>
+     <addaction name="actionMark_as_departed_and_paid"/>
+     <addaction name="actionMark_as_arrived_and_not_paid"/>
+     <addaction name="actionMark_as_departed_and_not_paid"/>
+     <addaction name="separator"/>
+     <addaction name="actionMark_as_requires_attengion"/>
+     <addaction name="actionUnmark_2"/>
+     <addaction name="separator"/>
+    </widget>
     <addaction name="actionAdd_2"/>
     <addaction name="actionRemove_2"/>
     <addaction name="actionEdit"/>
     <addaction name="separator"/>
     <addaction name="actionInfo"/>
     <addaction name="separator"/>
-    <addaction name="actionMark_as_arrived"/>
-    <addaction name="actionMark_as_departed"/>
+    <addaction name="menuMark"/>
    </widget>
    <widget class="QMenu" name="menuGuest">
     <property name="title">
@@ -283,6 +300,11 @@
    </attribute>
    <addaction name="actionPrevious_week"/>
    <addaction name="actionNext_week"/>
+   <addaction name="actionMark_as_arrived_2"/>
+   <addaction name="actionMark_as_departed_2"/>
+   <addaction name="actionMark_as_requires_attengion"/>
+   <addaction name="actionAdd_2"/>
+   <addaction name="actionRemove_2"/>
   </widget>
   <action name="actionAdd">
    <property name="text">
@@ -295,11 +317,19 @@
    </property>
   </action>
   <action name="actionAdd_2">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/rec/resources/add.png</normaloff>:/rec/resources/add.png</iconset>
+   </property>
    <property name="text">
     <string>Add</string>
    </property>
   </action>
   <action name="actionRemove_2">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/rec/resources/remove.png</normaloff>:/rec/resources/remove.png</iconset>
+   </property>
    <property name="text">
     <string>Remove</string>
    </property>
@@ -372,12 +402,94 @@
   </action>
   <action name="actionMark_as_arrived">
    <property name="text">
-    <string>Mark as arrived</string>
+    <string>Mark as arrived and paid</string>
    </property>
   </action>
   <action name="actionMark_as_departed">
    <property name="text">
+    <string>Mark as departed and paid</string>
+   </property>
+  </action>
+  <action name="actionUnmark">
+   <property name="text">
+    <string>Unmark</string>
+   </property>
+  </action>
+  <action name="actionMark_as_attention_required">
+   <property name="text">
+    <string>Mark as attention required</string>
+   </property>
+  </action>
+  <action name="actionMark_as_arrived_but_not_paid">
+   <property name="text">
+    <string>Mark as arrived but not paid</string>
+   </property>
+  </action>
+  <action name="actionMark_as_departed_but_not_paid">
+   <property name="text">
+    <string>Mark as departed but not paid</string>
+   </property>
+  </action>
+  <action name="actionEnable_auto_marking">
+   <property name="text">
+    <string>Disable auto - marking</string>
+   </property>
+  </action>
+  <action name="actionMark_as_arrived_and_paid">
+   <property name="text">
+    <string>Mark as arrived and paid</string>
+   </property>
+  </action>
+  <action name="actionMark_as_departed_and_paid">
+   <property name="text">
+    <string>Mark as departed and paid</string>
+   </property>
+  </action>
+  <action name="actionMark_as_requires_attengion">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/rec/resources/attention.png</normaloff>:/rec/resources/attention.png</iconset>
+   </property>
+   <property name="text">
+    <string>Mark as requires attention</string>
+   </property>
+  </action>
+  <action name="actionMark_as_arrived_and_not_paid">
+   <property name="text">
+    <string>Mark as arrived and not paid</string>
+   </property>
+  </action>
+  <action name="actionMark_as_departed_and_not_paid">
+   <property name="text">
+    <string>Mark as departed and not paid</string>
+   </property>
+  </action>
+  <action name="actionUnmark_2">
+   <property name="text">
+    <string>Unmark</string>
+   </property>
+  </action>
+  <action name="actionMark_as_arrived_2">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/rec/resources/arr.png</normaloff>:/rec/resources/arr.png</iconset>
+   </property>
+   <property name="text">
+    <string>Mark as arrived</string>
+   </property>
+  </action>
+  <action name="actionMark_as_departed_2">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/rec/resources/dep.png</normaloff>:/rec/resources/dep.png</iconset>
+   </property>
+   <property name="text">
     <string>Mark as departed</string>
+   </property>
+  </action>
+  <action name="actionAutomatic_functions">
+   <property name="text">
+    <string>Automatic functions:</string>
    </property>
   </action>
  </widget>

@@ -8,7 +8,7 @@ class Reservation
 {
 public:
 	Reservation();
-    Reservation(int _ID, Room _room, std::string _name, dateTime _arrival, dateTime _departure, std::string _phone_number, int _cost=0, std::string _NIP="0", int _status=0, int _people=0, std::string _comment="");
+    Reservation(int _ID, Room _room, std::string _name, dateTime _arrival, dateTime _departure, std::string _phone_number, int _cost, std::string _NIP, int _status, int _people=0, std::string _comment="", int _paid=0);
 	int getID();
 	Room getRoom();
 	std::string getName();
@@ -23,11 +23,14 @@ public:
     void setStatus(int _status);
     std::string getComment();
 	std::string sayHello();
+    int getPaid();
+    int setPaid();
 	Reservation operator = (Reservation const& obj)
 	{
 		return obj;
 	}
 private:
+    std::string stat_str[6] = {"Undetermined", "Arrived and paid", "Departed", "Requires attention", "Arrived but did not pay", "Departed but did not pay"};
 	int ID{};
 	Room room{};
 	std::string name{};
@@ -39,5 +42,6 @@ private:
     int status{};
     int people{};
     std::string comment{};
+    int paid{};
 };
 
