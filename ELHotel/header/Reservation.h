@@ -24,7 +24,8 @@ public:
     std::string getComment();
 	std::string sayHello();
     int getPaid();
-    int setPaid();
+    int setPaid(int money);
+    int set(Reservation res);
 	Reservation operator = (Reservation const& obj)
 	{
 		return obj;

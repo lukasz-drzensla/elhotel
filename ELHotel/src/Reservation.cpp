@@ -86,3 +86,29 @@ int Reservation::getPaid()
 {
     return paid;
 }
+
+int Reservation::setPaid(int money)
+{
+    paid = money;
+    return 0;
+}
+
+int Reservation::set(Reservation res)
+{
+    ID = res.getID();
+    name = res.getName();
+    room.id = res.getRoom().id;
+    room.description = res.getRoom().description;
+    room.max_people = res.getRoom().max_people;
+    room.cost_rate = res.getRoom().cost_rate;
+    arrival.set(res.getArrival());
+    departure.set (res.getDeparture());
+    phone_number=res.getPhone();
+    cost = res.getCost();
+    NIP=res.getNIP();
+    status = res.getStatus();
+    people = res.getPeople();
+    comment=res.getComment();
+    paid=res.getPaid();
+    return 0;
+}

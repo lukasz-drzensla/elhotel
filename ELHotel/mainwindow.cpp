@@ -8,8 +8,21 @@
 #include <vector>
 #include "header/Room.h"
 #include <QMessageBox>
+#include <time.h>
 
+int getTodayMonth()
+{
+    time_t t = time(NULL);
+    struct tm *t_struct = localtime (&t);
+    return t_struct->tm_mon;
+}
 
+int getTodayDay()
+{
+    time_t t = time(NULL);
+    struct tm *t_struct = localtime (&t);
+    return t_struct->tm_mday;
+}
 
 std::string MainWindow::toSTD (QString qs)
 {
@@ -38,7 +51,10 @@ MainWindow::MainWindow(QWidget *parent)
     //initialize room view
     calUpd->updateCalendar();
 
+
+
     //initialize days of week view
+    //dateTime dt (getTodayDay(),getTodayMonth(),globalConstants::thisYear);
     dateTime dt (19,12,globalConstants::thisYear);
     first_day.set(dt);
     calUpd->displayDates(&first_day);
@@ -226,7 +242,7 @@ void MainWindow::on_actionRemove_2_triggered()
     int row = QMI.row();
     int column = QMI.column();
     int ID{};
-    int res_id;
+    int res_id{};
     if (row > 0)
     {
         ID = rooms_on_display[--row];
@@ -350,7 +366,40 @@ void MainWindow::on_actionAdd_2_triggered()
 
 void MainWindow::on_actionEdit_triggered()
 {
+    QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
+    QModelIndex QMI = selection.at(0);
+    int row = QMI.row();
+    int column = QMI.column();
+    int ID{};
+    int res_id{};
+    int index_in_all{};
+    if (row > 0)
+    {
+        ID = rooms_on_display[--row];
+    } else {
+        return;
+    }
+    vector <Reservation> all = db.getAllReservationsAtDate(days_of_week[column]);
 
+    for (int i = 0; i < all.size(); i++)
+    {
+        if (all[i].getRoom().id == ID)
+        {
+            res_id = all[i].getID();
+            index_in_all=i;
+            break;
+        }
+    }
+
+    int index = db.getDBIDByResID(res_id);
+    Reservation temp_res = all[index_in_all];
+
+    edit_res_window = new editreservation (this, calUpd, &temp_res, &db, index);
+    edit_res_window->exec();
+
+    //db.save();
+    calUpd->updateCalendar();
+    calUpd->updateReservations();
 }
 
 void MainWindow::changeStatus(int stat)
@@ -467,36 +516,6 @@ void MainWindow::changeStatusAuto(int stat)
     }
 }
 
-void MainWindow::on_actionMark_as_arrived_triggered()
-{
-}
-
-
-void MainWindow::on_actionMark_as_departed_triggered()
-{
-}
-
-
-void MainWindow::on_actionMark_as_attention_required_triggered()
-{
-}
-
-
-void MainWindow::on_actionUnmark_triggered()
-{
-}
-
-
-void MainWindow::on_actionMark_as_arrived_but_not_paid_triggered()
-{
-}
-
-
-void MainWindow::on_actionMark_as_departed_but_not_paid_triggered()
-{
-}
-
-
 void MainWindow::on_actionMark_as_arrived_and_paid_triggered()
 {
     if (!enableAutoMarking)
@@ -600,5 +619,57 @@ void MainWindow::on_actionMark_as_departed_2_triggered()
         msgBox.setText("Auto - marking is disabled. Enable it or use the manual functions");
         msgBox.exec();
     }
+}
+
+void MainWindow::on_actionReturn_to_today_triggered()
+{
+    dateTime dt (getTodayDay(),getTodayMonth(),globalConstants::thisYear);
+    first_day.set(dt);
+    calUpd->displayDates(&first_day);
+    calUpd->updateReservations();
+}
+
+
+
+//empty but does not work without this
+
+void MainWindow::on_actionMark_as_arrived_triggered()
+{
+}
+
+
+void MainWindow::on_actionMark_as_departed_triggered()
+{
+}
+
+
+void MainWindow::on_actionMark_as_attention_required_triggered()
+{
+}
+
+
+void MainWindow::on_actionUnmark_triggered()
+{
+}
+
+
+void MainWindow::on_actionMark_as_arrived_but_not_paid_triggered()
+{
+}
+
+
+void MainWindow::on_actionMark_as_departed_but_not_paid_triggered()
+{
+}
+
+
+
+
+
+
+void MainWindow::on_actionJump_to_a_date_triggered()
+{
+    jump = new jumptodate(this, calUpd, &first_day);
+    jump->exec();
 }
 

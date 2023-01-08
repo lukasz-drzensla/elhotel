@@ -1,0 +1,9 @@
+<?xml version = "1.0" encoding = "utf-8"?><root><worksheet name = "rooms">
+<Row index="0">
+<ID>36</ID>
+<COST>50</COST>
+<DES>107</DES>
+<MAX>0</MAX>
+</Row>
+</worksheet>
+</root>

@@ -65,7 +65,7 @@ int dataBase::autoAddReservation(Reservation& reservation, bool affectGlobalCons
 
 int dataBase::init(int year)
 {
-	if (year % 4 == 0 && year % 100 != 0 && year % 400 == 0)
+    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
 	{
 		dayMonths[2] = 29;
 	}

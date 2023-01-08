@@ -280,6 +280,8 @@
     </property>
     <addaction name="actionNext_week"/>
     <addaction name="actionPrevious_week"/>
+    <addaction name="actionReturn_to_today"/>
+    <addaction name="actionJump_to_a_date"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuView"/>
@@ -305,6 +307,7 @@
    <addaction name="actionMark_as_requires_attengion"/>
    <addaction name="actionAdd_2"/>
    <addaction name="actionRemove_2"/>
+   <addaction name="actionEdit"/>
   </widget>
   <action name="actionAdd">
    <property name="text">
@@ -335,6 +338,10 @@
    </property>
   </action>
   <action name="actionEdit">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/resources/edit.png</normaloff>:/resources/edit.png</iconset>
+   </property>
    <property name="text">
     <string>Edit</string>
    </property>
@@ -490,6 +497,16 @@
   <action name="actionAutomatic_functions">
    <property name="text">
     <string>Automatic functions:</string>
+   </property>
+  </action>
+  <action name="actionReturn_to_today">
+   <property name="text">
+    <string>Return to today</string>
+   </property>
+  </action>
+  <action name="actionJump_to_a_date">
+   <property name="text">
+    <string>Jump to a date</string>
    </property>
   </action>
  </widget>

@@ -57,6 +57,8 @@ public:
     QAction *actionMark_as_arrived_2;
     QAction *actionMark_as_departed_2;
     QAction *actionAutomatic_functions;
+    QAction *actionReturn_to_today;
+    QAction *actionJump_to_a_date;
     QWidget *centralwidget;
     QTableWidget *reservationCalendar;
     QMenuBar *menubar;
@@ -90,6 +92,9 @@ public:
         actionRemove_2->setIcon(icon1);
         actionEdit = new QAction(MainWindow);
         actionEdit->setObjectName("actionEdit");
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/resources/edit.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionEdit->setIcon(icon2);
         actionAdd_3 = new QAction(MainWindow);
         actionAdd_3->setObjectName("actionAdd_3");
         actionSayHello = new QAction(MainWindow);
@@ -106,14 +111,14 @@ public:
         actionUpdate->setObjectName("actionUpdate");
         actionNext_week = new QAction(MainWindow);
         actionNext_week->setObjectName("actionNext_week");
-        QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/rec/resources/next.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionNext_week->setIcon(icon2);
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/rec/resources/next.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionNext_week->setIcon(icon3);
         actionPrevious_week = new QAction(MainWindow);
         actionPrevious_week->setObjectName("actionPrevious_week");
-        QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/rec/resources/prev.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionPrevious_week->setIcon(icon3);
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/rec/resources/prev.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionPrevious_week->setIcon(icon4);
         actionInfo = new QAction(MainWindow);
         actionInfo->setObjectName("actionInfo");
         actionMark_as_arrived = new QAction(MainWindow);
@@ -136,9 +141,9 @@ public:
         actionMark_as_departed_and_paid->setObjectName("actionMark_as_departed_and_paid");
         actionMark_as_requires_attengion = new QAction(MainWindow);
         actionMark_as_requires_attengion->setObjectName("actionMark_as_requires_attengion");
-        QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/rec/resources/attention.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionMark_as_requires_attengion->setIcon(icon4);
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/rec/resources/attention.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionMark_as_requires_attengion->setIcon(icon5);
         actionMark_as_arrived_and_not_paid = new QAction(MainWindow);
         actionMark_as_arrived_and_not_paid->setObjectName("actionMark_as_arrived_and_not_paid");
         actionMark_as_departed_and_not_paid = new QAction(MainWindow);
@@ -147,16 +152,20 @@ public:
         actionUnmark_2->setObjectName("actionUnmark_2");
         actionMark_as_arrived_2 = new QAction(MainWindow);
         actionMark_as_arrived_2->setObjectName("actionMark_as_arrived_2");
-        QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/rec/resources/arr.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionMark_as_arrived_2->setIcon(icon5);
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/rec/resources/arr.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionMark_as_arrived_2->setIcon(icon6);
         actionMark_as_departed_2 = new QAction(MainWindow);
         actionMark_as_departed_2->setObjectName("actionMark_as_departed_2");
-        QIcon icon6;
-        icon6.addFile(QString::fromUtf8(":/rec/resources/dep.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionMark_as_departed_2->setIcon(icon6);
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8(":/rec/resources/dep.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionMark_as_departed_2->setIcon(icon7);
         actionAutomatic_functions = new QAction(MainWindow);
         actionAutomatic_functions->setObjectName("actionAutomatic_functions");
+        actionReturn_to_today = new QAction(MainWindow);
+        actionReturn_to_today->setObjectName("actionReturn_to_today");
+        actionJump_to_a_date = new QAction(MainWindow);
+        actionJump_to_a_date->setObjectName("actionJump_to_a_date");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         reservationCalendar = new QTableWidget(centralwidget);
@@ -295,6 +304,8 @@ public:
         menuRoom->addAction(actioninfo);
         menuView->addAction(actionNext_week);
         menuView->addAction(actionPrevious_week);
+        menuView->addAction(actionReturn_to_today);
+        menuView->addAction(actionJump_to_a_date);
         toolBar->addAction(actionPrevious_week);
         toolBar->addAction(actionNext_week);
         toolBar->addAction(actionMark_as_arrived_2);
@@ -302,6 +313,7 @@ public:
         toolBar->addAction(actionMark_as_requires_attengion);
         toolBar->addAction(actionAdd_2);
         toolBar->addAction(actionRemove_2);
+        toolBar->addAction(actionEdit);
 
         retranslateUi(MainWindow);
 
@@ -345,6 +357,8 @@ public:
         actionMark_as_arrived_2->setText(QCoreApplication::translate("MainWindow", "Mark as arrived", nullptr));
         actionMark_as_departed_2->setText(QCoreApplication::translate("MainWindow", "Mark as departed", nullptr));
         actionAutomatic_functions->setText(QCoreApplication::translate("MainWindow", "Automatic functions:", nullptr));
+        actionReturn_to_today->setText(QCoreApplication::translate("MainWindow", "Return to today", nullptr));
+        actionJump_to_a_date->setText(QCoreApplication::translate("MainWindow", "Jump to a date", nullptr));
         QTableWidgetItem *___qtablewidgetitem = reservationCalendar->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow", "Monday", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = reservationCalendar->horizontalHeaderItem(1);

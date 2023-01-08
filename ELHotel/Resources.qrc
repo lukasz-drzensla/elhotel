@@ -8,4 +8,7 @@
         <file>resources/add.png</file>
         <file>resources/remove.png</file>
     </qresource>
+    <qresource prefix="/">
+        <file>resources/edit.png</file>
+    </qresource>
 </RCC>

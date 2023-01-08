@@ -9,6 +9,8 @@
 #include "header/Reservation.h"
 #include "addnewreservation.h"
 #include "viewcalendarupdater.h"
+#include "editreservation.h"
+#include "jumptodate.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -77,10 +79,16 @@ private slots:
 
     void on_actionMark_as_departed_2_triggered();
 
+    void on_actionReturn_to_today_triggered();
+
+    void on_actionJump_to_a_date_triggered();
+
 private:
     Ui::MainWindow *ui;
     addnewroom *ANR{};
     addnewreservation *add_new_res_window{};
+    editreservation *edit_res_window{};
+    jumptodate *jump{};
     dataBase db{};
     std::vector <int> days_of_week{};
     std::vector <int> rooms_on_display{};
