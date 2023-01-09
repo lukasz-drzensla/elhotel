@@ -59,15 +59,16 @@ public:
     QAction *actionAutomatic_functions;
     QAction *actionReturn_to_today;
     QAction *actionJump_to_a_date;
+    QAction *actionSearch_by_name;
     QWidget *centralwidget;
     QTableWidget *reservationCalendar;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuReservation;
     QMenu *menuMark;
-    QMenu *menuGuest;
     QMenu *menuRoom;
     QMenu *menuView;
+    QMenu *menuSearch;
     QStatusBar *statusbar;
     QToolBar *toolBar;
 
@@ -166,6 +167,8 @@ public:
         actionReturn_to_today->setObjectName("actionReturn_to_today");
         actionJump_to_a_date = new QAction(MainWindow);
         actionJump_to_a_date->setObjectName("actionJump_to_a_date");
+        actionSearch_by_name = new QAction(MainWindow);
+        actionSearch_by_name->setObjectName("actionSearch_by_name");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         reservationCalendar = new QTableWidget(centralwidget);
@@ -257,12 +260,12 @@ public:
         menuReservation->setObjectName("menuReservation");
         menuMark = new QMenu(menuReservation);
         menuMark->setObjectName("menuMark");
-        menuGuest = new QMenu(menubar);
-        menuGuest->setObjectName("menuGuest");
         menuRoom = new QMenu(menubar);
         menuRoom->setObjectName("menuRoom");
         menuView = new QMenu(menubar);
         menuView->setObjectName("menuView");
+        menuSearch = new QMenu(menubar);
+        menuSearch->setObjectName("menuSearch");
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -274,8 +277,8 @@ public:
         menubar->addAction(menuFile->menuAction());
         menubar->addAction(menuView->menuAction());
         menubar->addAction(menuReservation->menuAction());
-        menubar->addAction(menuGuest->menuAction());
         menubar->addAction(menuRoom->menuAction());
+        menubar->addAction(menuSearch->menuAction());
         menuReservation->addAction(actionAdd_2);
         menuReservation->addAction(actionRemove_2);
         menuReservation->addAction(actionEdit);
@@ -296,8 +299,6 @@ public:
         menuMark->addAction(actionMark_as_requires_attengion);
         menuMark->addAction(actionUnmark_2);
         menuMark->addSeparator();
-        menuGuest->addAction(actionAdd);
-        menuGuest->addAction(actionRemove);
         menuRoom->addAction(actionAdd_3);
         menuRoom->addAction(actionRemove_3);
         menuRoom->addSeparator();
@@ -306,6 +307,7 @@ public:
         menuView->addAction(actionPrevious_week);
         menuView->addAction(actionReturn_to_today);
         menuView->addAction(actionJump_to_a_date);
+        menuSearch->addAction(actionSearch_by_name);
         toolBar->addAction(actionPrevious_week);
         toolBar->addAction(actionNext_week);
         toolBar->addAction(actionMark_as_arrived_2);
@@ -322,7 +324,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "ELHotel - hotel reservations management system", nullptr));
         actionAdd->setText(QCoreApplication::translate("MainWindow", "Add", nullptr));
         actionRemove->setText(QCoreApplication::translate("MainWindow", "Remove", nullptr));
         actionAdd_2->setText(QCoreApplication::translate("MainWindow", "Add", nullptr));
@@ -359,6 +361,7 @@ public:
         actionAutomatic_functions->setText(QCoreApplication::translate("MainWindow", "Automatic functions:", nullptr));
         actionReturn_to_today->setText(QCoreApplication::translate("MainWindow", "Return to today", nullptr));
         actionJump_to_a_date->setText(QCoreApplication::translate("MainWindow", "Jump to a date", nullptr));
+        actionSearch_by_name->setText(QCoreApplication::translate("MainWindow", "Search by name", nullptr));
         QTableWidgetItem *___qtablewidgetitem = reservationCalendar->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow", "Monday", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = reservationCalendar->horizontalHeaderItem(1);
@@ -425,9 +428,9 @@ public:
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuReservation->setTitle(QCoreApplication::translate("MainWindow", "Reservation", nullptr));
         menuMark->setTitle(QCoreApplication::translate("MainWindow", "Mark", nullptr));
-        menuGuest->setTitle(QCoreApplication::translate("MainWindow", "Guest", nullptr));
         menuRoom->setTitle(QCoreApplication::translate("MainWindow", "Room", nullptr));
         menuView->setTitle(QCoreApplication::translate("MainWindow", "View", nullptr));
+        menuSearch->setTitle(QCoreApplication::translate("MainWindow", "Search", nullptr));
         toolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
     } // retranslateUi
 

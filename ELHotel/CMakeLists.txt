@@ -46,6 +46,9 @@ set(PROJECT_SOURCES
         jumptodate.h
         jumptodate.cpp
         jumptodate.ui
+        searchbyname.h
+        searchbyname.cpp
+        searchbyname.ui
         ${TS_FILES}
 )
 

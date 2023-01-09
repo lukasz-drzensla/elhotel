@@ -22,6 +22,7 @@ editreservation::editreservation(QWidget *parent, viewCalendarUpdater *_calendar
     ui->phone_txt->setText(QString::fromStdString(_reservation->getPhone()));
     ui->nip_txt->setText(QString::fromStdString(_reservation->getNIP()));
     ui->comment_txt->setText(QString::fromStdString(_reservation->getComment()));
+    ui->spinPeople->setValue(_reservation->getPeople());
     enabled=_enabled;
 }
 

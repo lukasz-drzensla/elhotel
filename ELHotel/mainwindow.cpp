@@ -51,10 +51,9 @@ MainWindow::MainWindow(QWidget *parent)
     //initialize room view
     calUpd->updateCalendar();
 
-
-
     //initialize days of week view
-    //dateTime dt (getTodayDay(),getTodayMonth(),globalConstants::thisYear);
+    dateTime dt1 (getTodayDay(),getTodayMonth()+1,globalConstants::thisYear);
+    ui->statusbar->showMessage("Today is: " + QString::fromStdString(dt1.sayHello()));
     dateTime dt (19,12,globalConstants::thisYear);
     first_day.set(dt);
     calUpd->displayDates(&first_day);
@@ -131,6 +130,10 @@ void MainWindow::on_actionTEST_triggered()
 void MainWindow::on_actioninfo_triggered()
 {
     QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
+    if (selection.empty())
+    {
+        return;
+    }
     QModelIndex QMI = selection.at(0);
     int row = QMI.row();
     if (row > 0)
@@ -162,6 +165,10 @@ void MainWindow::on_actionRemove_3_triggered()
       }
     try {
         QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
+        if (selection.empty())
+        {
+            return;
+        }
         QModelIndex QMI = selection.at(0);
         int row = QMI.row();
         if (row > 0)
@@ -204,6 +211,10 @@ void MainWindow::on_actionRemove_3_triggered()
 void MainWindow::on_actionInfo_triggered()
 {
     QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
+    if (selection.empty())
+    {
+        return;
+    }
     QModelIndex QMI = selection.at(0);
     int row = QMI.row();
     int column = QMI.column();
@@ -238,6 +249,10 @@ void MainWindow::on_actionUpdate_triggered()
 void MainWindow::on_actionRemove_2_triggered()
 {
     QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
+    if (selection.empty())
+    {
+        return;
+    }
     QModelIndex QMI = selection.at(0);
     int row = QMI.row();
     int column = QMI.column();
@@ -299,6 +314,10 @@ void MainWindow::on_actionAdd_2_triggered()
 {
     int departure_index{};
     QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
+    if (selection.empty())
+    {
+        return;
+    }
     QModelIndex QMI = selection.at(0);
     int start_row = QMI.row();
     int start_column = QMI.column();
@@ -367,6 +386,10 @@ void MainWindow::on_actionAdd_2_triggered()
 void MainWindow::on_actionEdit_triggered()
 {
     QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
+    if (selection.empty())
+    {
+        return;
+    }
     QModelIndex QMI = selection.at(0);
     int row = QMI.row();
     int column = QMI.column();
@@ -405,6 +428,10 @@ void MainWindow::on_actionEdit_triggered()
 void MainWindow::changeStatus(int stat)
 {
     QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
+    if (selection.empty())
+    {
+        return;
+    }
     QModelIndex QMI = selection.at(0);
     int row = QMI.row();
     int column = QMI.column();
@@ -444,6 +471,10 @@ void MainWindow::changeStatus(int stat)
 void MainWindow::changeStatusAuto(int stat)
 {
     QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
+    if (selection.empty())
+    {
+        return;
+    }
     QModelIndex QMI = selection.at(0);
     int row = QMI.row();
     int column = QMI.column();
@@ -671,5 +702,12 @@ void MainWindow::on_actionJump_to_a_date_triggered()
 {
     jump = new jumptodate(this, calUpd, &first_day);
     jump->exec();
+}
+
+
+void MainWindow::on_actionSearch_by_name_triggered()
+{
+    searchByName sbn (this, &db);
+    sbn.exec();
 }
 

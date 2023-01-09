@@ -325,6 +325,12 @@
 			null
 		],
 		[
+			"E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/searchbyname.h",
+			"MU",
+			"EWIEGA46WW/moc_searchbyname.cpp",
+			null
+		],
+		[
 			"E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/viewcalendarupdater.h",
 			"MU",
 			"EWIEGA46WW/moc_viewcalendarupdater.cpp",
@@ -423,6 +429,11 @@
 		[ "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/main.cpp", "MU", null ],
 		[
 			"E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/searchbyname.cpp",
 			"MU",
 			null
 		],

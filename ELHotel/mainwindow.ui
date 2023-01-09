@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>ELHotel - hotel reservations management system</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTableWidget" name="reservationCalendar">
@@ -258,13 +258,6 @@
     <addaction name="separator"/>
     <addaction name="menuMark"/>
    </widget>
-   <widget class="QMenu" name="menuGuest">
-    <property name="title">
-     <string>Guest</string>
-    </property>
-    <addaction name="actionAdd"/>
-    <addaction name="actionRemove"/>
-   </widget>
    <widget class="QMenu" name="menuRoom">
     <property name="title">
      <string>Room</string>
@@ -283,11 +276,17 @@
     <addaction name="actionReturn_to_today"/>
     <addaction name="actionJump_to_a_date"/>
    </widget>
+   <widget class="QMenu" name="menuSearch">
+    <property name="title">
+     <string>Search</string>
+    </property>
+    <addaction name="actionSearch_by_name"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuView"/>
    <addaction name="menuReservation"/>
-   <addaction name="menuGuest"/>
    <addaction name="menuRoom"/>
+   <addaction name="menuSearch"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
@@ -507,6 +506,11 @@
   <action name="actionJump_to_a_date">
    <property name="text">
     <string>Jump to a date</string>
+   </property>
+  </action>
+  <action name="actionSearch_by_name">
+   <property name="text">
+    <string>Search by name</string>
    </property>
   </action>
  </widget>

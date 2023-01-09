@@ -47,6 +47,7 @@ set(OLD_GLOB
   "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/jumptodate.cpp"
   "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/main.cpp"
   "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/mainwindow.cpp"
+  "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/searchbyname.cpp"
   "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/src/Reservation.cpp"
   "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/src/Room.cpp"
   "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/src/dataBase.cpp"
@@ -81,6 +82,7 @@ set(OLD_GLOB
   "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/header/globalConstants.h"
   "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/jumptodate.h"
   "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/mainwindow.h"
+  "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/searchbyname.h"
   "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/viewcalendarupdater.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
@@ -187,6 +189,7 @@ set(OLD_GLOB
   "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/editreservation.ui"
   "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/jumptodate.ui"
   "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/mainwindow.ui"
+  "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel/searchbyname.ui"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

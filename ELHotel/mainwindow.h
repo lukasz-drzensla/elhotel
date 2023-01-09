@@ -11,6 +11,7 @@
 #include "viewcalendarupdater.h"
 #include "editreservation.h"
 #include "jumptodate.h"
+#include "searchbyname.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -82,6 +83,8 @@ private slots:
     void on_actionReturn_to_today_triggered();
 
     void on_actionJump_to_a_date_triggered();
+
+    void on_actionSearch_by_name_triggered();
 
 private:
     Ui::MainWindow *ui;

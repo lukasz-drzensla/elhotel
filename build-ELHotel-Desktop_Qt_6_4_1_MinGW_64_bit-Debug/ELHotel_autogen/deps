@@ -552,6 +552,8 @@ ELHotel_autogen/timestamp: \
 	E:/Workspace/AGH/Sem\ 5/jpo/ELHotel/ELHotel/main.cpp \
 	E:/Workspace/AGH/Sem\ 5/jpo/ELHotel/ELHotel/mainwindow.cpp \
 	E:/Workspace/AGH/Sem\ 5/jpo/ELHotel/ELHotel/mainwindow.h \
+	E:/Workspace/AGH/Sem\ 5/jpo/ELHotel/ELHotel/searchbyname.cpp \
+	E:/Workspace/AGH/Sem\ 5/jpo/ELHotel/ELHotel/searchbyname.h \
 	E:/Workspace/AGH/Sem\ 5/jpo/ELHotel/ELHotel/src/Reservation.cpp \
 	E:/Workspace/AGH/Sem\ 5/jpo/ELHotel/ELHotel/src/Room.cpp \
 	E:/Workspace/AGH/Sem\ 5/jpo/ELHotel/ELHotel/src/dataBase.cpp \
@@ -568,4 +570,5 @@ ELHotel_autogen/timestamp: \
 	E:/Workspace/AGH/Sem\ 5/jpo/ELHotel/ELHotel/editreservation.ui \
 	E:/Workspace/AGH/Sem\ 5/jpo/ELHotel/ELHotel/jumptodate.ui \
 	E:/Workspace/AGH/Sem\ 5/jpo/ELHotel/ELHotel/mainwindow.ui \
+	E:/Workspace/AGH/Sem\ 5/jpo/ELHotel/ELHotel/searchbyname.ui \
 	E:/Software/Qt/Tools/CMake_64/bin/cmake.exe

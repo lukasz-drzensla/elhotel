@@ -2,6 +2,7 @@
 
 int dataBase::checkForID(int& ID)
 {
+    //go through the whole database (2 parts - even and odd), find the reservation with the given ID
 	if (ID % 2 == 0)
 	{
 		for (int i = 0; i < Reservations.even.size(); i++)
@@ -26,6 +27,7 @@ int dataBase::checkForID(int& ID)
 
 int dataBase::addReservation(Reservation& Reservation)
 {
+    //brute force add reservation to the database (section depending on the parity)
 	if (Reservation.getID() % 2 == 0)
 	{
 		Reservations.even.push_back(Reservation);
@@ -38,6 +40,7 @@ int dataBase::addReservation(Reservation& Reservation)
 
 int dataBase::addReservationAtDate(dateTime& dt, int& ID)
 {
+    //brute force add reservation to the calendar-oriented database
 	int which = dt.getDifference(dateTime(1, 1, globalConstants::globalConstants::thisYear), dt);
 	daysOfYear[which].Reservation_ID.push_back(ID);
 	return which;
@@ -45,6 +48,9 @@ int dataBase::addReservationAtDate(dateTime& dt, int& ID)
 
 int dataBase::autoAddReservation(Reservation& reservation, bool affectGlobalConstants)
 {
+    //the function actually used to add reservations
+    //add the reservation to the database of reservations
+    //for every single day occupied by reservation add at date
 	dateTime dt(1, 1, globalConstants::thisYear);
 	addReservation(reservation);
 
@@ -65,6 +71,7 @@ int dataBase::autoAddReservation(Reservation& reservation, bool affectGlobalCons
 
 int dataBase::init(int year)
 {
+    //initialize the calendar-oriented database
     if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
 	{
 		dayMonths[2] = 29;
@@ -81,6 +88,8 @@ int dataBase::init(int year)
 		}
 	}
 
+    //add an empty reservation as first in the even section, to avoid ambiguity when checking for ID (0 is neither + or -)
+
     Reservation empty(-2, Room(), "Empty", dateTime(30, 2, 2022), dateTime(31, 2, 2022), "666-666-666",0, "0", 0);
     addReservation(empty);
 
@@ -89,23 +98,28 @@ int dataBase::init(int year)
 
 int dataBase::load(bool LR)
 {
+    //shall I load the rooms database? - not always necessary
 	if (LR)
 	{
 		loadRooms();
 	}
-    //globalConstants::next_index = 0;
+
+
+    //read the reservations
 	ifstream file("reservations.xml");
 	if (!file.is_open())
 		return -1;
 
 	using std::string;
-	string line{};
+    string line{}; //we will be reading lines of our file here
 	getline(file, line);
     if (line.starts_with("<?xml"))
 	{
 		//set encoding
 	}
-	bool newRow = false;
+    bool newRow = false; //indicator if correct start of entry detected
+
+    //variables for storing our data
 	int _id{};
 	int _room_id{};
 	string _name{};
@@ -118,6 +132,8 @@ int dataBase::load(bool LR)
     int _people{};
     string _comment{};
     int _paid{};
+
+    //markers
 	const string id_str = "<ID>";
 	const string room_id_str = "<ROOM_ID>";
 	const string name_str = "<NAME>";
@@ -130,6 +146,8 @@ int dataBase::load(bool LR)
     const string people_str = "<PEOPLE>";
     const string comment_str = "<COMMENT>";
     const string paid_str = "<PAID>";
+
+    //read the content of reservations database
 	while (!file.eof())
 	{
 		getline(file, line);
@@ -140,8 +158,11 @@ int dataBase::load(bool LR)
 			{
 				newRow = false;
 				//add reservation
+
+                //create a room variable
                 Room room {};
 
+                //check if the rooms exists, read all the room data
                 for (int i = 0; i < rooms.size(); i++)
                 {
                     if (rooms[i].id == _room_id)
@@ -153,13 +174,16 @@ int dataBase::load(bool LR)
                         break;
                     }
                 }
+                //if by any chance the ID is negative, skip it (a possibility to add technical negative IDs in the future)
                 if (_id >=0){
                     Reservation res(_id, room, _name, _arrival, _departure, _phone, _cost, _NIP, _status, _people, _comment, _paid);
                     autoAddReservation(res, false);
+                    //auto add to the database and DO NOT change the indexes count - because we only read what already exists
                 }
 			}
             else if (line.starts_with(id_str))
 			{
+                //read ID
 				auto position = line.find('/');
 				string temp = line.substr(id_str.length(), position - id_str.length() - 1);
 				try
@@ -172,6 +196,7 @@ int dataBase::load(bool LR)
 				}
 			}
             else if (line.starts_with(room_id_str)) {
+                //read room ID
 				auto position = line.find('/');
 				string temp = line.substr(room_id_str.length(), position - room_id_str.length() - 1);
 				try
@@ -184,11 +209,13 @@ int dataBase::load(bool LR)
 				}
 			}
             else if (line.starts_with(name_str)) {
+                //read the name
 				auto position = line.find('/');
 				_name = line.substr(name_str.length(), position - name_str.length() - 1);
 			}
             else if (line.starts_with(arr_str))
 			{
+                //read the arrival date
 				auto position = line.find('/');
 				string temp = line.substr(arr_str.length(), position - arr_str.length() - 1);
 
@@ -216,6 +243,7 @@ int dataBase::load(bool LR)
 			}
             else if (line.starts_with(dep_str))
 			{
+                //read the departure date
 				auto position = line.find('/');
 				string temp = line.substr(dep_str.length(), position - dep_str.length() - 1);
 
@@ -243,11 +271,13 @@ int dataBase::load(bool LR)
 			}
             else if (line.starts_with(phone_str))
 			{
+                //read the phone number
 				auto position = line.find('/');
 				_phone = line.substr(phone_str.length(), position - phone_str.length() - 1);
 			}
             else if (line.starts_with(cost_str))
 			{
+                //read the cost
 				auto position = line.find('/');
 				string temp = line.substr(cost_str.length(), position - cost_str.length() - 1);
 				try
@@ -261,11 +291,13 @@ int dataBase::load(bool LR)
 			}
             else if (line.starts_with(NIP_str))
 			{
+                //read NIP
 				auto position = line.find('/');
 				_NIP = line.substr(NIP_str.length(), position - NIP_str.length() - 1);
 			}
             else if (line.starts_with(status_str))
             {
+                //read the status
                 auto position = line.find('/');
                 string temp = line.substr(status_str.length(), position - status_str.length() - 1);
                 try
@@ -279,6 +311,7 @@ int dataBase::load(bool LR)
             }
             else if (line.starts_with(people_str))
             {
+                //read people count
                 auto position = line.find('/');
                 string temp = line.substr(people_str.length(), position - people_str.length() - 1);
                 try
@@ -292,11 +325,13 @@ int dataBase::load(bool LR)
             }
             else if (line.starts_with(comment_str))
             {
+                //read the reservation comment
                 auto position = line.find('/');
                 _comment = line.substr(comment_str.length(), position - comment_str.length() - 1);
             }
             else if (line.starts_with(paid_str))
             {
+                //read how much has already been paid
                 auto position = line.find('/');
                 string temp = line.substr(paid_str.length(), position - paid_str.length() - 1);
                 try
@@ -323,23 +358,31 @@ int dataBase::load(bool LR)
 
 int dataBase::loadRooms()
 {
+    //read the rooms
 	ifstream file("rooms.xml");
 	if (!file.is_open())
 		return -1;
 
 	using std::string;
+    //the variable which we will be reading to
 	string line{};
+
+    //get the first line, set encoding - to be developed
 	getline(file, line);
     if (line.starts_with("<?xml"))
 	{
 		//set encoding
 	}
+    //indicator whether a valid start of entry was found
 	bool newRoom = false;
+
+    //variables for storing the read values
 	int _id{};
 	int _cost_rate{};
 	string _description{};
-	int _max_people;
-	
+	int _max_people;	
+
+    //markers
 	const string id_str = "<ID>";
 	const string cost_rate_str = "<COST>";
 	const string des_str = "<DES>";
@@ -360,6 +403,7 @@ int dataBase::loadRooms()
 			}
             else if (line.starts_with(id_str))
 			{
+                //read id
 				auto position = line.find('/');
 				string temp = line.substr(id_str.length(), position - id_str.length() - 1);
 				try
@@ -373,6 +417,7 @@ int dataBase::loadRooms()
 			}
             else if (line.starts_with(cost_rate_str))
 			{
+                //read cost rate (price per night)
 				auto position = line.find('/');
 				string temp = line.substr(cost_rate_str.length(), position - cost_rate_str.length() - 1);
 				try
@@ -386,11 +431,13 @@ int dataBase::loadRooms()
 			}
             else if (line.starts_with(des_str))
 			{
+                //read the description
 				auto position = line.find('/');
 				_description = line.substr(des_str.length(), position - des_str.length() - 1);
 			}
             else if (line.starts_with(max_str))
 			{
+                //read the max number of people
 				auto position = line.find('/');
 				string temp = line.substr(max_str.length(), position - max_str.length() - 1);
 				try
@@ -414,6 +461,7 @@ int dataBase::loadRooms()
 
 int dataBase::saveRooms()
 {
+    //save the rooms in xml format
     using std::string, std::endl;
     ofstream file;
     file.open("rooms.xml", ofstream::out | ofstream::trunc);
@@ -450,6 +498,7 @@ int dataBase::saveRooms()
 
 int dataBase::save(bool SR)
 {
+    //save the reservations
 	using std::endl;
 	ofstream file;
 	file.open("reservations.xml", ofstream::out | ofstream::trunc);
@@ -554,7 +603,7 @@ int dataBase::save(bool SR)
 	file << "</worksheet>" << endl << "</root>" << endl;
 	file.close();
 
-
+    //shall I also save the rooms?
 	if (SR)
 	{
         saveRooms();
@@ -565,11 +614,13 @@ int dataBase::save(bool SR)
 
 vector <int> dataBase::getID(dateTime dt)
 {
+    //returns the vector of all reservation ID saved for a specific day in the year
 	return daysOfYear[dt.getDifference(dateTime(1, 1, globalConstants::thisYear), dt)].Reservation_ID;
 }
 
 Reservation dataBase::getReservationByID(int& ID)
 {
+    //return a reservation being given its ID
 	if (ID % 2 == 0)
 	{
 		for (int i = 0; i < Reservations.even.size(); i++)
@@ -595,6 +646,8 @@ Reservation dataBase::getReservationByID(int& ID)
 
 int dataBase::getDBIDByResID(int ID)
 {
+    //return the index at which the reservation is stored in the database. Warning: this is about the database vector, it is not unique, may differ every single run of the program
+    //negative for even, 0 or positive for odd
     if (ID % 2 == 0)
     {
         for (int i = 0; i < Reservations.even.size(); i++)
@@ -620,8 +673,9 @@ int dataBase::getDBIDByResID(int ID)
 
 vector<Reservation> dataBase::getAllReservationsAtDate(dateTime& dt)
 {
+    //return a vector of all reservations made for a specific day
 	vector <int> ids = daysOfYear[dt.getDifference(dateTime(1, 1, globalConstants::thisYear), dt)].Reservation_ID;
-	vector <Reservation> all;
+    vector <Reservation> all{};
 	for (int i = 0; i < ids.size(); i++)
 	{
 		all.push_back(getReservationByID(ids[i]));
@@ -631,11 +685,55 @@ vector<Reservation> dataBase::getAllReservationsAtDate(dateTime& dt)
 
 vector<Reservation> dataBase::getAllReservationsAtDate(int index)
 {
+    //return a vector of all reservations made for a specific day (being given the day's number (n-th day of the year))
     vector <int> ids = daysOfYear[index].Reservation_ID;
-    vector <Reservation> all;
+    vector <Reservation> all{};
     for (int i = 0; i < ids.size(); i++)
     {
         all.push_back(getReservationByID(ids[i]));
+    }
+    return all;
+}
+
+
+
+vector <Reservation> dataBase::getAllReservationsByName(std::string _name)
+{
+    //change a string to lowercase
+    auto to_lower = [](std::string str)
+    {
+        std::string temp{};
+        for (int i = 0; i < str.size(); i++)
+        {
+            char t = str[i];
+            if (int (t) > 96 && int(t) < 123)
+            {
+                t-=32;
+            }
+            temp+=t;
+        }
+        return temp;
+    };
+
+    //search for reservations in which names contain certain string, ignore case
+    vector <Reservation> all{};
+    for (int i = 0; i < Reservations.even.size(); i++)
+    {
+        std::string temp = to_lower(Reservations.even[i].getName());
+        _name = to_lower(_name);
+        if (temp.find(_name) != std::string::npos)
+        {
+            all.push_back(Reservations.even[i]);
+        }
+    }
+    for (int i = 0; i < Reservations.odd.size(); i++)
+    {
+        std::string temp = to_lower(Reservations.odd[i].getName());
+        _name = to_lower(_name);
+        if (temp.find(_name) != std::string::npos)
+        {
+            all.push_back(Reservations.odd[i]);
+        }
     }
     return all;
 }

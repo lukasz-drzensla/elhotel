@@ -370,4 +370,5 @@ E:/Workspace/AGH/Sem\ 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-
   E:/Workspace/AGH/Sem\ 5/jpo/ELHotel/ELHotel/header/dateTime.h \
   E:/Workspace/AGH/Sem\ 5/jpo/ELHotel/ELHotel/header/globalConstants.h \
   E:/Workspace/AGH/Sem\ 5/jpo/ELHotel/ELHotel/jumptodate.h \
+  E:/Workspace/AGH/Sem\ 5/jpo/ELHotel/ELHotel/searchbyname.h \
   E:/Workspace/AGH/Sem\ 5/jpo/ELHotel/ELHotel/viewcalendarupdater.h
