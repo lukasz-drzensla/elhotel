@@ -10,7 +10,7 @@ Room::Room(int _id, int _max_people, std::string _description)
 	id = _id;
 	max_people = _max_people;
 	description = _description;
-	cost_rate = globalConstants::roomRate;
+    cost_rate = globalConstants::sharedVariables.roomRate;
 }
 
 Room::Room(int _id, int _max_people, std::string _description, int _cost_rate)

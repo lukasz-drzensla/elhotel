@@ -281,6 +281,7 @@
      <string>Search</string>
     </property>
     <addaction name="actionSearch_by_name"/>
+    <addaction name="actionSearch_by_phone"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuView"/>
@@ -511,6 +512,11 @@
   <action name="actionSearch_by_name">
    <property name="text">
     <string>Search by name</string>
+   </property>
+  </action>
+  <action name="actionSearch_by_phone">
+   <property name="text">
+    <string>Search by phone</string>
    </property>
   </action>
  </widget>

@@ -16,7 +16,7 @@ class searchByName : public QDialog
     Q_OBJECT
 
 public:
-    explicit searchByName(QWidget *parent = nullptr, dataBase *_db = nullptr);
+    explicit searchByName(QWidget *parent = nullptr, dataBase *_db = nullptr, int _sel = 0);
     ~searchByName();
 
 private slots:
@@ -24,7 +24,8 @@ private slots:
 
 private:
     Ui::searchByName *ui;
-    dataBase *db;
+    dataBase *db{};
+    int sel{};
 };
 
 #endif // SEARCHBYNAME_H

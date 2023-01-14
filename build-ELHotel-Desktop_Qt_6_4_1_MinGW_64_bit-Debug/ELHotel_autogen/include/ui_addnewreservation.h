@@ -55,7 +55,7 @@ public:
     {
         if (addnewreservation->objectName().isEmpty())
             addnewreservation->setObjectName("addnewreservation");
-        addnewreservation->resize(326, 588);
+        addnewreservation->resize(326, 628);
         label = new QLabel(addnewreservation);
         label->setObjectName("label");
         label->setGeometry(QRect(20, 70, 71, 16));
@@ -65,11 +65,11 @@ public:
         arr_dateEdit = new QDateEdit(addnewreservation);
         arr_dateEdit->setObjectName("arr_dateEdit");
         arr_dateEdit->setGeometry(QRect(20, 90, 110, 25));
-        arr_dateEdit->setDateTime(QDateTime(QDate(2021, 12, 31), QTime(14, 0, 0)));
+        arr_dateEdit->setDateTime(QDateTime(QDate(2021, 12, 31), QTime(13, 0, 0)));
         dep_dateEdit = new QDateEdit(addnewreservation);
         dep_dateEdit->setObjectName("dep_dateEdit");
         dep_dateEdit->setGeometry(QRect(20, 140, 110, 25));
-        dep_dateEdit->setDateTime(QDateTime(QDate(2022, 1, 1), QTime(14, 0, 0)));
+        dep_dateEdit->setDateTime(QDateTime(QDate(2022, 1, 1), QTime(13, 0, 0)));
         name_txt = new QTextEdit(addnewreservation);
         name_txt->setObjectName("name_txt");
         name_txt->setGeometry(QRect(20, 30, 281, 31));
@@ -104,10 +104,10 @@ public:
         phone_txt->setGeometry(QRect(20, 340, 281, 31));
         add_reservation_button = new QPushButton(addnewreservation);
         add_reservation_button->setObjectName("add_reservation_button");
-        add_reservation_button->setGeometry(QRect(130, 550, 80, 24));
+        add_reservation_button->setGeometry(QRect(130, 580, 80, 24));
         cancel_but = new QPushButton(addnewreservation);
         cancel_but->setObjectName("cancel_but");
-        cancel_but->setGeometry(QRect(220, 550, 80, 24));
+        cancel_but->setGeometry(QRect(220, 580, 80, 24));
         roomLabel = new QLabel(addnewreservation);
         roomLabel->setObjectName("roomLabel");
         roomLabel->setGeometry(QRect(20, 200, 49, 16));
@@ -122,7 +122,7 @@ public:
         label_9->setGeometry(QRect(20, 490, 131, 16));
         comment_txt = new QTextEdit(addnewreservation);
         comment_txt->setObjectName("comment_txt");
-        comment_txt->setGeometry(QRect(20, 510, 281, 31));
+        comment_txt->setGeometry(QRect(20, 510, 281, 61));
         label_10 = new QLabel(addnewreservation);
         label_10->setObjectName("label_10");
         label_10->setGeometry(QRect(70, 460, 31, 16));

@@ -28,8 +28,10 @@ public:
 private slots:
     void on_actionAdd_3_triggered();
 
+    //
     void on_actionSayHello_triggered();
 
+    //
     void on_actionTEST_triggered();
 
     void on_actioninfo_triggered();
@@ -85,6 +87,10 @@ private slots:
     void on_actionJump_to_a_date_triggered();
 
     void on_actionSearch_by_name_triggered();
+
+    void on_reservationCalendar_itemDoubleClicked(QTableWidgetItem *item);
+
+    void on_actionSearch_by_phone_triggered();
 
 private:
     Ui::MainWindow *ui;

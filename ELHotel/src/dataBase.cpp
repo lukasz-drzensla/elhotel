@@ -41,7 +41,7 @@ int dataBase::addReservation(Reservation& Reservation)
 int dataBase::addReservationAtDate(dateTime& dt, int& ID)
 {
     //brute force add reservation to the calendar-oriented database
-	int which = dt.getDifference(dateTime(1, 1, globalConstants::globalConstants::thisYear), dt);
+    int which = dt.getDifference(dateTime(1, 1, globalConstants::sharedVariables.thisYear), dt);
 	daysOfYear[which].Reservation_ID.push_back(ID);
 	return which;
 }
@@ -51,7 +51,7 @@ int dataBase::autoAddReservation(Reservation& reservation, bool affectGlobalCons
     //the function actually used to add reservations
     //add the reservation to the database of reservations
     //for every single day occupied by reservation add at date
-	dateTime dt(1, 1, globalConstants::thisYear);
+    dateTime dt(1, 1, globalConstants::sharedVariables.thisYear);
 	addReservation(reservation);
 
 	int arr = dt.getDifference(dt, reservation.getArrival());
@@ -63,7 +63,7 @@ int dataBase::autoAddReservation(Reservation& reservation, bool affectGlobalCons
 	}
     if (affectGlobalConstants)
     {
-        globalConstants::next_index++;
+        globalConstants::sharedVariables.next_index++;
         globalConstants::save();
     }
 	return 0;
@@ -81,7 +81,7 @@ int dataBase::init(int year)
 	{
 		for (int j = 0; j < dayMonths[i]; j++)
 		{
-			tuple temp;
+			single_day temp;
 			dateTime dt(j + 1, i, year);
 			temp.date.set(dt);
 			daysOfYear.push_back(temp);
@@ -615,7 +615,7 @@ int dataBase::save(bool SR)
 vector <int> dataBase::getID(dateTime dt)
 {
     //returns the vector of all reservation ID saved for a specific day in the year
-	return daysOfYear[dt.getDifference(dateTime(1, 1, globalConstants::thisYear), dt)].Reservation_ID;
+    return daysOfYear[dt.getDifference(dateTime(1, 1, globalConstants::sharedVariables.thisYear), dt)].Reservation_ID;
 }
 
 Reservation dataBase::getReservationByID(int& ID)
@@ -674,7 +674,7 @@ int dataBase::getDBIDByResID(int ID)
 vector<Reservation> dataBase::getAllReservationsAtDate(dateTime& dt)
 {
     //return a vector of all reservations made for a specific day
-	vector <int> ids = daysOfYear[dt.getDifference(dateTime(1, 1, globalConstants::thisYear), dt)].Reservation_ID;
+    vector <int> ids = daysOfYear[dt.getDifference(dateTime(1, 1, globalConstants::sharedVariables.thisYear), dt)].Reservation_ID;
     vector <Reservation> all{};
 	for (int i = 0; i < ids.size(); i++)
 	{
@@ -723,7 +723,8 @@ vector <Reservation> dataBase::getAllReservationsByName(std::string _name)
         _name = to_lower(_name);
         if (temp.find(_name) != std::string::npos)
         {
-            all.push_back(Reservations.even[i]);
+            if (Reservations.even[i].getID()>=0)
+                all.push_back(Reservations.even[i]);
         }
     }
     for (int i = 0; i < Reservations.odd.size(); i++)
@@ -732,7 +733,51 @@ vector <Reservation> dataBase::getAllReservationsByName(std::string _name)
         _name = to_lower(_name);
         if (temp.find(_name) != std::string::npos)
         {
-            all.push_back(Reservations.odd[i]);
+            if (Reservations.odd[i].getID()>=0)
+                all.push_back(Reservations.odd[i]);
+        }
+    }
+    return all;
+}
+
+
+vector <Reservation> dataBase::getAllReservationsByPhone(std::string _phone)
+{
+    //remove all characters which are not numbers - including slashes, spaces etc
+    auto remove_non_numbers =[](std::string str)
+    {
+        std::string temp{};
+        for (int i = 0; i < str.size(); i++)
+        {
+            char t = str[i];
+            if (int (t) > 47 && int(t) < 58)
+            {
+                temp+=t;
+            }
+        }
+        return temp;
+    };
+
+    //search for reservations in which names contain certain string, ignore non-number characters
+    vector <Reservation> all{};
+    for (int i = 0; i < Reservations.even.size(); i++)
+    {
+        std::string temp = remove_non_numbers(Reservations.even[i].getPhone());
+        _phone = remove_non_numbers(_phone);
+        if (temp.find(_phone) != std::string::npos)
+        {
+            if (Reservations.even[i].getID()>=0)
+                all.push_back(Reservations.even[i]);
+        }
+    }
+    for (int i = 0; i < Reservations.odd.size(); i++)
+    {
+        std::string temp = remove_non_numbers(Reservations.odd[i].getPhone());
+        _phone = remove_non_numbers(_phone);
+        if (temp.find(_phone) != std::string::npos)
+        {
+            if (Reservations.odd[i].getID()>=0)
+                all.push_back(Reservations.odd[i]);
         }
     }
     return all;

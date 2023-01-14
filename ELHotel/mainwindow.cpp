@@ -45,16 +45,16 @@ MainWindow::MainWindow(QWidget *parent)
     calUpd = new viewCalendarUpdater(&rooms_on_display, ui->reservationCalendar, &db, &days_of_week, &first_day);
 
     //initalize database
-    db.init(globalConstants::thisYear); //init the database with current year
+    db.init(globalConstants::sharedVariables.thisYear); //init the database with current year
     db.load(true);
 
     //initialize room view
     calUpd->updateCalendar();
 
     //initialize days of week view
-    dateTime dt1 (getTodayDay(),getTodayMonth()+1,globalConstants::thisYear);
+    dateTime dt1 (getTodayDay(),getTodayMonth()+1,globalConstants::sharedVariables.thisYear);
     ui->statusbar->showMessage("Today is: " + QString::fromStdString(dt1.sayHello()));
-    dateTime dt (19,12,globalConstants::thisYear);
+    dateTime dt (19,12,globalConstants::sharedVariables.thisYear);
     first_day.set(dt);
     calUpd->displayDates(&first_day);
 
@@ -64,12 +64,12 @@ MainWindow::MainWindow(QWidget *parent)
 
 void MainWindow::on_actionPrevious_week_triggered()
 {
-    dateTime dt (1, 1, globalConstants::thisYear);
+    dateTime dt (1, 1, globalConstants::sharedVariables.thisYear);
     int index = dt.getDifference(dt, first_day);
     index-=7;
     int day = dt.guessDay(index);
     int month = dt.guessMonth(index);
-    dateTime prev_dt (day, month, globalConstants::thisYear);
+    dateTime prev_dt (day, month, globalConstants::sharedVariables.thisYear);
     first_day.set(prev_dt);
     calUpd->displayDates(&first_day);
     calUpd->updateReservations();
@@ -77,7 +77,7 @@ void MainWindow::on_actionPrevious_week_triggered()
 
 void MainWindow::on_actionNext_week_triggered()
 {
-    dateTime dt (1, 1, globalConstants::thisYear);
+    dateTime dt (1, 1, globalConstants::sharedVariables.thisYear);
     int isLeap = dt.isLeap();
     int max=365;
     if (isLeap)
@@ -88,7 +88,7 @@ void MainWindow::on_actionNext_week_triggered()
         index+=7;
         int day = dt.guessDay(index);
         int month = dt.guessMonth(index);
-        dateTime next_dt (day, month, globalConstants::thisYear);
+        dateTime next_dt (day, month, globalConstants::sharedVariables.thisYear);
         first_day.set(next_dt);
         calUpd->displayDates(&first_day);
         calUpd->updateReservations();
@@ -365,10 +365,10 @@ void MainWindow::on_actionAdd_2_triggered()
     dateTime dt{};
     int day = dt.guessDay(days_of_week[start_column]);
     int month = dt.guessMonth(days_of_week[start_column]);
-    dateTime arrival (day, month, globalConstants::thisYear);
+    dateTime arrival (day, month, globalConstants::sharedVariables.thisYear);
     day = dt.guessDay(departure_index);
     month = dt.guessMonth(departure_index);
-    dateTime departure (day, month, globalConstants::thisYear);
+    dateTime departure (day, month, globalConstants::sharedVariables.thisYear);
     int duration = dt.getDifference(arrival, departure);
     if (duration < 1)
     {
@@ -654,7 +654,7 @@ void MainWindow::on_actionMark_as_departed_2_triggered()
 
 void MainWindow::on_actionReturn_to_today_triggered()
 {
-    dateTime dt (getTodayDay(),getTodayMonth(),globalConstants::thisYear);
+    dateTime dt (getTodayDay(),getTodayMonth(),globalConstants::sharedVariables.thisYear);
     first_day.set(dt);
     calUpd->displayDates(&first_day);
     calUpd->updateReservations();
@@ -708,6 +708,56 @@ void MainWindow::on_actionJump_to_a_date_triggered()
 void MainWindow::on_actionSearch_by_name_triggered()
 {
     searchByName sbn (this, &db);
+    sbn.exec();
+}
+
+
+void MainWindow::on_reservationCalendar_itemDoubleClicked(QTableWidgetItem *item)
+{
+    QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
+    if (selection.empty())
+    {
+        return;
+    }
+    QModelIndex QMI = selection.at(0);
+    int row = QMI.row();
+    int column = QMI.column();
+    int ID{};
+    int res_id{};
+    int index_in_all{};
+    if (row > 0)
+    {
+        ID = rooms_on_display[--row];
+    } else {
+        return;
+    }
+    vector <Reservation> all = db.getAllReservationsAtDate(days_of_week[column]);
+
+    for (int i = 0; i < all.size(); i++)
+    {
+        if (all[i].getRoom().id == ID)
+        {
+            res_id = all[i].getID();
+            index_in_all=i;
+            break;
+        }
+    }
+
+    int index = db.getDBIDByResID(res_id);
+    Reservation temp_res = all[index_in_all];
+
+    edit_res_window = new editreservation (this, calUpd, &temp_res, &db, index);
+    edit_res_window->exec();
+
+    //db.save();
+    calUpd->updateCalendar();
+    calUpd->updateReservations();
+}
+
+
+void MainWindow::on_actionSearch_by_phone_triggered()
+{
+    searchByName sbn (this, &db, 1);
     sbn.exec();
 }
 

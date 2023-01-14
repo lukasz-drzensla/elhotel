@@ -60,6 +60,7 @@ public:
     QAction *actionReturn_to_today;
     QAction *actionJump_to_a_date;
     QAction *actionSearch_by_name;
+    QAction *actionSearch_by_phone;
     QWidget *centralwidget;
     QTableWidget *reservationCalendar;
     QMenuBar *menubar;
@@ -169,6 +170,8 @@ public:
         actionJump_to_a_date->setObjectName("actionJump_to_a_date");
         actionSearch_by_name = new QAction(MainWindow);
         actionSearch_by_name->setObjectName("actionSearch_by_name");
+        actionSearch_by_phone = new QAction(MainWindow);
+        actionSearch_by_phone->setObjectName("actionSearch_by_phone");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         reservationCalendar = new QTableWidget(centralwidget);
@@ -308,6 +311,7 @@ public:
         menuView->addAction(actionReturn_to_today);
         menuView->addAction(actionJump_to_a_date);
         menuSearch->addAction(actionSearch_by_name);
+        menuSearch->addAction(actionSearch_by_phone);
         toolBar->addAction(actionPrevious_week);
         toolBar->addAction(actionNext_week);
         toolBar->addAction(actionMark_as_arrived_2);
@@ -362,6 +366,7 @@ public:
         actionReturn_to_today->setText(QCoreApplication::translate("MainWindow", "Return to today", nullptr));
         actionJump_to_a_date->setText(QCoreApplication::translate("MainWindow", "Jump to a date", nullptr));
         actionSearch_by_name->setText(QCoreApplication::translate("MainWindow", "Search by name", nullptr));
+        actionSearch_by_phone->setText(QCoreApplication::translate("MainWindow", "Search by phone", nullptr));
         QTableWidgetItem *___qtablewidgetitem = reservationCalendar->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow", "Monday", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = reservationCalendar->horizontalHeaderItem(1);

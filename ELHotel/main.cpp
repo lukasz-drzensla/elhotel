@@ -16,10 +16,7 @@
 
 using std::ifstream, std::ofstream, std::string;
 
-int globalConstants::roomRate = 0;
-int globalConstants::thisYear = 0;
-int globalConstants::next_index = 0;
-int globalConstants::next_room_index = 0;
+globalConstants::shared_variables globalConstants::sharedVariables {};
 
 int global_init()
 {
@@ -49,33 +46,56 @@ int global_init()
         case 0:
         {
             if (!err)
-                globalConstants::roomRate = t;
+            {
+                //globalConstants::roomRate = t;
+                globalConstants::sharedVariables.roomRate = t;
+            }
             else
-                globalConstants::roomRate = 1;
+            {
+                //globalConstants::roomRate = 1;
+                globalConstants::sharedVariables.roomRate = 1;
+            }
             break;
         }
         case 1:
         {
-            if (!err)
-                globalConstants::thisYear = t;
+            if (!err){
+                //globalConstants::thisYear = t;
+                globalConstants::sharedVariables.thisYear = t;
+            }
             else
-                globalConstants::thisYear = 2020;
+            {
+                //globalConstants::thisYear = 2020;
+                globalConstants::sharedVariables.thisYear = 2020;
+            }
             break;
         }
         case 2:
         {
             if (!err)
-                globalConstants::next_index = t;
+            {
+                //globalConstants::next_index = t;
+                globalConstants::sharedVariables.next_index = t;
+            }
             else
-                globalConstants::next_index = 0;
+            {
+                //globalConstants::next_index = 0;
+                globalConstants::sharedVariables.next_index = 0;
+            }
             break;
         }
         case 3:
         {
             if (!err)
-                globalConstants::next_room_index = t;
+            {
+                //globalConstants::next_room_index = t;
+                globalConstants::sharedVariables.next_room_index = t;
+            }
             else
-                globalConstants::next_room_index = 0;
+            {
+                //globalConstants::next_room_index = 0;
+                globalConstants::sharedVariables.next_room_index = 0;
+            }
             break;
         }
         };

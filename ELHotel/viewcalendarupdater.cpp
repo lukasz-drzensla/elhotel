@@ -24,7 +24,7 @@ viewCalendarUpdater::viewCalendarUpdater(vector <int> *_rooms_on_display, QTable
 void viewCalendarUpdater::displayDates(dateTime *f_day)
 {
     days_of_week->clear();
-    int day_index = f_day->getDifference(dateTime(1, 1, globalConstants::thisYear), *f_day);
+    int day_index = f_day->getDifference(dateTime(1, 1, globalConstants::sharedVariables.thisYear), *f_day);
     for (int i = 0; i < 14; i++)
     {
         days_of_week->push_back(day_index+i);

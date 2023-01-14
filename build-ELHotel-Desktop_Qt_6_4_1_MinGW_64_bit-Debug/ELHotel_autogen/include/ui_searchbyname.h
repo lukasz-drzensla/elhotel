@@ -24,7 +24,7 @@ class Ui_searchByName
 public:
     QTextEdit *textEdit;
     QPushButton *searchbtn;
-    QLabel *label;
+    QLabel *var_txt;
     QLabel *label_2;
     QTextBrowser *result_txt;
 
@@ -39,9 +39,9 @@ public:
         searchbtn = new QPushButton(searchByName);
         searchbtn->setObjectName("searchbtn");
         searchbtn->setGeometry(QRect(440, 30, 80, 24));
-        label = new QLabel(searchByName);
-        label->setObjectName("label");
-        label->setGeometry(QRect(20, 10, 49, 16));
+        var_txt = new QLabel(searchByName);
+        var_txt->setObjectName("var_txt");
+        var_txt->setGeometry(QRect(20, 10, 49, 16));
         label_2 = new QLabel(searchByName);
         label_2->setObjectName("label_2");
         label_2->setGeometry(QRect(20, 70, 151, 16));
@@ -56,9 +56,9 @@ public:
 
     void retranslateUi(QDialog *searchByName)
     {
-        searchByName->setWindowTitle(QCoreApplication::translate("searchByName", "Search by name", nullptr));
+        searchByName->setWindowTitle(QCoreApplication::translate("searchByName", "Search", nullptr));
         searchbtn->setText(QCoreApplication::translate("searchByName", "Search", nullptr));
-        label->setText(QCoreApplication::translate("searchByName", "Name:", nullptr));
+        var_txt->setText(QCoreApplication::translate("searchByName", "Name:", nullptr));
         label_2->setText(QCoreApplication::translate("searchByName", "Found reservatons:", nullptr));
     } // retranslateUi
 

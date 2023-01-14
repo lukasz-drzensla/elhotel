@@ -83,7 +83,7 @@ void addnewreservation::on_add_reservation_button_clicked()
         msgBox.exec();
         return;
     }
-    int first_index = new_arr.getDifference(dateTime (1,1,globalConstants::thisYear), new_arr);
+    int first_index = new_arr.getDifference(dateTime (1,1,globalConstants::sharedVariables.thisYear), new_arr);
     for (int j = 0; j <= duration; j++)
     {
         vector <Reservation> all = db->getAllReservationsAtDate(first_index+j);
@@ -116,7 +116,7 @@ void addnewreservation::on_add_reservation_button_clicked()
         msgBox.exec();
     }
     int paid = ui->spinPaid->value();
-    Reservation reservation (globalConstants::next_index, *room, name, new_arr, new_dep, phone, cost, nip, 0, people, comment, paid);
+    Reservation reservation (globalConstants::sharedVariables.next_index, *room, name, new_arr, new_dep, phone, cost, nip, 0, people, comment, paid);
     db->autoAddReservation(reservation);
     calendar->updateReservations();
     db->save();

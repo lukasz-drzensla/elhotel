@@ -59,7 +59,7 @@ int Reservation::getDuration()
 
 std::string Reservation::sayHello()
 {
-    return "ID: " + std::to_string(ID) + " Name: " + name + " Cost: " + std::to_string(cost) + " Room: " + room.description + " Arrival: " + arrival.sayHello() + " Departure: " + departure.sayHello() + " People: " + std::to_string (people) + " Status: " + stat_str[status] + " Paid: " + std::to_string(paid) + " Comments: " + comment;
+    return "ID: " + std::to_string(ID) + " Name: " + name + " Cost: " + std::to_string(cost) + " Room: " + room.description + " Arrival: " + arrival.sayHello() + " Departure: " + departure.sayHello() + " Phone: " + phone_number + " People: " + std::to_string (people) + " Status: " + stat_str[status] + " Paid: " + std::to_string(paid) + " Comments: " + comment;
 }
 
 int Reservation::getStatus()

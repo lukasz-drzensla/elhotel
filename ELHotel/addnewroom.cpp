@@ -11,8 +11,8 @@ addnewroom::addnewroom(QWidget *parent, QTableWidget* calendar, dataBase* data, 
     r_o_d = rooms_on_display;
     calUpd = _calUpd;
     ui->setupUi(this);
-    ui->ID_label->setText(QString::fromStdString(std::to_string(globalConstants::next_room_index)));
-    ui->spin_cost->setValue(globalConstants::roomRate);
+    ui->ID_label->setText(QString::fromStdString(std::to_string(globalConstants::sharedVariables.next_room_index)));
+    ui->spin_cost->setValue(globalConstants::sharedVariables.roomRate);
 }
 
 addnewroom::~addnewroom()
@@ -23,13 +23,13 @@ addnewroom::~addnewroom()
 void addnewroom::on_Add_clicked()
 {
     QString qs=ui->room_des->toPlainText();
-    Room r (globalConstants::next_room_index, ui->spin_people->value(), qs.toStdString(), ui->spin_cost->value());
+    Room r (globalConstants::sharedVariables.next_room_index, ui->spin_people->value(), qs.toStdString(), ui->spin_cost->value());
     db->rooms.push_back(r);
     //refresh calendar view
     calUpd->updateCalendar();
     calUpd->updateReservations();
     db->saveRooms();
-    globalConstants::next_room_index++;
+    globalConstants::sharedVariables.next_room_index++;
     globalConstants::save();
     close();
 }

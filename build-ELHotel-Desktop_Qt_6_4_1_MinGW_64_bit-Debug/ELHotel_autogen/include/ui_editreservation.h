@@ -55,7 +55,7 @@ public:
     {
         if (editreservation->objectName().isEmpty())
             editreservation->setObjectName("editreservation");
-        editreservation->resize(306, 575);
+        editreservation->resize(306, 628);
         label_11 = new QLabel(editreservation);
         label_11->setObjectName("label_11");
         label_11->setGeometry(QRect(10, 260, 49, 16));
@@ -78,10 +78,10 @@ public:
         dep_dateEdit = new QDateEdit(editreservation);
         dep_dateEdit->setObjectName("dep_dateEdit");
         dep_dateEdit->setGeometry(QRect(10, 130, 110, 25));
-        dep_dateEdit->setDateTime(QDateTime(QDate(2022, 1, 1), QTime(12, 0, 0)));
+        dep_dateEdit->setDateTime(QDateTime(QDate(2022, 1, 1), QTime(10, 0, 0)));
         comment_txt = new QTextEdit(editreservation);
         comment_txt->setObjectName("comment_txt");
-        comment_txt->setGeometry(QRect(10, 500, 281, 31));
+        comment_txt->setGeometry(QRect(10, 500, 281, 81));
         spinPeople = new QSpinBox(editreservation);
         spinPeople->setObjectName("spinPeople");
         spinPeople->setGeometry(QRect(10, 450, 42, 25));
@@ -117,7 +117,7 @@ public:
         label_2->setGeometry(QRect(10, 110, 91, 16));
         cancel_but = new QPushButton(editreservation);
         cancel_but->setObjectName("cancel_but");
-        cancel_but->setGeometry(QRect(210, 540, 80, 24));
+        cancel_but->setGeometry(QRect(210, 590, 80, 24));
         label_8 = new QLabel(editreservation);
         label_8->setObjectName("label_8");
         label_8->setGeometry(QRect(10, 430, 49, 16));
@@ -127,7 +127,7 @@ public:
         spinPaid->setMaximum(2147483647);
         add_reservation_button = new QPushButton(editreservation);
         add_reservation_button->setObjectName("add_reservation_button");
-        add_reservation_button->setGeometry(QRect(120, 540, 80, 24));
+        add_reservation_button->setGeometry(QRect(120, 590, 80, 24));
         spinPrice = new QSpinBox(editreservation);
         spinPrice->setObjectName("spinPrice");
         spinPrice->setGeometry(QRect(10, 230, 191, 25));
@@ -141,7 +141,7 @@ public:
         arr_dateEdit = new QDateEdit(editreservation);
         arr_dateEdit->setObjectName("arr_dateEdit");
         arr_dateEdit->setGeometry(QRect(10, 80, 110, 25));
-        arr_dateEdit->setDateTime(QDateTime(QDate(2021, 12, 31), QTime(12, 0, 0)));
+        arr_dateEdit->setDateTime(QDateTime(QDate(2021, 12, 31), QTime(10, 0, 0)));
 
         retranslateUi(editreservation);
 
@@ -150,7 +150,7 @@ public:
 
     void retranslateUi(QDialog *editreservation)
     {
-        editreservation->setWindowTitle(QCoreApplication::translate("editreservation", "Dialog", nullptr));
+        editreservation->setWindowTitle(QCoreApplication::translate("editreservation", "Edit reservation", nullptr));
         label_11->setText(QCoreApplication::translate("editreservation", "Paid:", nullptr));
         label_10->setText(QCoreApplication::translate("editreservation", "Max:", nullptr));
         nip_txt->setPlaceholderText(QCoreApplication::translate("editreservation", "0", nullptr));

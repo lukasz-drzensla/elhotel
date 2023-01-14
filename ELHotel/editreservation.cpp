@@ -94,7 +94,7 @@ void editreservation::on_add_reservation_button_clicked()
         msgBox.exec();
         return;
     }
-    int first_index = new_arr.getDifference(dateTime (1,1,globalConstants::thisYear), new_arr);
+    int first_index = new_arr.getDifference(dateTime (1,1,globalConstants::sharedVariables.thisYear), new_arr);
     for (int j = 0; j <= duration; j++)
     {
         vector <Reservation> all = db->getAllReservationsAtDate(first_index+j);
@@ -166,7 +166,7 @@ void editreservation::on_add_reservation_button_clicked()
     db->save();
     db->Reservations.even.clear();
     db->Reservations.odd.clear();
-    db->init(globalConstants::thisYear);
+    db->init(globalConstants::sharedVariables.thisYear);
     db->load();
     calendar->updateReservations();
     close();

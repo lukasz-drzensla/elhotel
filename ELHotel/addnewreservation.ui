@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>326</width>
-    <height>588</height>
+    <height>628</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -50,7 +50,7 @@
    </property>
    <property name="dateTime">
     <datetime>
-     <hour>14</hour>
+     <hour>13</hour>
      <minute>0</minute>
      <second>0</second>
      <year>2021</year>
@@ -70,7 +70,7 @@
    </property>
    <property name="dateTime">
     <datetime>
-     <hour>14</hour>
+     <hour>13</hour>
      <minute>0</minute>
      <second>0</second>
      <year>2022</year>
@@ -216,7 +216,7 @@
    <property name="geometry">
     <rect>
      <x>130</x>
-     <y>550</y>
+     <y>580</y>
      <width>80</width>
      <height>24</height>
     </rect>
@@ -229,7 +229,7 @@
    <property name="geometry">
     <rect>
      <x>220</x>
-     <y>550</y>
+     <y>580</y>
      <width>80</width>
      <height>24</height>
     </rect>
@@ -293,7 +293,7 @@
      <x>20</x>
      <y>510</y>
      <width>281</width>
-     <height>31</height>
+     <height>61</height>
     </rect>
    </property>
   </widget>

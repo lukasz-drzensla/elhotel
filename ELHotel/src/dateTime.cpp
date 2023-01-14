@@ -11,11 +11,11 @@ dateTime::dateTime(int _day, int _month, int _year)
 	{
 		error = 2;
 	}
-	if (_day > 28 && _month == 2 && _year % 4 != 0)
+    if (_day > 28 && _month == 2 && ((_year % 4 == 0 && _year % 100 != 0) || _year%400==0))
 	{
 		error = 3;
 	}
-	if (_year % 4 == 0)
+    if ((_year % 4 == 0 && _year % 100 != 0) || _year%400==0)
 	{
 		leap = 1;
 	}

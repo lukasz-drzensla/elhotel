@@ -7,11 +7,11 @@
     <x>0</x>
     <y>0</y>
     <width>306</width>
-    <height>575</height>
+    <height>628</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Edit reservation</string>
   </property>
   <widget class="QLabel" name="label_11">
    <property name="geometry">
@@ -105,7 +105,7 @@
    </property>
    <property name="dateTime">
     <datetime>
-     <hour>12</hour>
+     <hour>10</hour>
      <minute>0</minute>
      <second>0</second>
      <year>2022</year>
@@ -120,7 +120,7 @@
      <x>10</x>
      <y>500</y>
      <width>281</width>
-     <height>31</height>
+     <height>81</height>
     </rect>
    </property>
   </widget>
@@ -268,7 +268,7 @@
    <property name="geometry">
     <rect>
      <x>210</x>
-     <y>540</y>
+     <y>590</y>
      <width>80</width>
      <height>24</height>
     </rect>
@@ -307,7 +307,7 @@
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>540</y>
+     <y>590</y>
      <width>80</width>
      <height>24</height>
     </rect>
@@ -366,7 +366,7 @@
    </property>
    <property name="dateTime">
     <datetime>
-     <hour>12</hour>
+     <hour>10</hour>
      <minute>0</minute>
      <second>0</second>
      <year>2021</year>

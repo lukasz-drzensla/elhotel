@@ -19,7 +19,7 @@ void jumptodate::on_Jump_clicked()
 {
     int day = ui->dateEdit->date().day();
     int month = ui->dateEdit->date().month();
-    dateTime dt (day, month, globalConstants::thisYear);
+    dateTime dt (day, month, globalConstants::sharedVariables.thisYear);
     first_day->set(dt);
     calendar->displayDates(&dt);
     calendar->updateReservations();

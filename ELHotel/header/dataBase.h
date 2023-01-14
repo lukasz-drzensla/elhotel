@@ -12,7 +12,7 @@ class dataBase
 {
 private:
 	int dayMonths[13] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-	struct tuple {
+    struct single_day {
 		dateTime date{};
 		vector <int> Reservation_ID{};
 	};
@@ -21,7 +21,7 @@ private:
 		vector <Reservation> even{};
 		vector <Reservation> odd{};
 	};
-    vector <tuple> daysOfYear{}; //calendar-oriented database, store the reservation IDs for every day of the year in here
+    vector <single_day> daysOfYear{}; //calendar-oriented database, store the reservation IDs for every day of the year in here
 public:
     res Reservations{};
     int init(int year); //initialize the calendar-oriented database with the given year (to determine whether the array needs to be size 365 or 366)
@@ -39,7 +39,12 @@ public:
 
     vector <Reservation> getAllReservationsAtDate(dateTime &dt); //return a vector of all reservations made for a specific day
     vector <Reservation> getAllReservationsAtDate(int index); //return a vector of all reservations made for a specific day (being given the day's number (n-th day of the year))
+
     vector <Reservation> getAllReservationsByName(std::string _name);
+    vector <Reservation> getAllReservationsByPhone(std::string _phone);
+
+
+
     int checkForID(int &ID); //does client exist in database? 1->yes
     int addReservation(Reservation &Reservation);//add reservation to the database but do not make reservation for the given time period
 	int addReservationAtDate(dateTime &dt, int &ID);//be careful! adds a reservation only for a specific day, requires reservation existing in database
