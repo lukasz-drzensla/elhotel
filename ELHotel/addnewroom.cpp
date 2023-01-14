@@ -8,7 +8,6 @@ addnewroom::addnewroom(QWidget *parent, QTableWidget* calendar, dataBase* data, 
 {
     db=data;
     cal=calendar;
-    r_o_d = rooms_on_display;
     calUpd = _calUpd;
     ui->setupUi(this);
     ui->ID_label->setText(QString::fromStdString(std::to_string(globalConstants::sharedVariables.next_room_index)));

@@ -64,7 +64,6 @@ public:
     QWidget *centralwidget;
     QTableWidget *reservationCalendar;
     QMenuBar *menubar;
-    QMenu *menuFile;
     QMenu *menuReservation;
     QMenu *menuMark;
     QMenu *menuRoom;
@@ -257,8 +256,6 @@ public:
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 1460, 21));
         menubar->setNativeMenuBar(true);
-        menuFile = new QMenu(menubar);
-        menuFile->setObjectName("menuFile");
         menuReservation = new QMenu(menubar);
         menuReservation->setObjectName("menuReservation");
         menuMark = new QMenu(menuReservation);
@@ -277,7 +274,6 @@ public:
         toolBar->setObjectName("toolBar");
         MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
 
-        menubar->addAction(menuFile->menuAction());
         menubar->addAction(menuView->menuAction());
         menubar->addAction(menuReservation->menuAction());
         menubar->addAction(menuRoom->menuAction());
@@ -430,7 +426,6 @@ public:
         ___qtablewidgetitem28->setText(QCoreApplication::translate("MainWindow", "1.1", nullptr));
         reservationCalendar->setSortingEnabled(__sortingEnabled);
 
-        menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuReservation->setTitle(QCoreApplication::translate("MainWindow", "Reservation", nullptr));
         menuMark->setTitle(QCoreApplication::translate("MainWindow", "Mark", nullptr));
         menuRoom->setTitle(QCoreApplication::translate("MainWindow", "Room", nullptr));

@@ -1,4 +1,4 @@
-# Install script for directory: D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel
+# Install script for directory: E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,15 +34,15 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Qt/Tools/mingw1120_64/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "E:/Software/Qt/Tools/mingw1120_64/bin/objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel.exe")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "E:/Workspace/AGH/Sem 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/ELHotel.exe")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ELHotel.exe" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ELHotel.exe")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "C:/Qt/Tools/mingw1120_64/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ELHotel.exe")
+      execute_process(COMMAND "E:/Software/Qt/Tools/mingw1120_64/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ELHotel.exe")
     endif()
   endif()
 endif()
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "E:/Workspace/AGH/Sem 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

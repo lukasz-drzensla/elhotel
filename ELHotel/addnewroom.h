@@ -30,7 +30,6 @@ private:
     Ui::addnewroom *ui;
     QTableWidget* cal;
     dataBase* db;
-    vector <int> *r_o_d;
     viewCalendarUpdater *calUpd{};
 };
 

@@ -15,7 +15,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1120_64/bin/addr2line.exe"
+			"value" : "E:/Software/Qt/Tools/mingw1120_64/bin/addr2line.exe"
 		},
 		{
 			"name" : "CMAKE_AR",
@@ -31,7 +31,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1120_64/bin/ar.exe"
+			"value" : "E:/Software/Qt/Tools/mingw1120_64/bin/ar.exe"
 		},
 		{
 			"name" : "CMAKE_BUILD_TYPE",
@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "d:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug"
+			"value" : "e:/Workspace/AGH/Sem 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -103,7 +103,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Qt/Tools/CMake_64/bin/cmake.exe"
+			"value" : "E:/Software/Qt/Tools/CMake_64/bin/cmake.exe"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -115,7 +115,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Qt/Tools/CMake_64/bin/cpack.exe"
+			"value" : "E:/Software/Qt/Tools/CMake_64/bin/cpack.exe"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -127,7 +127,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Qt/Tools/CMake_64/bin/ctest.exe"
+			"value" : "E:/Software/Qt/Tools/CMake_64/bin/ctest.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER",
@@ -143,7 +143,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "C:/Qt/Tools/mingw1120_64/bin/g++.exe"
+			"value" : "E:/Software/Qt/Tools/mingw1120_64/bin/g++.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -159,7 +159,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1120_64/bin/gcc-ar.exe"
+			"value" : "E:/Software/Qt/Tools/mingw1120_64/bin/gcc-ar.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_RANLIB",
@@ -175,7 +175,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1120_64/bin/gcc-ranlib.exe"
+			"value" : "E:/Software/Qt/Tools/mingw1120_64/bin/gcc-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -295,7 +295,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1120_64/bin/gcc.exe"
+			"value" : "E:/Software/Qt/Tools/mingw1120_64/bin/gcc.exe"
 		},
 		{
 			"name" : "CMAKE_DLLTOOL",
@@ -311,7 +311,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1120_64/bin/dlltool.exe"
+			"value" : "E:/Software/Qt/Tools/mingw1120_64/bin/dlltool.exe"
 		},
 		{
 			"name" : "CMAKE_EDIT_COMMAND",
@@ -323,7 +323,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Qt/Tools/CMake_64/bin/cmake-gui.exe"
+			"value" : "E:/Software/Qt/Tools/CMake_64/bin/cmake-gui.exe"
 		},
 		{
 			"name" : "CMAKE_EXECUTABLE_FORMAT",
@@ -443,7 +443,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/CMakeFiles/pkgRedirects"
+			"value" : "E:/Workspace/AGH/Sem 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -527,7 +527,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel"
+			"value" : "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel"
 		},
 		{
 			"name" : "CMAKE_INSTALL_BINDIR",
@@ -811,7 +811,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1120_64/bin/ld.exe"
+			"value" : "E:/Software/Qt/Tools/mingw1120_64/bin/ld.exe"
 		},
 		{
 			"name" : "CMAKE_MAKE_PROGRAM",
@@ -827,7 +827,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/Ninja/ninja.exe"
+			"value" : "E:/Software/Qt/Tools/Ninja/ninja.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -923,7 +923,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1120_64/bin/nm.exe"
+			"value" : "E:/Software/Qt/Tools/mingw1120_64/bin/nm.exe"
 		},
 		{
 			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
@@ -951,7 +951,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1120_64/bin/objcopy.exe"
+			"value" : "E:/Software/Qt/Tools/mingw1120_64/bin/objcopy.exe"
 		},
 		{
 			"name" : "CMAKE_OBJDUMP",
@@ -967,7 +967,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1120_64/bin/objdump.exe"
+			"value" : "E:/Software/Qt/Tools/mingw1120_64/bin/objdump.exe"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -991,7 +991,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.4.1/mingw_64"
+			"value" : "E:/Software/Qt/6.4.1/mingw_64;C:/Qt/6.4.1/mingw_64"
 		},
 		{
 			"name" : "CMAKE_PROJECT_DESCRIPTION",
@@ -1103,7 +1103,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1120_64/bin/ranlib.exe"
+			"value" : "E:/Software/Qt/Tools/mingw1120_64/bin/ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER",
@@ -1119,7 +1119,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1120_64/bin/windres.exe"
+			"value" : "E:/Software/Qt/Tools/mingw1120_64/bin/windres.exe"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER_WORKS",
@@ -1227,7 +1227,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1120_64/bin/readelf.exe"
+			"value" : "E:/Software/Qt/Tools/mingw1120_64/bin/readelf.exe"
 		},
 		{
 			"name" : "CMAKE_ROOT",
@@ -1239,7 +1239,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Qt/Tools/CMake_64/share/cmake-3.24"
+			"value" : "E:/Software/Qt/Tools/CMake_64/share/cmake-3.24"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1447,7 +1447,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/Tools/mingw1120_64/bin/strip.exe"
+			"value" : "E:/Software/Qt/Tools/mingw1120_64/bin/strip.exe"
 		},
 		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
@@ -1475,7 +1475,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug"
+			"value" : "E:/Workspace/AGH/Sem 5/jpo/ELHotel/build-ELHotel-Desktop_Qt_6_4_1_MinGW_64_bit-Debug"
 		},
 		{
 			"name" : "ELHotel_IS_TOP_LEVEL",
@@ -1499,7 +1499,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/Workspace/AGH/Semestr 5/jpo/ELHotel/ELHotel"
+			"value" : "E:/Workspace/AGH/Sem 5/jpo/ELHotel/ELHotel"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Threads",
@@ -1571,7 +1571,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6"
+			"value" : "E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6"
 		},
 		{
 			"name" : "QT_FEATURE_abstractbutton",
@@ -5831,7 +5831,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/6.4.1/mingw_64/bin/qmake.exe"
+			"value" : "E:/Software/Qt/6.4.1/mingw_64/bin/qmake.exe"
 		},
 		{
 			"name" : "Qt6CoreTools_DIR",
@@ -5843,7 +5843,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6CoreTools"
+			"value" : "E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6CoreTools"
 		},
 		{
 			"name" : "Qt6Core_DIR",
@@ -5855,7 +5855,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6Core"
+			"value" : "E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6Core"
 		},
 		{
 			"name" : "Qt6EntryPointPrivate_DIR",
@@ -5867,7 +5867,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6EntryPointPrivate"
+			"value" : "E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6EntryPointPrivate"
 		},
 		{
 			"name" : "Qt6GuiTools_DIR",
@@ -5879,7 +5879,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6GuiTools"
+			"value" : "E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6GuiTools"
 		},
 		{
 			"name" : "Qt6Gui_DIR",
@@ -5891,7 +5891,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6Gui"
+			"value" : "E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6Gui"
 		},
 		{
 			"name" : "Qt6LinguistTools_DIR",
@@ -5903,7 +5903,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6LinguistTools"
+			"value" : "E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6LinguistTools"
 		},
 		{
 			"name" : "Qt6WidgetsTools_DIR",
@@ -5915,7 +5915,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6WidgetsTools"
+			"value" : "E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6WidgetsTools"
 		},
 		{
 			"name" : "Qt6Widgets_DIR",
@@ -5927,7 +5927,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6Widgets"
+			"value" : "E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6Widgets"
 		},
 		{
 			"name" : "Qt6ZlibPrivate_DIR",
@@ -5939,7 +5939,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6ZlibPrivate"
+			"value" : "E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6ZlibPrivate"
 		},
 		{
 			"name" : "Qt6_DIR",
@@ -5951,7 +5951,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6"
+			"value" : "E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6"
 		},
 		{
 			"name" : "Vulkan_GLSLANG_VALIDATOR_EXECUTABLE",
@@ -6027,7 +6027,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Qt/6.4.1/mingw_64/bin/windeployqt.exe"
+			"value" : "E:/Software/Qt/6.4.1/mingw_64/bin/windeployqt.exe"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
@@ -6063,7 +6063,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Qt/6.4.1/mingw_64/lib/cmake/Qt6LinguistTools"
+			"value" : "E:/Software/Qt/6.4.1/mingw_64/lib/cmake/Qt6LinguistTools"
 		}
 	],
 	"kind" : "cache",

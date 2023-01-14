@@ -223,11 +223,6 @@
    <property name="nativeMenuBar">
     <bool>true</bool>
    </property>
-   <widget class="QMenu" name="menuFile">
-    <property name="title">
-     <string>File</string>
-    </property>
-   </widget>
    <widget class="QMenu" name="menuReservation">
     <property name="title">
      <string>Reservation</string>
@@ -283,7 +278,6 @@
     <addaction name="actionSearch_by_name"/>
     <addaction name="actionSearch_by_phone"/>
    </widget>
-   <addaction name="menuFile"/>
    <addaction name="menuView"/>
    <addaction name="menuReservation"/>
    <addaction name="menuRoom"/>
