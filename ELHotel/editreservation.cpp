@@ -6,10 +6,12 @@ editreservation::editreservation(QWidget *parent, viewCalendarUpdater *_calendar
     QDialog(parent),
     ui(new Ui::editreservation)
 {
+    //assign pointers
     calendar = _calendar;
     db=_db;
     reservation=_reservation;
     ui->setupUi(this);
+    //setup default
     ui->arr_dateEdit->setDate(QDate(_reservation->getArrival().getYear(), _reservation->getArrival().getMonth(), _reservation->getArrival().getDay()));
     ui->dep_dateEdit->setDate(QDate(_reservation->getDeparture().getYear(), _reservation->getDeparture().getMonth(), _reservation->getDeparture().getDay()));
     ui->roomLabel->setText(QString::fromStdString(_reservation->getRoom().description));
@@ -33,10 +35,12 @@ editreservation::~editreservation()
 
 void editreservation::on_recalc_button_clicked()
 {
+    //get input from the fields in dialog and calculate duration once more
     dateTime new_arr (ui->arr_dateEdit->date().day(), ui->arr_dateEdit->date().month(), ui->arr_dateEdit->date().year());
     dateTime new_dep (ui->dep_dateEdit->date().day(), ui->dep_dateEdit->date().month(), ui->dep_dateEdit->date().year());
     duration = new_arr.getDifference(new_arr, new_dep);
     int price = (reservation->getRoom().cost_rate)*duration;
+    //update display
     ui->spinPrice->setValue(price);
     ui->left_txt->setText((QString::fromStdString(std::to_string(price-ui->spinPaid->value()))));
 }
@@ -50,6 +54,7 @@ void editreservation::on_cancel_but_clicked()
 
 void editreservation::on_add_reservation_button_clicked()
 {
+    //create variables for storing data read from the dialog
     std::string name {};
     std::string phone {};
     std::string nip {};
@@ -94,6 +99,7 @@ void editreservation::on_add_reservation_button_clicked()
         msgBox.exec();
         return;
     }
+    //check once more whether the reservation does not collide with any other
     int first_index = new_arr.getDifference(dateTime (1,1,globalConstants::sharedVariables.thisYear), new_arr);
     for (int j = 0; j <= duration; j++)
     {
@@ -158,7 +164,7 @@ void editreservation::on_add_reservation_button_clicked()
     int DBID = db->getDBIDByResID(res_id);
     if (DBID<0)
     {
-        db->Reservations.even[-DBID].set(res);
+        db->Reservations.even[-DBID].set(res);//operator = is not suitable for this because it is ambigous with pointers
     } else {
         db->Reservations.odd[DBID].set(res);
     }

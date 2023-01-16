@@ -6,12 +6,15 @@ addnewreservation::addnewreservation(QWidget *parent, viewCalendarUpdater *_cale
     QDialog(parent),
     ui(new Ui::addnewreservation)
 {
+    //assign pointers passed by the parent window
     calendar = _calendar;
     db=_db;
     duration=*_duration;
     room=_room;
     enable=_enable;
     ui->setupUi(this);
+
+    //load default values into input fields
     ui->arr_dateEdit->setDate(QDate(_arrival->getYear(), _arrival->getMonth(), _arrival->getDay()));
     ui->dep_dateEdit->setDate(QDate(_departure->getYear(), _departure->getMonth(), _departure->getDay()));
     ui->roomLabel->setText(QString::fromStdString(room->description));
@@ -28,10 +31,13 @@ addnewreservation::~addnewreservation()
 
 void addnewreservation::on_recalc_button_clicked()
 {
+    //create dates from the input fields
     dateTime new_arr (ui->arr_dateEdit->date().day(), ui->arr_dateEdit->date().month(), ui->arr_dateEdit->date().year());
     dateTime new_dep (ui->dep_dateEdit->date().day(), ui->dep_dateEdit->date().month(), ui->dep_dateEdit->date().year());
+    //calculate duration again
     duration = new_arr.getDifference(new_arr, new_dep);
     int price = (room->cost_rate)*duration;
+    //update gui
     ui->spinPrice->setValue(price);
     ui->left_txt->setText((QString::fromStdString(std::to_string(price-ui->spinPaid->value()))));
 }
@@ -39,6 +45,7 @@ void addnewreservation::on_recalc_button_clicked()
 
 void addnewreservation::on_add_reservation_button_clicked()
 {
+    //variables which the values from the input fields will be loaded to
     std::string name {};
     std::string phone {};
     std::string nip {};
@@ -68,8 +75,8 @@ void addnewreservation::on_add_reservation_button_clicked()
     }
     dateTime new_arr (ui->arr_dateEdit->date().day(), ui->arr_dateEdit->date().month(), ui->arr_dateEdit->date().year());
     dateTime new_dep (ui->dep_dateEdit->date().day(), ui->dep_dateEdit->date().month(), ui->dep_dateEdit->date().year());
-    duration = new_arr.getDifference(new_arr, new_dep);
-    if (duration < 0)
+    duration = new_arr.getDifference(new_arr, new_dep); //calculate the duration
+    if (duration < 0) //if departure is later than arrival, throw an error - here custom dates system with negative values comes in handy
     {
         QMessageBox msgBox;
         msgBox.setText("Error: departure earlier than arrival");
@@ -116,8 +123,9 @@ void addnewreservation::on_add_reservation_button_clicked()
         msgBox.exec();
     }
     int paid = ui->spinPaid->value();
+    //create an object of class Reservation with all the data provied in the dialog
     Reservation reservation (globalConstants::sharedVariables.next_index, *room, name, new_arr, new_dep, phone, cost, nip, 0, people, comment, paid);
-    db->autoAddReservation(reservation);
+    db->autoAddReservation(reservation); //invoke autoAdd function, it takes care of adding to the database and for each day, etc
     calendar->updateReservations();
     db->save();
     close();

@@ -97,7 +97,7 @@ std::string dateTime::sayHello()
 	{
 		m += "0";
 	}
-	return d+std::to_string(day) + ", " + m+std::to_string(month) + ", " + std::to_string(year);
+    return d+std::to_string(day) + ", " + m+std::to_string(month) + ", " + std::to_string(year);
 }
 
 

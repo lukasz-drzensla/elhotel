@@ -54,8 +54,7 @@ MainWindow::MainWindow(QWidget *parent)
     //initialize days of week view
     dateTime dt1 (getTodayDay(),getTodayMonth()+1,globalConstants::sharedVariables.thisYear);
     ui->statusbar->showMessage("Today is: " + QString::fromStdString(dt1.sayHello()));
-    dateTime dt (19,12,globalConstants::sharedVariables.thisYear);
-    first_day.set(dt);
+    first_day.set(dt1);
     calUpd->displayDates(&first_day);
 
     //initialize reservations view
@@ -64,6 +63,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 void MainWindow::on_actionPrevious_week_triggered()
 {
+    //calculate which day of the year is the currently displayed first day, then move by one week prior and initialize dates display again
     dateTime dt (1, 1, globalConstants::sharedVariables.thisYear);
     int index = dt.getDifference(dt, first_day);
     index-=7;
@@ -77,11 +77,14 @@ void MainWindow::on_actionPrevious_week_triggered()
 
 void MainWindow::on_actionNext_week_triggered()
 {
+    //calculate which day of the year is the currently displayed first day, then move by one week forward and initialize dates display again
     dateTime dt (1, 1, globalConstants::sharedVariables.thisYear);
     int isLeap = dt.isLeap();
     int max=365;
+    //if the year is leap then change the number of days
     if (isLeap)
         max=366;
+    //if showing the next week would result in showing further in the next year, do not allow
     if (days_of_week[13]<max-5)
     {
         int index = dt.getDifference(dt, first_day);
@@ -129,17 +132,21 @@ void MainWindow::on_actionTEST_triggered()
 
 void MainWindow::on_actioninfo_triggered()
 {
+    //get selected cells
     QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
     if (selection.empty())
     {
         return;
     }
+    //get first selected cell index
     QModelIndex QMI = selection.at(0);
     int row = QMI.row();
+    //check if a cell is not a date
     if (row > 0)
     {
         int ID = rooms_on_display[--row];
         int index = 0;
+        //search for a room with being given the ID of the selected room
         for (int i = 0; i < db.rooms.size(); i++)
         {
             if (db.rooms[i].id == ID)
@@ -148,6 +155,7 @@ void MainWindow::on_actioninfo_triggered()
                 break;
             }
         }
+        //display the result
         QMessageBox msgBox;
         msgBox.setText("Room ID: " + toQString(std::to_string(db.rooms[index].id)) + ", Description: " + toQString(db.rooms[index].description) + ", Max people: " + toQString(std::to_string(db.rooms[index].max_people)) + ", Cost rate (price per night): " + toQString(std::to_string(db.rooms[index].cost_rate)));
         msgBox.exec();
@@ -164,15 +172,18 @@ void MainWindow::on_actionRemove_3_triggered()
         return;
       }
     try {
+        //get selected cells
         QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
         if (selection.empty())
         {
             return;
         }
+        //get first selected cell
         QModelIndex QMI = selection.at(0);
         int row = QMI.row();
         if (row > 0)
         {
+            //find ID of the room
             int ID = rooms_on_display[--row];
             int index = 0;
             for (int i = 0; i < db.rooms.size(); i++)
@@ -184,6 +195,7 @@ void MainWindow::on_actionRemove_3_triggered()
                 }
             }
             //db.rooms.erase(db.rooms.begin()+index); //for a reason which remains unknown to me it always deletes the last element
+            //remove a room
             vector <Room> temp{};
             for (int i = 0; i < db.rooms.size(); i++)
             {
@@ -192,6 +204,8 @@ void MainWindow::on_actionRemove_3_triggered()
             }
             db.rooms.clear();
             db.rooms=temp;
+
+            //save and reinitialize
             db.saveRooms();
             calUpd->updateCalendar();
             calUpd->updateReservations();
@@ -210,27 +224,32 @@ void MainWindow::on_actionRemove_3_triggered()
 
 void MainWindow::on_actionInfo_triggered()
 {
+    //get selection
     QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
     if (selection.empty())
     {
         return;
     }
+    //get first selected cell
     QModelIndex QMI = selection.at(0);
     int row = QMI.row();
     int column = QMI.column();
     int ID{};
+    //check if the selected cell is not a date display, get room ID
     if (row > 0)
     {
         ID = rooms_on_display[--row];
     } else {
         return;
     }
+    //get all the reservations for the specified date
     vector <Reservation> all = db.getAllReservationsAtDate(days_of_week[column]);
-
+    //find the one with the given room ID
     for (int i = 0; i < all.size(); i++)
     {
         if (all[i].getRoom().id == ID)
         {
+            //show results
             QMessageBox msgBox;
             msgBox.setText(toQString(all[i].sayHello()));
             msgBox.exec();
@@ -248,24 +267,29 @@ void MainWindow::on_actionUpdate_triggered()
 
 void MainWindow::on_actionRemove_2_triggered()
 {
+    //get selection
     QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
     if (selection.empty())
     {
         return;
     }
+    //get the first selected cell
     QModelIndex QMI = selection.at(0);
     int row = QMI.row();
     int column = QMI.column();
     int ID{};
     int res_id{};
+    //get room ID
     if (row > 0)
     {
         ID = rooms_on_display[--row];
     } else {
         return;
     }
+    //get all the reservations for the specified date
     vector <Reservation> all = db.getAllReservationsAtDate(days_of_week[column]);
 
+    //if room ID matches the room ID in the reservation, head to removing - but first ask the user again whether they really wish to remove it or not
     for (int i = 0; i < all.size(); i++)
     {
         if (all[i].getRoom().id == ID)
@@ -280,6 +304,7 @@ void MainWindow::on_actionRemove_2_triggered()
             break;
         }
     }
+    //remove the reservation
     vector <Reservation> temp{};
     if (res_id%2==0)
     {
@@ -303,6 +328,8 @@ void MainWindow::on_actionRemove_2_triggered()
         db.Reservations.odd.clear();
         db.Reservations.odd = temp;
     }
+
+    //save the database and reinitialize display
     db.save();
     calUpd->updateCalendar();
     calUpd->updateReservations();
@@ -312,6 +339,7 @@ void MainWindow::on_actionRemove_2_triggered()
 
 void MainWindow::on_actionAdd_2_triggered()
 {
+    //first check if the time period does not collide with any other reservations
     int departure_index{};
     QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
     if (selection.empty())
@@ -361,7 +389,7 @@ void MainWindow::on_actionAdd_2_triggered()
             }
         }
     }
-    //if no error
+    //if no error and no collision detected, initialize some defaults for the new reservation
     dateTime dt{};
     int day = dt.guessDay(days_of_week[start_column]);
     int month = dt.guessMonth(days_of_week[start_column]);
@@ -377,7 +405,7 @@ void MainWindow::on_actionAdd_2_triggered()
         msgBox.exec();
         return;
     }
-
+    //if everything is fine proceed to the add reservation dialog
     add_new_res_window = new addnewreservation(this, calUpd, &arrival, &departure, &db, &duration, &db.rooms[index], &enableAutoMarking);
     add_new_res_window->exec();
 }
@@ -385,23 +413,27 @@ void MainWindow::on_actionAdd_2_triggered()
 
 void MainWindow::on_actionEdit_triggered()
 {
+    //get selection
     QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
     if (selection.empty())
     {
         return;
     }
+    //get first selected cell
     QModelIndex QMI = selection.at(0);
     int row = QMI.row();
     int column = QMI.column();
     int ID{};
     int res_id{};
     int index_in_all{};
+    //get room ID
     if (row > 0)
     {
         ID = rooms_on_display[--row];
     } else {
         return;
     }
+    //get all the reservations at the specified date
     vector <Reservation> all = db.getAllReservationsAtDate(days_of_week[column]);
 
     for (int i = 0; i < all.size(); i++)
@@ -413,20 +445,22 @@ void MainWindow::on_actionEdit_triggered()
             break;
         }
     }
-
+    //get the index at which the reservation is stored in the database
     int index = db.getDBIDByResID(res_id);
+    //create a temp value (de facto not a temp) - needed because editreservation requires a pointer and it is not possible to a temporary variable
     Reservation temp_res = all[index_in_all];
 
+    //call edit dialog
     edit_res_window = new editreservation (this, calUpd, &temp_res, &db, index);
     edit_res_window->exec();
 
-    //db.save();
     calUpd->updateCalendar();
     calUpd->updateReservations();
 }
 
 void MainWindow::changeStatus(int stat)
 {
+    //get selected cell
     QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
     if (selection.empty())
     {
@@ -444,6 +478,7 @@ void MainWindow::changeStatus(int stat)
     }
     vector <Reservation> all = db.getAllReservationsAtDate(days_of_week[column]);
 
+    //find the reservation with matching room ID, when found - change status to the provided
     for (int j = 0; j < all.size(); j++)
     {
         if (all[j].getRoom().id == ID)
@@ -468,6 +503,7 @@ void MainWindow::changeStatus(int stat)
     }
 }
 
+//this function automatically calculates whether the guest should pay more or not being given only the information whether they arrived or left
 void MainWindow::changeStatusAuto(int stat)
 {
     QModelIndexList selection = ui->reservationCalendar->selectionModel()->selectedIndexes();
